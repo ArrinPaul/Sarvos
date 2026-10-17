@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SARVOS — Independent Software &amp; Technology Studio</title>
+<!-- Fonts: Geist & JetBrains Mono / Geist Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAFAFA',
+              card: '#FFFFFF',
+              muted: '#F5F5F5',
+              subtle: '#EAEAEA',
+              border: '#E5E5E5',
+              borderDark: '#D4D4D4',
+              textPrimary: '#000000',
+              textSecondary: '#4A4A4A',
+              textMuted: '#737373',
+            }
+          },
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+            mono: ['Geist Mono', 'JetBrains Mono', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.05em',
+            tight: '-0.03em',
+            mono: '0.06em',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        background-color: #FAFAFA;
+        color: #000000;
+        font-family: 'Geist', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+    .hairline-border {
+      border: 1px solid #E5E5E5;
+    }
+  </style>
+<meta content="web_standard" name="shell-type"/></head>
+<body class="bg-[#FAFAFA] text-[#000000] antialiased selection:bg-[#000000] selection:text-[#FFFFFF]">
+<!-- ========================================================
+       STICKY COMPACT HEADER
+       ======================================================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#FAFAFA]/90 backdrop-blur-md border-b border-[#E5E5E5]">
+<div class="max-w-[1200px] h-16 mx-auto px-6 md:px-12 flex items-center justify-between">
+<!-- SARVOS Wordmark -->
+<div class="flex items-center gap-3">
+<a class="font-sans font-semibold tracking-tight text-lg text-black hover:opacity-80 transition-opacity" href="#">
+          SARVOS
+        </a>
+<span class="font-mono text-[10px] tracking-wider px-1.5 py-0.5 rounded border border-[#E5E5E5] bg-white text-[#737373]">
+          EST. 2024
+        </span>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="inline-flex items-center h-full text-sm font-medium text-black border-b-2 border-black pt-0.5" href="#work">Work</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#services">Services</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#about">About</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#faq">Insights</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#contact">Contact</a>
+</nav>
+<!-- Right Controls: Theme toggle & CTA -->
+<div class="flex items-center gap-3">
+<button aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-[#E5E5E5] bg-white hover:bg-[#F5F5F5] text-black flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">light_mode</span>
+</button>
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-black text-white text-xs font-medium tracking-tight hover:bg-neutral-800 transition-colors" href="#contact">
+<span>Start a project</span>
+<span class="text-xs font-mono">↗</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN PAGE CONTENT (1200px max container, 48px gutters, 96px section padding) -->
+<main class="w-full pt-16"><div class="flex flex-col w-full">
+<!-- Active Navigation Sync Script -->
+<script>
+    (function syncActiveNav() {
+      const links = document.querySelectorAll('header nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === '#contact') {
+          link.className = 'inline-flex items-center h-full font-body-md text-body-md font-medium text-primary border-b-2 border-primary pt-0.5';
+        } else {
+          link.className = 'inline-flex items-center h-full font-body-md text-body-md font-normal text-on-surface-variant hover:text-primary transition-colors border-b-2 border-transparent pt-0.5';
+        }
+      });
+    })();
+  </script>
+<!-- Main Container: max-w-[1200px], 48px gutters -->
+<div class="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col gap-16">
+<!-- ========================================================
+         1. PAGE HEADER / EDITORIAL INTRO
+         ======================================================== -->
+<section class="flex flex-col gap-8 pb-12 border-b border-surface-container-highest">
+<!-- Telemetry Strip & Status Header -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="inline-flex items-center gap-2 font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>[ 01 / CONTACT &amp; ENQUIRY ] — DIRECT CONSULTANCY ACCESS</span>
+</div>
+<!-- Live System Telemetry Status Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container border border-surface-container-highest font-label-mono-sm text-label-mono-sm text-primary">
+<span class="text-on-surface-variant font-medium">STATUS:</span>
+<span>ACCEPTING SELECT CLIENT ENGAGEMENTS</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-on-surface-variant">DIRECT PRINCIPAL RESPONSE</span>
+</div>
+</div>
+<!-- Headline & Subtitle -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 flex flex-col gap-4">
+<h1 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">
+            Let's discuss what needs building.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            We work directly with founders, product teams, and engineering leads. Tell us about your technical requirements, architecture, or scope, and we'll reply within 24 business hours.
+          </p>
+</div>
+<!-- Metric / SLA Monospaced Snapshot -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-5 rounded border border-surface-container-highest flex flex-col gap-3">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider flex items-center justify-between">
+<span>RESPONSE TELEMETRY</span>
+<span class="text-primary font-semibold">&lt; 24H SLA</span>
+</div>
+<div class="h-px bg-surface-container-highest w-full"></div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">AVG TRIAGE</div>
+<div class="font-label-mono-md text-label-mono-md font-semibold text-primary">3.4 HRS</div>
+</div>
+<div>
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">ENG DIRECT</div>
+<div class="font-label-mono-md text-label-mono-md font-semibold text-primary">100%</div>
+</div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant pt-1">
+            Engineers triage every submission. No automated pitch decks or sales routing.
+          </div>
+</div>
+</div>
+<!-- Protocol / Engagement Parameters Banner -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+<div class="flex items-start gap-3 p-3.5 bg-surface-container-lowest rounded border border-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">person_remove</span>
+<div>
+<div class="font-label-mono-sm text-label-mono-sm font-semibold text-primary uppercase">No Sales Intermediaries</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Zero business development gatekeepers. Direct consultation with principal engineers.</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 bg-surface-container-lowest rounded border border-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">terminal</span>
+<div>
+<div class="font-label-mono-sm text-label-mono-sm font-semibold text-primary uppercase">Senior Technical Staff</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Scoping conversations lead straight into architectural feasibility and execution plans.</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 bg-surface-container-lowest rounded border border-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
+<div>
+<div class="font-label-mono-sm text-label-mono-sm font-semibold text-primary uppercase">Mutual NDAs Standard</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Proprietary architecture protected. Standard bilateral NDA executed within minutes if required.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+         2. CORE WORKSPACE: FORM & CONTEXTUAL INTEL
+         ======================================================== -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- LEFT COLUMN: INTERACTIVE FORM ENGINE (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- TECHNICAL STATE CONTROLLER BAR -->
+<div class="p-3 bg-surface-container-lowest rounded border border-surface-container-highest flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant">SIMULATE STATE:</span>
+</div>
+<!-- Segmented Tab Controls -->
+<div class="inline-flex flex-wrap p-1 rounded bg-surface-container border border-surface-container-highest gap-1" role="tablist">
+<button aria-selected="true" class="px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary bg-surface-container-lowest border border-surface-container-highest shadow-xs transition-all" id="btn-state-default" onclick="setFormState('default')" role="tab" type="button">
+              01 Default (Clean)
+            </button>
+<button aria-selected="false" class="px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-primary transition-all" id="btn-state-errors" onclick="setFormState('errors')" role="tab" type="button">
+              02 Validation Errors
+            </button>
+<button aria-selected="false" class="px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-primary transition-all" id="btn-state-submitting" onclick="setFormState('submitting')" role="tab" type="button">
+              03 Submitting
+            </button>
+<button aria-selected="false" class="px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-primary transition-all" id="btn-state-feedback" onclick="setFormState('feedback')" role="tab" type="button">
+              04 Submission Feedback
+            </button>
+</div>
+</div>
+<!-- FORM CONTAINER CARD -->
+<div class="bg-surface-container-lowest rounded p-6 md:p-8 border border-surface-container-highest">
+<!-- STATE 4 FEEDBACK VIEWS (SUCCESS & FAILURE) -->
+<div class="hidden flex flex-col gap-6 mb-8" id="state-feedback-panel">
+<!-- Success Confirmation Card -->
+<div class="p-6 rounded bg-surface border border-surface-container-highest flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-label-mono-md">
+                  ✓
+                </span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Enquiry successfully ingested</h3>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TRANSMISSION DISPATCH REFERENCE: <span class="text-primary font-semibold">SRV-8492</span></p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pl-11">
+                A principal engineer has been assigned to triage your system requirements. You will receive an initial feasibility assessment and follow-up within 24 business hours.
+              </p>
+<div class="pl-11 pt-2 flex items-center gap-4 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>TIMESTAMP: <span id="telemetry-timestamp">2025-05-18T14:32:09Z</span></span>
+<span>•</span>
+<span>CRYPTOGRAPHIC VERIFICATION: OK</span>
+</div>
+</div>
+<!-- Alternative Error/Failure Notice -->
+<div class="p-5 rounded bg-[#FFF5F5] border border-[#E5484D] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#E5484D] text-xl mt-0.5">error</span>
+<div class="flex flex-col gap-1">
+<div class="font-label-mono-sm text-label-mono-sm font-semibold text-[#E5484D] uppercase">
+                  Gateway Ingestion Failure [HTTP 503]
+                </div>
+<div class="font-body-sm text-body-sm text-primary">
+                  Transmission failed. Unable to reach ingestion gateway. Please retry or dispatch your specification directly to: <a class="font-label-mono-sm underline text-primary" href="mailto:contact@sarvos.studio">contact@sarvos.studio [placeholder]</a>
+</div>
+</div>
+</div>
+</div>
+<!-- THE TECHNICAL CONTACT FORM -->
+<form class="flex flex-col gap-6" id="sarvos-contact-form" novalidate="" onsubmit="event.preventDefault(); simulateSubmit();">
+<!-- Grid: Name & Email -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- 1. NAME FIELD -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-name">
+<span>Name <span class="text-[#E5484D]">*</span></span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[REQUIRED]</span>
+</label>
+<div class="relative">
+<input class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="field-name" name="name" placeholder="e.g. Alex Vance" type="text"/>
+<!-- Error Icon & Label -->
+<div class="hidden flex items-center gap-1.5 mt-1.5 text-[#E5484D]" id="err-name">
+<span class="material-symbols-outlined text-sm">error</span>
+<span class="font-label-mono-sm text-label-mono-sm">Name is required</span>
+</div>
+</div>
+</div>
+<!-- 2. WORK EMAIL FIELD -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-email">
+<span>Work Email <span class="text-[#E5484D]">*</span></span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[REQUIRED]</span>
+</label>
+<div class="relative">
+<input class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="field-email" name="email" placeholder="alex@northstar.io" type="email"/>
+<!-- Error Icon & Label -->
+<div class="hidden flex items-center gap-1.5 mt-1.5 text-[#E5484D]" id="err-email">
+<span class="material-symbols-outlined text-sm">error</span>
+<span class="font-label-mono-sm text-label-mono-sm">Please enter a valid work email address</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid: Company & Service Discipline -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- 3. COMPANY / ORG -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-company">
+<span>Company or Organization</span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[OPTIONAL]</span>
+</label>
+<input class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="field-company" name="company" placeholder="Company / Studio Name" type="text"/>
+</div>
+<!-- 4. SERVICE DISCIPLINE -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-service">
+<span>Service Required <span class="text-[#E5484D]">*</span></span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[DISCIPLINE]</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer transition-all pr-8" id="field-service" name="service">
+<option disabled="" selected="" value="">Select a service discipline...</option>
+<option value="custom_software">Websites or custom software</option>
+<option value="ai_automation">AI or workflow automation</option>
+<option value="virtual_tour">Virtual tour or interactive experience</option>
+<option value="seo_website">SEO or website improvement</option>
+<option value="api_integration">API or systems integration</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute right-3 top-2.5 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">unfold_more</span>
+</div>
+<!-- Error Icon & Label -->
+<div class="hidden flex items-center gap-1.5 mt-1.5 text-[#E5484D]" id="err-service">
+<span class="material-symbols-outlined text-sm">error</span>
+<span class="font-label-mono-sm text-label-mono-sm">Please select a primary service</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid: Budget & Timeline -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- 5. APPROXIMATE BUDGET -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-budget">
+<span>Approximate Budget</span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[CAPITAL]</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer transition-all pr-8" id="field-budget" name="budget">
+<option selected="" value="undetermined">Undetermined / Scoping phase</option>
+<option value="tier_1">$15k - $30k</option>
+<option value="tier_2">$30k - $60k</option>
+<option value="tier_3">$60k+</option>
+</select>
+<div class="absolute right-3 top-2.5 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">unfold_more</span>
+</div>
+</div>
+</div>
+<!-- 6. DESIRED TIMELINE -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-timeline">
+<span>Desired Timeline</span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[CADENCE]</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer transition-all pr-8" id="field-timeline" name="timeline">
+<option value="immediate">Immediate (&lt; 4 weeks)</option>
+<option selected="" value="1_to_3_months">1 - 3 months</option>
+<option value="q3_q4">Q3 / Q4</option>
+<option value="exploratory">Exploratory</option>
+</select>
+<div class="absolute right-3 top-2.5 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">unfold_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. PROJECT DESCRIPTION -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm uppercase text-primary flex items-center justify-between" for="field-desc">
+<span>Project Description <span class="text-[#E5484D]">*</span></span>
+<span class="text-on-surface-variant text-[10px] font-normal tracking-normal">[TECHNICAL SPEC]</span>
+</label>
+<div class="relative">
+<textarea class="w-full p-3 rounded bg-surface-container-lowest border border-surface-container-highest font-body-md text-body-md text-primary placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-y" id="field-desc" name="description" placeholder="Describe the system, problem statement, key requirements, technical stack or existing constraints..." rows="5"></textarea>
+<!-- Error Icon & Label -->
+<div class="hidden flex items-center gap-1.5 mt-1.5 text-[#E5484D]" id="err-desc">
+<span class="material-symbols-outlined text-sm">error</span>
+<span class="font-label-mono-sm text-label-mono-sm">Project description must specify core problem details (min 30 characters)</span>
+</div>
+</div>
+</div>
+<!-- Privacy Policy Notice -->
+<div class="flex items-start gap-2.5 pt-2">
+<input checked="" class="mt-1 h-4 w-4 rounded border-surface-container-highest text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" id="field-privacy" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed select-none" for="field-privacy">
+                By submitting, you agree to our <a class="text-primary underline hover:opacity-80" href="#">Privacy Policy</a>. We never share your data, broker contacts, or transmit marketing solicitations.
+              </label>
+</div>
+<!-- Action Toolbar: Primary Button & In-Flight State -->
+<div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-t border-surface-container-highest">
+<!-- Direct Button -->
+<button class="group relative inline-flex items-center justify-center gap-2 h-10 px-6 rounded bg-primary text-on-primary font-body-md text-body-md font-medium tracking-tight hover:opacity-90 active:scale-[0.99] transition-all" id="btn-submit-action" type="submit">
+<span id="btn-label">Send project enquiry</span>
+<span class="font-label-mono-md text-label-mono-md group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" id="btn-arrow">↗</span>
+<!-- Loading State Spinner (Hidden by default) -->
+<div class="hidden items-center gap-2 font-label-mono-sm text-label-mono-sm uppercase text-on-primary" id="btn-spinner">
+<svg class="animate-spin h-4 w-4 text-white" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span>[TRANSMITTING BRIEF...]</span>
+</div>
+</button>
+<!-- Auxiliary Telemetry Note -->
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant text-right">
+                DISPATCH TIME: &lt; 200MS • TLS 1.3
+              </div>
+</div>
+<!-- Encrypted RFC Fallback -->
+<div class="pt-2 border-t border-surface-container-highest flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Prefer direct communication or PGP/RFC transmissions?</span>
+<a class="text-primary hover:underline font-medium" href="mailto:contact@sarvos.studio">contact@sarvos.studio [placeholder]</a>
+</div>
+</form>
+</div>
+</div>
+<!-- RIGHT COLUMN: PROTOCOL SPEC & TRIAGE TIMELINE (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- "What happens next?" Systematic Blueprint Card -->
+<div class="bg-surface-container-lowest rounded p-6 border border-surface-container-highest flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-4">
+<h2 class="font-headline-sm text-headline-sm font-medium text-primary">What happens next?</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">[PROTOCOL]</span>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Step 01 -->
+<div class="flex items-start gap-4">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold text-primary px-2 py-0.5 rounded bg-surface-container border border-surface-container-highest">
+                01
+              </span>
+<div class="flex flex-col gap-1">
+<div class="font-body-md text-body-md font-medium text-primary">Triage by Lead Engineer</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  Within 24 business hours, a senior engineer reviews your stack requirements, constraints, and operational goals.
+                </div>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="flex items-start gap-4">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold text-primary px-2 py-0.5 rounded bg-surface-container border border-surface-container-highest">
+                02
+              </span>
+<div class="flex flex-col gap-1">
+<div class="font-body-md text-body-md font-medium text-primary">Technical Scope &amp; Feasibility</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  We verify architectural alignment and deliver a preliminary execution roadmap or request clarifying specifications.
+                </div>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="flex items-start gap-4">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold text-primary px-2 py-0.5 rounded bg-surface-container border border-surface-container-highest">
+                03
+              </span>
+<div class="flex flex-col gap-1">
+<div class="font-body-md text-body-md font-medium text-primary">30-min Technical Call</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  A high-bandwidth video briefing between your key stakeholder and our principal architect to agree on deliverables.
+                </div>
+</div>
+</div>
+</div>
+<!-- Direct Escalation Footer within card -->
+<div class="p-3.5 rounded bg-surface border border-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant flex flex-col gap-1">
+<span class="text-primary font-medium uppercase">URGENT PRODUCTION OUTAGES</span>
+<span>For urgent production incidents or ongoing system architecture reviews, flag [URGENT] in your subject or description.</span>
+</div>
+</div>
+<!-- System Capability Matrix Card -->
+<div class="bg-surface-container-lowest rounded p-6 border border-surface-container-highest flex flex-col gap-4">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider">
+            PRIMARY SYSTEM ENGAGEMENTS
+          </div>
+<ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-primary">
+<li class="flex items-center justify-between py-1 border-b border-surface-container-highest">
+<span>Full-Stack Web Applications</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">NEXT / GO / RUST</span>
+</li>
+<li class="flex items-center justify-between py-1 border-b border-surface-container-highest">
+<span>AI &amp; Document Intelligence</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">LLM / VECTOR / RAG</span>
+</li>
+<li class="flex items-center justify-between py-1 border-b border-surface-container-highest">
+<span>API Gateway &amp; Telemetry</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">GRPC / KAFKA / CLOUD</span>
+</li>
+<li class="flex items-center justify-between py-1 border-b border-surface-container-highest">
+<span>Spatial 3D &amp; Digital Twins</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">WEBGL / THREE.JS</span>
+</li>
+<li class="flex items-center justify-between py-1">
+<span>Performance &amp; Code Audits</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">SOC2 / COMPLIANCE</span>
+</li>
+</ul>
+</div>
+<!-- Studio Coordinates & Verification -->
+<div class="p-4 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span>STUDIO TIMEZONE</span>
+<span class="text-primary">UTC-05:00 (EST) / REMOTE GLOBAL</span>
+</div>
+<div class="flex items-center justify-between">
+<span>OFFICIAL PGP FINGERPRINT</span>
+<span class="text-primary truncate max-w-[150px]">9A8B 7C6D 5E4F 3A2B</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================
+       INLINE LOGIC: STATE CONTROLLER & INTERACTION ENGINE
+       ======================================================== -->
+<script>
+    /**
+     * Updates form display according to requested state:
+     * - 'default': pristine inputs, no error outlines, button active
+     * - 'errors': red borders (#E5484D), icon + message displays, aria invalid
+     * - 'submitting': muted fields, loading spinner inside button
+     * - 'feedback': success banner & failure alert viewable with clean fields
+     */
+    function setFormState(state) {
+      // 1. Sync toolbar tabs visual styling
+      const states = ['default', 'errors', 'submitting', 'feedback'];
+      states.forEach(s => {
+        const btn = document.getElementById('btn-state-' + s);
+        if (btn) {
+          if (s === state) {
+            btn.className = 'px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary bg-surface-container-lowest border border-surface-container-highest shadow-xs transition-all';
+            btn.setAttribute('aria-selected', 'true');
+          } else {
+            btn.className = 'px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-primary transition-all';
+            btn.setAttribute('aria-selected', 'false');
+          }
+        }
+      });
+
+      // UI References
+      const form = document.getElementById('sarvos-contact-form');
+      const feedbackPanel = document.getElementById('state-feedback-panel');
+      const submitBtn = document.getElementById('btn-submit-action');
+      const btnLabel = document.getElementById('btn-label');
+      const btnArrow = document.getElementById('btn-arrow');
+      const btnSpinner = document.getElementById('btn-spinner');
+
+      const inputs = [
+        document.getElementById('field-name'),
+        document.getElementById('field-email'),
+        document.getElementById('field-service'),
+        document.getElementById('field-desc')
+      ];
+
+      const errorContainers = {
+        name: document.getElementById('err-name'),
+        email: document.getElementById('err-email'),
+        service: document.getElementById('err-service'),
+        desc: document.getElementById('err-desc')
+      };
+
+      // Reset base input styling
+      const resetInputs = () => {
+        inputs.forEach(input => {
+          if (!input) return;
+          input.disabled = false;
+          input.removeAttribute('aria-invalid');
+          input.classList.remove('border-[#E5484D]', 'bg-[#FFF5F5]/30');
+          input.classList.add('border-surface-container-highest', 'bg-surface-container-lowest');
+        });
+        Object.values(errorContainers).forEach(el => {
+          if (el) el.classList.add('hidden');
+        });
+        form.classList.remove('opacity-60', 'pointer-events-none');
+        submitBtn.disabled = false;
+        btnLabel.classList.remove('hidden');
+        btnArrow.classList.remove('hidden');
+        btnSpinner.classList.remove('flex');
+        btnSpinner.classList.add('hidden');
+      };
+
+      resetInputs();
+
+      // State branches
+      if (state === 'default') {
+        feedbackPanel.classList.add('hidden');
+        // Clear sample invalid values
+        if (inputs[0].value === '') inputs[0].value = '';
+        if (inputs[1].value === 'invalid-format') inputs[1].value = '';
+      } 
+      else if (state === 'errors') {
+        feedbackPanel.classList.add('hidden');
+        
+        // Apply Red #E5484D borders and expose explicit warning icons + labels
+        inputs.forEach(input => {
+          if (!input) return;
+          input.setAttribute('aria-invalid', 'true');
+          input.classList.remove('border-surface-container-highest', 'bg-surface-container-lowest');
+          input.classList.add('border-[#E5484D]', 'bg-[#FFF5F5]/30');
+        });
+
+        // Set contextual validation values to make testing transparent
+        inputs[1].value = 'alex-unformatted';
+        inputs[3].value = 'Too short.';
+
+        Object.values(errorContainers).forEach(el => {
+          if (el) el.classList.remove('hidden');
+        });
+      } 
+      else if (state === 'submitting') {
+        feedbackPanel.classList.add('hidden');
+        // Mute inputs
+        form.classList.add('opacity-60', 'pointer-events-none');
+        inputs.forEach(i => { if (i) i.disabled = true; });
+
+        // Show active loading state
+        submitBtn.disabled = true;
+        btnLabel.classList.add('hidden');
+        btnArrow.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        btnSpinner.classList.add('flex');
+      } 
+      else if (state === 'feedback') {
+        feedbackPanel.classList.remove('hidden');
+        // Update live timestamp
+        const stamp = document.getElementById('telemetry-timestamp');
+        if (stamp) stamp.textContent = new Date().toISOString();
+      }
+    }
+
+    function simulateSubmit() {
+      setFormState('submitting');
+      setTimeout(() => {
+        setFormState('feedback');
+      }, 1200);
+    }
+  </script>
+</div></main>
+<!-- ========================================================
+       8. FOOTER
+       ======================================================== -->
+<footer class="w-full bg-[#FAFAFA] border-t border-[#E5E5E5] mt-12">
+<div class="max-w-[1200px] mx-auto px-6 md:px-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#E5E5E5]">
+<!-- Wordmark & Description -->
+<div class="md:col-span-6 space-y-4">
+<div class="space-y-1">
+<span class="font-sans text-lg font-semibold tracking-tight text-black">SARVOS</span>
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Independent Software &amp; Technology Studio</div>
+</div>
+<p class="text-sm text-[#4A4A4A] max-w-sm leading-relaxed">
+            SARVOS is a technology consultancy focused on building websites, software and digital systems around specific business needs.
+          </p>
+<div class="pt-1">
+<span class="font-mono text-xs text-[#737373]">
+              contact@sarvos.studio [email placeholder]
+            </span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="md:col-span-3 space-y-3">
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Navigation</div>
+<ul class="space-y-2 text-sm">
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#work">Work</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#services">Services</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#about">About</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#faq">Insights</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#contact">Contact</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div class="md:col-span-3 space-y-3">
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Legal</div>
+<ul class="space-y-2 text-sm">
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#737373]">
+<div>© 2025 SARVOS. All rights reserved.</div>
+<div>MONOCHROME TECHNICAL EDITORIAL SPEC</div>
+</div>
+</div>
+</footer>
+<!-- ========================================================
+       VANILLA JAVASCRIPT: Hero Tabs & Accordion
+       ======================================================== -->
+<script>
+    // Hero preview tab switcher (manual only)
+    function switchHeroTab(tabId, url, clickedBtn) {
+      // Hide all preview viewports
+      document.getElementById('view-telemetry').classList.add('hidden');
+      document.getElementById('view-spatial').classList.add('hidden');
+      document.getElementById('view-docutriage').classList.add('hidden');
+
+      // Show selected viewport
+      document.getElementById('view-' + tabId).classList.remove('hidden');
+
+      // Update browser URL
+      document.getElementById('browser-url').textContent = url;
+
+      // Update tab styles
+      const tabs = document.querySelectorAll('.hero-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('border-black', 'bg-white');
+        tab.classList.add('border-[#E5E5E5]', 'bg-[#FAFAFA]');
+        const label = tab.querySelector('.font-mono');
+        if (label) {
+          label.classList.remove('text-black', 'font-semibold');
+          label.classList.add('text-[#737373]');
+        }
+      });
+
+      clickedBtn.classList.remove('border-[#E5E5E5]', 'bg-[#FAFAFA]');
+      clickedBtn.classList.add('border-black', 'bg-white');
+      const activeLabel = clickedBtn.querySelector('.font-mono');
+      if (activeLabel) {
+        activeLabel.classList.remove('text-[#737373]');
+        activeLabel.classList.add('text-black', 'font-semibold');
+      }
+    }
+
+    // FAQ Accordion disclosure toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      const isHidden = answer.classList.contains('hidden');
+
+      if (isHidden) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+      } else {
+        answer.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
+  </script>
+</body></html>

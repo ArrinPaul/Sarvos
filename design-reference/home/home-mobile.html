@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SARVOS</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f9f9f9;color:#1a1c1c;-webkit-font-smoothing:antialiased;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'surface-container-lowest': '#ffffff', 'tertiary-fixed': '#e2e2e2', 'secondary-container': '#e3e2e2', 'error': '#ba1a1a', 'on-tertiary-fixed': '#1b1b1b', 'secondary-fixed-dim': '#c7c6c6', 'surface': '#f9f9f9', 'on-tertiary': '#ffffff', 'surface-tint': '#5e5e5e', 'secondary-fixed': '#e3e2e2', 'surface-container-highest': '#e2e2e2', 'primary': '#000000', 'on-primary-container': '#848484', 'background': '#f9f9f9', 'inverse-surface': '#2f3131', 'surface-container-high': '#e8e8e8', 'on-secondary-fixed': '#1b1c1c', 'inverse-primary': '#c6c6c6', 'on-error-container': '#93000a', 'on-secondary-container': '#646464', 'outline': '#7e7576', 'primary-container': '#1b1b1b', 'tertiary': '#000000', 'surface-container': '#eeeeee', 'inverse-on-surface': '#f0f1f1', 'surface-container-low': '#f3f3f3', 'on-primary-fixed-variant': '#474747', 'primary-fixed-dim': '#c6c6c6', 'on-primary': '#ffffff', 'tertiary-container': '#1b1b1b', 'on-tertiary-fixed-variant': '#474747', 'on-error': '#ffffff', 'surface-bright': '#f9f9f9', 'surface-dim': '#dadada', 'error-container': '#ffdad6', 'on-surface-variant': '#4c4546', 'surface-variant': '#e2e2e2', 'on-background': '#1a1c1c', 'on-surface': '#1a1c1c', 'primary-fixed': '#e2e2e2', 'tertiary-fixed-dim': '#c6c6c6', 'on-secondary': '#ffffff', 'on-primary-fixed': '#1b1b1b', 'on-tertiary-container': '#848484', 'outline-variant': '#cfc4c5', 'on-secondary-fixed-variant': '#464747', 'secondary': '#5e5e5e' }, borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' }, spacing: { 'space-xl': '2rem', 'gutter': '3rem', 'gutter-tablet': '2rem', 'margin': '3rem', 'space-md': '1rem', 'gutter-mobile': '1.25rem', 'space-xs': '0.25rem', 'margin-mobile': '1.25rem', 'space-sm': '0.5rem', 'space-lg': '1.5rem' }, fontFamily: { 'headline-sm': ['Geist'], 'headline-lg': ['Geist'], 'body-lg': ['Geist'], 'display-mobile': ['Geist'], 'display': ['Geist'], 'body-md': ['Geist'], 'headline-md': ['Geist'], 'headline-lg-mobile': ['Geist'], 'label-mono-sm': ['JetBrains Mono'], 'body-sm': ['Geist'], 'label-mono-md': ['JetBrains Mono'] }, fontSize: { 'headline-sm': ['18px', { lineHeight: '26px', letterSpacing: '-0.01em', fontWeight: '500' }], 'headline-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.03em', fontWeight: '500' }], 'body-lg': ['16px', { lineHeight: '26px', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.03em', fontWeight: '600' }], 'display': ['56px', { lineHeight: '64px', letterSpacing: '-0.04em', fontWeight: '600' }], 'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0em', fontWeight: '400' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '-0.02em', fontWeight: '500' }], 'headline-lg-mobile': ['28px', { lineHeight: '36px', letterSpacing: '-0.02em', fontWeight: '500' }], 'label-mono-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '500' }], 'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0em', fontWeight: '400' }], 'label-mono-md': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '500' }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Open navigation menu" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-secondary active:opacity-70" id="menu-open-btn"><span class="material-symbols-outlined text-[22px]">menu</span></button><a class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase" data-path="work-index" href="#">SARVOS</a></div><div class="flex items-center gap-space-xs"><button aria-label="Toggle visual theme" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-secondary active:opacity-70" id="theme-toggle"><span class="material-symbols-outlined text-[20px]">contrast</span></button><a class="h-9 px-space-sm bg-primary text-on-primary font-label-mono-sm text-label-mono-sm uppercase inline-flex items-center gap-space-xs rounded active:opacity-85" data-path="contact-inquiry" href="#"><span>Start</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-200" id="mobile-drawer"><div class="absolute inset-0 bg-primary/40" id="drawer-backdrop"></div><nav aria-label="Main navigation" class="absolute top-0 left-0 bottom-0 w-[300px] max-w-[85vw] bg-surface-container-lowest p-gutter-mobile flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)] transform -translate-x-full transition-transform duration-200 ease-out"><div class="flex flex-col"><div class="flex items-center justify-between h-12 mb-space-lg"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">[ INDEX.DIR ]</span><button aria-label="Close navigation menu" class="w-11 h-11 -mr-2 flex items-center justify-center text-on-surface hover:text-secondary" id="menu-close-btn"><span class="material-symbols-outlined text-[22px]">close</span></button></div><div class="flex flex-col gap-space-xs font-headline-md text-headline-md"><a class="py-space-xs text-on-surface hover:text-secondary transition-colors" data-path="work-index" href="#">Work</a><a class="py-space-xs text-on-surface hover:text-secondary transition-colors" data-path="services-overview" href="#">Services</a><a class="py-space-xs text-on-surface hover:text-secondary transition-colors" data-path="studio-about" href="#">About</a><a class="py-space-xs text-on-surface hover:text-secondary transition-colors" data-path="insights-archive" href="#">Insights</a><a class="py-space-xs text-on-surface hover:text-secondary transition-colors" data-path="contact-inquiry" href="#">Contact</a></div></div><div class="pt-space-md flex flex-col gap-space-xs"><div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">SYS // STATUS</div><p class="font-label-mono-sm text-label-mono-sm text-on-surface">ONLINE // AVAILABLE Q3</p></div></nav></div><main class="flex flex-col relative w-full pt-16 bg-surface px-gutter-mobile flex-1 pb-24"><div class="flex flex-col w-full text-on-surface">
+<!-- 1. HERO SECTION -->
+<section class="flex flex-col pt-space-md">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider">
+        INDEPENDENT SOFTWARE &amp; TECHNOLOGY STUDIO
+      </span>
+</div>
+<h1 class="font-headline-lg-mobile text-[40px] leading-[1.04] tracking-[-0.05em] font-medium text-on-surface max-w-[280px] mb-space-md">
+      We build software for real-world problems.
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+      Websites, custom applications, automation and interactive digital experiences. Defined by the problem, not the buzzwords.
+    </p>
+<div class="flex flex-col gap-space-sm w-full mb-space-xl">
+<a class="w-full h-12 bg-primary text-on-primary font-headline-sm text-[15px] flex items-center justify-center gap-space-xs rounded-lg active:scale-[0.99] transition-transform" data-path="contact-inquiry" href="#">
+<span>Discuss a project</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+<a class="w-full h-12 bg-surface-container-low text-on-surface font-headline-sm text-[15px] flex items-center justify-center gap-space-xs rounded-lg active:bg-surface-container-high transition-colors" href="#selected-work">
+<span>View selected work</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+<!-- Restrained Mobile Browser Interface Frame -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-sm shadow-sm flex flex-col">
+<!-- Browser Top bar -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+</div>
+<div class="bg-surface-container px-space-sm py-0.5 rounded text-[10px] font-label-mono-sm text-on-surface-variant tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>sarvos.core/preview-v4</span>
+</div>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">60FPS</span>
+</div>
+<!-- Tab Selectors (Interactive) -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container p-1 rounded-md mb-space-sm" id="hero-tabs">
+<button class="hero-tab-btn h-9 rounded text-center font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-lowest text-on-surface font-semibold shadow-sm" data-tab="0" type="button">
+          SYS.LOGISTICS
+        </button>
+<button class="hero-tab-btn h-9 rounded text-center font-label-mono-sm text-label-mono-sm uppercase transition-all text-on-surface-variant" data-tab="1" type="button">
+          TELEMETRY
+        </button>
+<button class="hero-tab-btn h-9 rounded text-center font-label-mono-sm text-label-mono-sm uppercase transition-all text-on-surface-variant" data-tab="2" type="button">
+          3D.SPATIAL
+        </button>
+</div>
+<!-- Tab Panels -->
+<div class="relative rounded overflow-hidden bg-surface-container-low min-h-[200px]" id="hero-tab-contents">
+<!-- Panel 0 -->
+<div class="hero-panel block p-space-md" data-panel="0">
+<div class="flex justify-between items-center mb-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">[ DISPATCH RUNNER ]</span>
+<span class="inline-flex items-center gap-1 font-label-mono-sm text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface">ONLINE</span>
+</div>
+<div class="w-full h-28 rounded overflow-hidden relative mb-space-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Monochrome minimal technical user interface wireframe showing automated dispatch routing nodes, fleet telemetry lines, and system latency diagrams in stark architectural black and white styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcV2RkqIkw61WmGOn5Pzi1ICv2e1CtAooZwTx1FeTmCEKtvncaaKfhP1UxkbUcD7uX3tTrd08Vmn8zUVfLdD5wKpZKektZ80mWrS7QtE13uFz4VrzG_tDaASOePNnKK5DUnwZdpJZEq6MNIF6saiK32pGog615LDplZodnXku6Cn75qB-yUJylRJsfIQaXSFFl9z5RBn6opct5c21h9JvTYaBSeM-fvyVrbHVZrlVItavz49CSijBKRQ"/>
+</div>
+<div class="flex justify-between items-baseline font-label-mono-sm text-label-mono-sm">
+<span class="text-on-surface-variant">LATENCY: 14ms</span>
+<span class="text-on-surface">99.98% ACCURACY</span>
+</div>
+</div>
+<!-- Panel 1 -->
+<div class="hero-panel hidden p-space-md" data-panel="1">
+<div class="flex justify-between items-center mb-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">[ SENSOR RADIAL GRID ]</span>
+<span class="inline-flex items-center gap-1 font-label-mono-sm text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface">STREAMING</span>
+</div>
+<div class="w-full h-28 rounded overflow-hidden relative mb-space-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Precision technical telemetry dashboard with live bar metrics, vector frequency oscillators, and monochrome dark modern system typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn7v4nyrcKcIn9ZchklBKzqGxvU85-j5zClZh2zVx3DNdQol0x7L75xg8QRmyVS0lPjz9P4Lt_sH_OKDtBECQIDwnzZl6n1iM57y4vIGt3lBEM97Odr_7d6mdx6QpbtjQIdzGs2e_4jAXiMciCYhsuyeTw9e4P1Nab9ms8bWVne3VXdH_gMJaLghj_U_bXHQC9Wy20k_w7t4JbgrlmoI7fpght8fQL6ZCInvx0lU7QRXRyHKqJY8ZRxw"/>
+</div>
+<div class="flex justify-between items-baseline font-label-mono-sm text-label-mono-sm">
+<span class="text-on-surface-variant">THROUGHPUT: 1.2 GB/S</span>
+<span class="text-on-surface">0 ERROR STATES</span>
+</div>
+</div>
+<!-- Panel 2 -->
+<div class="hero-panel hidden p-space-md" data-panel="2">
+<div class="flex justify-between items-center mb-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">[ WEBGL SPATIAL CAD ]</span>
+<span class="inline-flex items-center gap-1 font-label-mono-sm text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface">RENDERED</span>
+</div>
+<div class="w-full h-28 rounded overflow-hidden relative mb-space-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Minimalist 3D architectural wireframe CAD projection of a contemporary gallery pavilion with clean vector line work and isometric perspective." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtxHgRhlpc4WDyM0CO1ThdWeLTd084igzgYkY1tDabTdpYlmbS4bbosJioBT5gmNkgZ0X7diiIMXborZqsLovwHruqJZc8CFPNWI7v2wTUDEmK_kbxXTQBICxMPWND2ByltNfS5C3rxuohoTwcR8twSulP0bTs5iU2uQfMe-J7Dwe_6QY_JV13AenSIZuTBYMMbtH-I7a3MlSi97hEzzuJ-IKRru14PhvhClue2e5c7XBJodPSMoQbdg"/>
+</div>
+<div class="flex justify-between items-baseline font-label-mono-sm text-label-mono-sm">
+<span class="text-on-surface-variant">POLYGONS: 148K</span>
+<span class="text-on-surface">CANVAS: READY</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SELECTED WORK SECTION (56px Spacing) -->
+<section class="flex flex-col mt-14" id="selected-work">
+<div class="flex flex-col mb-space-md">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ SELECTED WORK ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Built with a purpose.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+        A selection of software and digital experiences, presented through the problems they address and the solutions built.
+      </p>
+</div>
+<!-- Stacked Cards -->
+<div class="flex flex-col gap-space-lg">
+<!-- Project 1 (Large Featured) -->
+<article class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">CASE STUDY // 01</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[11px] font-label-mono-sm text-on-surface">CUSTOM SOFTWARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Vanguard Global Inventory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          Legacy ERP caused 18-minute order reconciliation delays; replaced with sub-second real-time event pipeline.
+        </p>
+<!-- Interface Preview -->
+<div class="w-full h-48 rounded-lg overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover" data-alt="Monochrome Scandinavian industrial software interface for global supply tracking showing warehouse data tables, clean metric badges, and interactive inventory status." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCekmEBb_hHfSLoB5rEXYL3G83-4o5j6fGM3WveM3PTgl2hw_E2t94qsK3RlLyCgQjnoEr_f1Hs8mDrV4NAGWOxGbF2BiTvwoPcuZHChbGXvtS2va5E9DjOHiuPFc9crtHivnS2f17YYnv1gA4YiWA0CJd3f7CCLeKFSWC4JVZMCzV4yjdmgH7jVofIfBDALQp_kUpmn11gL-J6I9PpXtX69t_m1KId5DooeyVoo_HVqBS6TYe8m8kcKA"/>
+</div>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">RUST</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">TYPESCRIPT</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">POSTGRES</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">WEBSOCKET</span>
+</div>
+<!-- 44px min touch target link -->
+<a class="h-11 inline-flex items-center justify-between text-on-surface font-headline-sm text-[15px] group active:opacity-70" href="#">
+<span class="group-hover:underline">View project</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</article>
+<!-- Project 2 (Secondary) -->
+<article class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">CASE STUDY // 02</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[11px] font-label-mono-sm text-on-surface">INTERACTIVE 3D</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Monolith Spatial Archive</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          Physical architecture firm required photorealistic browser-native spatial walkthroughs without plugins.
+        </p>
+<!-- Interface Preview -->
+<div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container-low mb-space-md relative">
+<img class="w-full h-full object-cover" data-alt="Sleek brutalist 3D architectural portfolio interface rendered inside a minimal browser showing concrete structures and light shadows in neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGrswZu8Z2uM6LCHHPFmrYdyWw2rcTcYslDWjWp8I3Br9vQZ-pAkruYWZntaZBVWiM-gYPxxVDSsiTq8xQQo-6RpxsqPw721O4Z0kTXwkyXW0AY_XD1ul69IUtNqjn4Q7GBR4PvJL-STG-LlJM9wElY4DRuWqlaCTBeXaaCHIu6ULtIvnYQ5jbG6qT7kpQV_hlVKKJgJvfideV65NH4pwHLwqsy0Z451V52RnMtIKbdqWdJyobx3SA4g"/>
+</div>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">THREE.JS</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">WEBGL</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">GLSL</span>
+<span class="bg-surface-container px-2 py-1 rounded text-label-mono-sm font-label-mono-sm text-on-surface">NEXT.JS</span>
+</div>
+<!-- 44px min touch target link -->
+<a class="h-11 inline-flex items-center justify-between text-on-surface font-headline-sm text-[15px] group active:opacity-70" href="#">
+<span class="group-hover:underline">View project</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</article>
+</div>
+</section>
+<!-- 3. SERVICES (WHAT WE DO) (56px Spacing) -->
+<section class="flex flex-col mt-14">
+<div class="flex flex-col mb-space-md">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ WHAT WE DO ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">The right solution for the problem.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+        From a first website to a connected software system, we focus on what needs to be built and how it should work.
+      </p>
+</div>
+<!-- 4 Numbered rows / cards stacked -->
+<div class="flex flex-col gap-space-sm">
+<!-- Row 01 -->
+<a class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg min-h-[44px] shadow-sm hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">01 // ARCHITECTURE</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Websites &amp; Custom Software</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          High-performance platforms engineered for speed, conversion, and complex domain requirements.
+        </p>
+<span class="font-label-mono-sm text-[11px] text-secondary tracking-wide uppercase">
+          DELIVERABLES: WEB APPS / CMS / CLIENT PORTALS / API SERVICES
+        </span>
+</a>
+<!-- Row 02 -->
+<a class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg min-h-[44px] shadow-sm hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">02 // INTELLIGENCE</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">AI &amp; Workflow Automation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Deterministic integrations that strip out manual data reentry and streamline operational pipelines.
+        </p>
+<span class="font-label-mono-sm text-[11px] text-secondary tracking-wide uppercase">
+          DELIVERABLES: LLM PIPELINES / SCRAPERS / ETL / ASYNC SYNC
+        </span>
+</a>
+<!-- Row 03 -->
+<a class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg min-h-[44px] shadow-sm hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">03 // SPATIAL</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Virtual Tours &amp; Interactive Experiences</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          GPU-accelerated spatial presentations and product configurators running inside standard mobile browsers.
+        </p>
+<span class="font-label-mono-sm text-[11px] text-secondary tracking-wide uppercase">
+          DELIVERABLES: THREE.JS CANVASES / 360 PANORAMAS / SHADER ENGINES
+        </span>
+</a>
+<!-- Row 04 -->
+<a class="flex flex-col bg-surface-container-lowest rounded-lg p-space-lg min-h-[44px] shadow-sm hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">04 // OPTIMIZATION</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">SEO &amp; Website Improvement</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Rigorous technical remediation for search visibility, Core Web Vitals, and UX bottleneck elimination.
+        </p>
+<span class="font-label-mono-sm text-[11px] text-secondary tracking-wide uppercase">
+          DELIVERABLES: CWV AUDITS / STRUCTURED DATA / SPEED REFACTOR
+        </span>
+</a>
+</div>
+</section>
+<!-- 4. PROCESS (THE PROCESS) (56px Spacing) -->
+<section class="flex flex-col mt-14">
+<div class="flex flex-col mb-space-lg">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ THE PROCESS ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Clear steps. No unnecessary complexity.</h2>
+</div>
+<!-- Vertical Timeline with Connecting Lines -->
+<div class="flex flex-col relative pl-6">
+<!-- Vertical connecting line -->
+<div class="absolute left-2.5 top-3 bottom-6 w-0.5 bg-surface-container-highest"></div>
+<!-- Step 01 -->
+<div class="relative flex flex-col mb-space-lg">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-surface"></span>
+</div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">PHASE 01</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Understand</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          We extract your actual business constraints, users, and core workflow problems before touching any code.
+        </p>
+</div>
+<!-- Step 02 -->
+<div class="relative flex flex-col mb-space-lg">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">PHASE 02</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Define</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          System specs, data models, and functional interactive prototypes. You see exactly what is built and why.
+        </p>
+</div>
+<!-- Step 03 -->
+<div class="relative flex flex-col mb-space-lg">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">PHASE 03</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Build</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Production software written in short, transparent sprints with live staging links updated continuously.
+        </p>
+</div>
+<!-- Step 04 -->
+<div class="relative flex flex-col mb-space-lg">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">PHASE 04</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Verify</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Rigorous stress testing across edge network scenarios, device matrices, and security validations.
+        </p>
+</div>
+<!-- Step 05 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[13px] text-on-primary">check</span>
+</div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">PHASE 05</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Handover</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Complete asset transfer, zero vendor lock-in, automated deployment pipelines, and operational training.
+        </p>
+</div>
+</div>
+</section>
+<!-- 5. ABOUT (ABOUT SARVOS) (56px Spacing) -->
+<section class="flex flex-col mt-14 bg-surface-container-lowest p-space-lg rounded-lg shadow-sm">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ ABOUT SARVOS ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-space-sm leading-snug">
+      Small enough to work closely. Technical enough to build properly.
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+      SARVOS is a technology consultancy focused on building websites, software and digital systems around specific business needs. We operate without bureaucratic layers or junior handoffs—every client works directly with senior engineering architects.
+    </p>
+<a class="h-11 inline-flex items-center gap-space-xs text-on-surface font-headline-sm text-[15px] group active:opacity-70" data-path="studio-about" href="#">
+<span class="group-hover:underline">More about SARVOS</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</section>
+<!-- 6. FAQ ACCORDION (COMMON QUESTIONS) (56px Spacing) -->
+<section class="flex flex-col mt-14">
+<div class="flex flex-col mb-space-md">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ COMMON QUESTIONS ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Before we get started.</h2>
+</div>
+<div class="flex flex-col gap-space-sm" id="faq-list">
+<!-- FAQ 1 (Default Expanded) -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>What kinds of projects do you take on?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 rotate-180">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant block">
+          We engineer custom web apps, specialized automation engines, performant commercial websites, and spatial 3D interactive experiences. If it requires rigorous architectural thinking rather than generic website templates, it is within our scope.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>How much does a project cost?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant hidden">
+          Engagements are structured either as fixed-scope sprints starting at $8,500 for defined technical deliverables or on a dedicated monthly studio retainer for ongoing product engineering.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>How long does a project take?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant hidden">
+          Focused website and integration initiatives typically ship in 3 to 6 weeks. Complex custom applications and spatial systems generally span 8 to 14 weeks from definition to deployment.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>Can you improve an existing application?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant hidden">
+          Yes. We frequently audit and refactor existing legacy systems, optimizing database latency, stabilizing messy API integrations, and rewriting slow frontend rendering trees.
+        </div>
+</div>
+<!-- FAQ 5 -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>Will I own the deliverables?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant hidden">
+          100%. Upon project completion and final payment, you retain full ownership of all source code, deployment scripts, design assets, and intellectual property. No ongoing license fees.
+        </div>
+</div>
+<!-- FAQ 6 -->
+<div class="faq-item bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<button class="faq-toggle w-full min-h-[48px] px-space-md py-space-sm flex items-center justify-between text-left text-on-surface font-headline-sm text-[15px] active:bg-surface-container-low transition-colors" type="button">
+<span>Can you help after launch?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200">keyboard_arrow_down</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant hidden">
+          We provide proactive systems maintenance, monitoring, security updates, and phased roadmap development under simple monthly retainer agreements.
+        </div>
+</div>
+</div>
+</section>
+<!-- 7. CTA BAND (56px Spacing) -->
+<section class="flex flex-col mt-14 mb-space-md">
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-on-surface-variant tracking-wider mb-space-xs">[ COMMENCE ]</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-space-xs">
+        Tell us what needs building.
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+        Share a little about the problem, your requirements and what a successful outcome would look like.
+      </p>
+<a class="w-full h-12 bg-primary text-on-primary font-headline-sm text-[15px] flex items-center justify-center gap-space-xs rounded-lg active:scale-[0.99] transition-transform" data-path="contact-inquiry" href="#">
+<span>Start a project</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</section>
+</div>
+<script>
+  // Hero Tab Switcher Logic
+  const tabBtns = document.querySelectorAll('.hero-tab-btn');
+  const panels = document.querySelectorAll('.hero-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetIndex = btn.getAttribute('data-tab');
+      
+      tabBtns.forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+
+      panels.forEach(p => {
+        if(p.getAttribute('data-panel') === targetIndex) {
+          p.classList.remove('hidden');
+          p.classList.add('block');
+        } else {
+          p.classList.add('hidden');
+          p.classList.remove('block');
+        }
+      });
+    });
+  });
+
+  // Accordion Logic
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const item = toggle.parentElement;
+      const content = item.querySelector('.faq-content');
+      const icon = toggle.querySelector('.material-symbols-outlined');
+      const isExpanded = !content.classList.contains('hidden');
+
+      // Close all FAQs
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => i.classList.remove('rotate-180'));
+
+      // If it wasn't open, open it
+      if (!isExpanded) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script><footer class="mt-space-xl pt-space-lg pb-space-md flex flex-col gap-space-md"><div class="flex justify-between items-center"><span class="font-headline-sm text-headline-sm text-on-surface">SARVOS</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">SYS_ID: 0x90A1</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Systems engineering, computational architecture &amp; digital product consultancy.</p><div class="flex flex-wrap gap-x-space-md gap-y-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase pt-space-xs"><a class="hover:text-on-surface" data-path="legal-privacy" href="#">Privacy</a><a class="hover:text-on-surface" data-path="legal-terms" href="#">Terms</a><a class="hover:text-on-surface" data-path="studio-colophon" href="#">Colophon</a><span>© 2025 SARVOS INC</span></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-medium"><div class="flex justify-around items-center h-16 px-gutter-mobile"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-14 h-14 transition-colors text-primary font-medium" data-path="work-index" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-mono-sm text-label-mono-sm uppercase">Work</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="services-overview" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span class="font-label-mono-sm text-label-mono-sm uppercase">Specs</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="studio-about" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span><span class="font-label-mono-sm text-label-mono-sm uppercase">Studio</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="insights-archive" href="#"><span class="material-symbols-outlined text-[20px]">article</span><span class="font-label-mono-sm text-label-mono-sm uppercase">Logs</span></a><a class="flex flex-col items-center justify-center gap-1 w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-inquiry" href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span><span class="font-label-mono-sm text-label-mono-sm uppercase">Ping</span></a></div></nav><script>const d=document.getElementById('mobile-drawer'),o=document.getElementById('menu-open-btn'),c=document.getElementById('menu-close-btn'),b=document.getElementById('drawer-backdrop');const toggle=(v)=>{if(v){d.classList.remove('pointer-events-none','opacity-0');d.querySelector('nav').classList.remove('-translate-x-full');}else{d.classList.add('opacity-0','pointer-events-none');d.querySelector('nav').classList.add('-translate-x-full');}};o&&o.addEventListener('click',()=>toggle(true));c&&c.addEventListener('click',()=>toggle(false));b&&b.addEventListener('click',()=>toggle(false));</script></body></html>

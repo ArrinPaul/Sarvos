@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-high": "#e8e8e8",
+        "secondary-fixed": "#e3e2e2",
+        "on-secondary-fixed": "#1b1c1c",
+        "outline-variant": "#cfc4c5",
+        "surface-tint": "#5e5e5e",
+        "on-error-container": "#93000a",
+        "on-secondary-container": "#646464",
+        "secondary": "#5e5e5e",
+        "tertiary": "#000000",
+        "on-tertiary-fixed-variant": "#474747",
+        "on-surface-variant": "#4c4546",
+        "surface-bright": "#f9f9f9",
+        "surface-container": "#eeeeee",
+        "tertiary-fixed": "#e2e2e2",
+        "on-primary": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "surface-container-low": "#f3f3f3",
+        "surface-container-lowest": "#ffffff",
+        "on-background": "#1a1c1c",
+        "background": "#f9f9f9",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#1b1b1b",
+        "primary": "#000000",
+        "secondary-container": "#e3e2e2",
+        "primary-fixed-dim": "#c6c6c6",
+        "primary-fixed": "#e2e2e2",
+        "on-primary-fixed-variant": "#474747",
+        "error": "#ba1a1a",
+        "secondary-fixed-dim": "#c7c6c6",
+        "on-secondary": "#ffffff",
+        "on-secondary-fixed-variant": "#464747",
+        "surface-container-highest": "#e2e2e2",
+        "inverse-surface": "#2f3131",
+        "on-surface": "#1a1c1c",
+        "tertiary-fixed-dim": "#c6c6c6",
+        "inverse-on-surface": "#f0f1f1",
+        "outline": "#7e7576",
+        "surface": "#f9f9f9",
+        "primary-container": "#1b1b1b",
+        "inverse-primary": "#c6c6c6",
+        "error-container": "#ffdad6",
+        "surface-dim": "#dadada",
+        "on-primary-container": "#848484",
+        "tertiary-container": "#1b1b1b",
+        "on-tertiary-container": "#848484",
+        "on-tertiary-fixed": "#1b1b1b",
+        "surface-variant": "#e2e2e2"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter": "3rem",
+        "gutter-tablet": "2rem",
+        "margin": "3rem",
+        "space-xl": "2rem",
+        "margin-mobile": "1.25rem",
+        "space-lg": "1.5rem",
+        "gutter-mobile": "1.25rem",
+        "space-xs": "0.25rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem"
+      },
+      "fontFamily": {
+        "headline-sm": ["Geist"],
+        "display": ["Geist"],
+        "headline-lg": ["Geist"],
+        "body-lg": ["Geist"],
+        "label-mono-sm": ["JetBrains Mono"],
+        "display-mobile": ["Geist"],
+        "headline-md": ["Geist"],
+        "body-md": ["Geist"],
+        "body-sm": ["Geist"],
+        "label-mono-md": ["JetBrains Mono"],
+        "headline-lg-mobile": ["Geist"]
+      },
+      "fontSize": {
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+        "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "label-mono-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+        "display-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+        "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-mono-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-surface-container-highest"><div class="h-16 max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm group text-primary" data-path="home" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight">SARVOS</span><span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container border border-surface-container-highest text-secondary rounded">EST. 2024</span></a></div><nav class="hidden md:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-medium border-b-2 border-primary"><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="home" href="#">Home</a><a aria-current="page" class="inline-flex items-center h-full transition-colors text-primary font-medium border-b-2 border-primary" data-path="work" href="#">Work</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="services" href="#">Services</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="about" href="#">About</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="insights" href="#">Insights</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><button aria-label="Toggle system theme" class="w-9 h-9 flex items-center justify-center rounded-lg border border-surface-container-highest bg-surface hover:bg-surface-container-low text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><a class="group inline-flex items-center gap-space-xs h-10 px-space-md rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium transition-all duration-150 hover:bg-tertiary-container hover:text-on-tertiary" data-path="contact" href="#"><span>Start a project</span><span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Top Global Grid Boundary Container -->
+<div class="max-w-[1200px] mx-auto w-full px-margin-mobile md:px-gutter-tablet lg:px-margin">
+<!-- Hero Editorial Header Section -->
+<section class="pt-space-xl pb-space-xl border-b border-surface-container-highest">
+<div class="flex flex-col space-y-space-md">
+<!-- Eyebrow Tag -->
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary">
+<span class="inline-block w-1.5 h-1.5 bg-primary"></span>
+<span>[ 01 / SELECTED WORK ] — SYSTEMS, PLATFORMS &amp; INTERACTIVE SOFTWARE</span>
+</div>
+<!-- Structural Title & Manifesto Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-baseline">
+<div class="lg:col-span-7">
+<h1 class="font-display text-display text-primary tracking-tight font-semibold">
+              Built with a purpose.
+            </h1>
+</div>
+<div class="lg:col-span-5">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              A selection of software, technical platforms, and digital experiences presented through the specific business problems they address and the architectural solutions engineered. No vanity metrics or marketing embellishments.
+            </p>
+</div>
+</div>
+<!-- Telemetry & Index Metadata Bar -->
+<div class="pt-space-md flex flex-wrap items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm text-secondary">
+<div class="flex items-center gap-space-md">
+<span>INDEX COUNT: 03 ENTRIES</span>
+<span>SYSTEM AUDIT: VERIFIED [ISO/IEC 25010]</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span>DEPLOYMENT SCOPE: PRODUCTION ARCHITECTURE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Index Grid / Blueprint Layout -->
+<section class="py-space-xl space-y-space-xl">
+<!-- PROJECT 01 -->
+<article class="bg-surface-container-lowest border border-surface-container-highest p-space-lg lg:p-space-xl relative group">
+<!-- Index Badge Absolute -->
+<div class="flex flex-col lg:flex-row justify-between lg:items-center pb-space-lg border-b border-surface-container-highest gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container text-primary font-medium">01</span>
+<span class="font-label-mono-sm text-label-mono-sm tracking-wider uppercase text-secondary">
+              SYSTEMS ARCHITECTURE / DISTRIBUTED PIPELINES
+            </span>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>STATUS: LATENCY OPTIMIZED</span>
+</div>
+</div>
+<!-- Project Main Body Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl pt-space-lg">
+<!-- Textual Specs Column -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+                Core Ingestion Engine &amp; Telemetry Bus [Placeholder]
+              </h2>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 01. The Problem
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Legacy batch processing triggered unpredictable 4-hour ingestion latency spikes across distributed multi-tenant customer endpoints.
+                </p>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 02. Architectural Solution
+                </div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                  Re-architected event stream pipeline into sharded Go ingestion daemons feeding clustered Kafka partitions and ClickHouse storage.
+                </p>
+</div>
+</div>
+<!-- Stack Tags & Action -->
+<div class="space-y-space-md pt-space-md border-t border-surface-container-highest">
+<div class="flex flex-wrap gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">GO</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">KAFKA</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">CLICKHOUSE</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">DOCKER</span>
+</div>
+<div>
+<a class="inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:underline group-hover:translate-x-0.5 transition-transform duration-150" href="#">
+<span>Read case study</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Schematic Frame -->
+<div class="lg:col-span-7 flex flex-col border border-surface-container-highest bg-surface">
+<!-- Terminal Header Bar -->
+<div class="h-9 border-b border-surface-container-highest px-space-md flex items-center justify-between bg-surface-container-low font-label-mono-sm text-label-mono-sm text-secondary">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2 h-2 border border-secondary"></span>
+<span>DATAFLOW_TOPOLOGY::PROD_CLUSTER</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="text-primary font-medium">P99 &lt; 42MS</span>
+<span>ETH0: 1.2 GB/S</span>
+</div>
+</div>
+<!-- Terminal Visual Architecture Diagram -->
+<div class="p-space-lg flex flex-col justify-between flex-1 space-y-space-lg font-label-mono-sm">
+<!-- Visual Node Pipeline -->
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs text-center items-center">
+<!-- Node 1 -->
+<div class="p-space-sm bg-surface-container-lowest border border-surface-container-highest text-left">
+<div class="text-secondary text-[10px]">SRC::01</div>
+<div class="font-medium text-primary text-body-sm">Ingest Bus</div>
+<div class="text-secondary text-[10px] mt-1">HTTP/gRPC TLS</div>
+</div>
+<!-- Node Connector -->
+<div class="hidden sm:flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">trending_flat</span>
+</div>
+<!-- Node 2 -->
+<div class="p-space-sm bg-surface-container-lowest border border-surface-container-highest text-left">
+<div class="text-secondary text-[10px]">QUEUE::SHARD</div>
+<div class="font-medium text-primary text-body-sm">Kafka Partition</div>
+<div class="text-secondary text-[10px] mt-1">32x Consumers</div>
+</div>
+<!-- Node 3 -->
+<div class="p-space-sm bg-surface-container-lowest border border-surface-container-highest text-left sm:col-start-4">
+<div class="text-secondary text-[10px]">SINK::LIVE</div>
+<div class="font-medium text-primary text-body-sm">ClickHouse</div>
+<div class="text-secondary text-[10px] mt-1">Sub-sec OLAP</div>
+</div>
+</div>
+<!-- Real-time Sparkline Visualization -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-container-highest space-y-space-xs">
+<div class="flex justify-between items-center text-secondary text-label-mono-sm">
+<span>TELEMETRY FEED [AGGREGATE_LATENCY_HISTOGRAM]</span>
+<span class="text-primary">SAMPLING: 10,000 REQ/SEC</span>
+</div>
+<!-- Inline SVG latency graph -->
+<svg class="w-full h-20 text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 600 80">
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.15" x1="0" x2="600" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.15" x1="0" x2="600" y1="40" y2="40"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.15" x1="0" x2="600" y1="60" y2="60"></line>
+<path d="M0,65 L30,62 L60,63 L90,60 L120,58 L150,59 L180,55 L210,54 L240,56 L270,30 L300,52 L330,51 L360,49 L390,48 L420,49 L450,47 L480,48 L510,46 L540,45 L570,44 L600,43" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+<circle cx="270" cy="30" fill="currentColor" r="3"></circle>
+<text class="text-[9px] font-label-mono-sm" fill="currentColor" x="278" y="28">BURST RESOLVED &lt; 42ms</text>
+</svg>
+<div class="flex justify-between items-center text-secondary text-[10px]">
+<span>T-60 MIN</span>
+<span>T-30 MIN</span>
+<span>T-00 MIN (CURRENT)</span>
+</div>
+</div>
+<!-- Terminal Diagnostic Stream -->
+<div class="bg-surface-container-low p-space-sm text-[11px] leading-relaxed font-label-mono-sm text-on-surface-variant flex items-center justify-between">
+<span>&gt; DAEMON_STATUS: ACTIVE [16 NODES SYNCHRONIZED]</span>
+<span class="text-secondary">SYS_EPOCH: 1718029281</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- PROJECT 02 -->
+<article class="bg-surface-container-lowest border border-surface-container-highest p-space-lg lg:p-space-xl relative group">
+<!-- Header Discipline Bar -->
+<div class="flex flex-col lg:flex-row justify-between lg:items-center pb-space-lg border-b border-surface-container-highest gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container text-primary font-medium">02</span>
+<span class="font-label-mono-sm text-label-mono-sm tracking-wider uppercase text-secondary">
+              SPATIAL COMPUTING / WEBGL &amp; GLSL
+            </span>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>STATUS: 60 FPS DETERMINISTIC</span>
+</div>
+</div>
+<!-- Two Column Spec Structure -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl pt-space-lg">
+<!-- Text Content -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+                Spatial CAD &amp; Asset Visualizer [Placeholder]
+              </h2>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 01. The Problem
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Engineering field staff lacked low-latency, interactive in-browser 3D inspection tools for complex hardware assemblies without proprietary desktop client software.
+                </p>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 02. Architectural Solution
+                </div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                  Engineered a custom Three.js and WebGL rendering engine with client-side GLSL shaders, procedural LOD mesh decimation, and offline asset caching.
+                </p>
+</div>
+</div>
+<!-- Tech Tags & Link -->
+<div class="space-y-space-md pt-space-md border-t border-surface-container-highest">
+<div class="flex flex-wrap gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">WEBGL</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">THREE.JS</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">TYPESCRIPT</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">GLSL</span>
+</div>
+<div>
+<a class="inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:underline group-hover:translate-x-0.5 transition-transform duration-150" href="#">
+<span>Read case study</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Viewport Telemetry HUD Frame -->
+<div class="lg:col-span-7 flex flex-col border border-surface-container-highest bg-surface">
+<!-- HUD Top Toolbar -->
+<div class="h-9 border-b border-surface-container-highest px-space-md flex items-center justify-between bg-surface-container-low font-label-mono-sm text-label-mono-sm text-secondary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span>
+<span>VIEWPORT_GL::CAMERA_ORTHO_Z</span>
+</div>
+<div class="flex items-center gap-space-md text-primary">
+<span>VERTICES: 1,482,900</span>
+<span>MESH: DECIMATED_LOD_2</span>
+</div>
+</div>
+<!-- Simulated 3D CAD Canvas Area with Isometric Wireframe Grid -->
+<div class="p-space-lg flex-1 flex flex-col justify-between bg-surface relative overflow-hidden min-h-[260px]">
+<!-- Blueprint Vector Wireframe Display -->
+<div class="relative w-full h-44 flex items-center justify-center border border-surface-container-highest bg-surface-container-lowest">
+<!-- Orthographic Coordinate System Canvas Overlay -->
+<svg class="w-full h-full text-secondary opacity-30" preserveaspectratio="none" viewbox="0 0 400 160">
+<pattern height="20" id="grid" patternunits="userSpaceOnUse" width="20">
+<path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<!-- Isometric Cube Wireframe Model -->
+<g fill="none" stroke="#000000" stroke-width="1.2" transform="translate(200, 80) scale(1.1)">
+<!-- Front Facet -->
+<polygon fill="#f3f3f3" fill-opacity="0.5" points="0,-45 45,-20 45,30 0,5" stroke-opacity="0.9"></polygon>
+<!-- Top Facet -->
+<polygon fill="#e8e8e8" fill-opacity="0.4" points="0,-45 -45,-20 0,5 45,-20" stroke-opacity="0.9"></polygon>
+<!-- Left Facet -->
+<polygon fill="#ffffff" fill-opacity="0.7" points="-45,-20 0,5 0,55 -45,30" stroke-opacity="0.9"></polygon>
+<!-- Internal Geometry Center Lines -->
+<circle cx="0" cy="5" fill="#000000" r="2"></circle>
+<line stroke-dasharray="2 2" stroke-opacity="0.6" x1="0" x2="0" y1="5" y2="-45"></line>
+</g>
+</svg>
+<!-- Floating Dimension Annotation Labels -->
+<div class="absolute top-3 left-4 font-label-mono-sm text-[10px] text-secondary">
+                  [X: +142.08  Y: -12.44  Z: 0.00]
+                </div>
+<div class="absolute bottom-3 right-4 font-label-mono-sm text-[10px] text-primary">
+                  RAYCAST: INTERSECT_NODE #092B
+                </div>
+</div>
+<!-- HUD Performance Telemetry Strip -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-sm font-label-mono-sm text-center">
+<div class="p-space-xs bg-surface-container-lowest border border-surface-container-highest">
+<div class="text-[10px] text-secondary">TARGET FPS</div>
+<div class="text-body-md font-medium text-primary">60.0</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest border border-surface-container-highest">
+<div class="text-[10px] text-secondary">FRAME TIME</div>
+<div class="text-body-md font-medium text-primary">14.2 MS</div>
+</div>
+<div class="p-space-xs bg-surface-container-lowest border border-surface-container-highest">
+<div class="text-[10px] text-secondary">FRAME DROPS</div>
+<div class="text-body-md font-medium text-primary">0 / HR</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- PROJECT 03 -->
+<article class="bg-surface-container-lowest border border-surface-container-highest p-space-lg lg:p-space-xl relative group">
+<!-- Header Discipline Bar -->
+<div class="flex flex-col lg:flex-row justify-between lg:items-center pb-space-lg border-b border-surface-container-highest gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container text-primary font-medium">03</span>
+<span class="font-label-mono-sm text-label-mono-sm tracking-wider uppercase text-secondary">
+              AI &amp; WORKFLOW AUTOMATION / DETERMINISTIC RAG
+            </span>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>STATUS: REPRODUCIBLE REASONING</span>
+</div>
+</div>
+<!-- Content Row -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl pt-space-lg">
+<!-- Text Specifications -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+                Autonomous Documentation &amp; Triage Agent [Placeholder]
+              </h2>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 01. The Problem
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Engineering teams lost significant sprint velocity manually classifying repetitive incoming error traces and correlating disparate API documentation.
+                </p>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+                  // 02. Architectural Solution
+                </div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                  Deployed deterministic vector retrieval pipeline and local schema validation engine to parse stack traces, generate verified pull request explanations, and triage tickets.
+                </p>
+</div>
+</div>
+<!-- Stack Tags & Action -->
+<div class="space-y-space-md pt-space-md border-t border-surface-container-highest">
+<div class="flex flex-wrap gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">PYTHON</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">PGVECTOR</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">FASTAPI</span>
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] border border-surface-container-highest bg-surface text-primary">LANGCHAIN</span>
+</div>
+<div>
+<a class="inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:underline group-hover:translate-x-0.5 transition-transform duration-150" href="#">
+<span>Read case study</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Code Diff Review & Verification HUD -->
+<div class="lg:col-span-7 flex flex-col border border-surface-container-highest bg-surface">
+<!-- Terminal Header -->
+<div class="h-9 border-b border-surface-container-highest px-space-md flex items-center justify-between bg-surface-container-low font-label-mono-sm text-label-mono-sm text-secondary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>AGENT_TRACE::INFERENCE_VALIDATION</span>
+</div>
+<div class="flex items-center gap-space-xs font-medium text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>PR #4182 VERIFIED</span>
+</div>
+</div>
+<!-- Code Diff & Reasoning Artifacts -->
+<div class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md font-label-mono-sm text-[11px]">
+<!-- Trace Resolution Log -->
+<div class="p-space-sm bg-surface-container-lowest border border-surface-container-highest space-y-space-xs">
+<div class="text-secondary flex justify-between items-center text-[10px]">
+<span>INGESTION_TYPE: STACK_TRACE_SIGILL</span>
+<span>CONFIDENCE: 99.4%</span>
+</div>
+<div class="text-on-surface font-mono">
+                  [RETRIEVAL] Matched Spec: RFC-9110 HTTP Semantics §15.5.1
+                </div>
+<div class="text-secondary">
+                  &gt; Vector distance: cosine_sim = 0.041 (PgVector index cluster 0x1A)
+                </div>
+</div>
+<!-- Inline Diff Mock -->
+<div class="bg-surface-container-lowest border border-surface-container-highest p-space-sm space-y-1">
+<div class="text-[10px] text-secondary pb-1 border-b border-surface-container-highest flex justify-between">
+<span>DIFF PREVIEW: internal/transport/http.go</span>
+<span>LINES -12 / +16</span>
+</div>
+<div class="text-red-700 bg-red-50/50 px-1 font-mono">
+                  - if header.ContentLength == 0 { return ErrZeroLengthBody }
+                </div>
+<div class="text-emerald-800 bg-emerald-50/50 px-1 font-mono">
+                  + if header.ContentLength == 0 &amp;&amp; !isChunkedTransfer(header) { return nil }
+                </div>
+<div class="text-secondary px-1 text-[10px] pt-1">
+                  &gt;&gt; Automated PR explanation synthesized and assigned to code-owners.
+                </div>
+</div>
+<!-- Metadata Metrics Strip -->
+<div class="flex items-center justify-between text-secondary pt-space-xs border-t border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<span>TOKENS_EVAL: 1,412</span>
+<span>LATENCY: 480MS</span>
+</div>
+<div class="text-primary font-medium">
+                  HALLUCINATION SCORE: 0.00
+                </div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Project Inquiry / Bottom Architectural Banner -->
+<section class="my-space-xl border border-surface-container-highest bg-surface-container-lowest p-space-lg lg:p-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Title & Subtitle -->
+<div class="lg:col-span-8 space-y-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm uppercase text-secondary tracking-wider">
+            // NEXT PHASE INGESTION
+          </div>
+<h3 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+            Have a system that needs building or repairing?
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl pt-space-xs">
+            We discuss technical requirements directly with engineering leads and product stakeholders without sales intermediaries.
+          </p>
+</div>
+<!-- CTA Action -->
+<div class="lg:col-span-4 flex lg:justify-end">
+<a class="inline-flex items-center justify-center gap-space-xs h-10 px-space-lg bg-primary text-on-primary font-body-md text-body-md font-medium hover:bg-tertiary-container hover:text-on-tertiary transition-colors" data-path="contact" href="#">
+<span>Discuss a project</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface border-t border-surface-container-highest"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl border-b border-surface-container-highest"><div class="md:col-span-5 flex flex-col justify-between space-y-space-md"><div class="space-y-space-xs"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">SARVOS</span><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Independent software and technology consultancy. Architecting resilient systems, digital flagships, and deterministically engineered web platforms.</p></div><div class="space-y-space-xs"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Direct Inquiry</div><a class="font-body-md text-body-md text-primary hover:underline flex items-center gap-space-xs" href="mailto:inquiries@sarvos.engineering"><span class="material-symbols-outlined text-[16px] text-secondary">mail</span><span>inquiries@sarvos.engineering</span></a></div><div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary"><span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span><span>ALL SYSTEMS OPERATIONAL</span></div></div><div class="md:col-span-4 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Capabilities</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Websites &amp; Flagship Platforms</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Full-stack Web Applications</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Workflow &amp; Pipeline Automation</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Performance Tuning &amp; SEO</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Custom API &amp; Cloud Integrations</li></ul></div><div class="md:col-span-3 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Navigation</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="text-on-surface-variant hover:text-on-surface" data-path="home" href="#">Home</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="work" href="#">Selected Work</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="services" href="#">Services &amp; Scope</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="about" href="#">About Studio</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="insights" href="#">Technical Insights</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="contact" href="#">Contact &amp; Enquiry</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm text-secondary"><div class="flex items-center gap-space-sm"><span>© 2024 SARVOS ENGINEERING GMBH.</span><span>ALL RIGHTS RESERVED.</span></div><div class="flex items-center gap-space-md"><span>STUDIO AVAILABILITY: UTC+1 / CET</span><span>LATENCY: &lt;18MS</span></div></div></div></footer></body></html>

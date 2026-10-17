@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-container": "#1b1b1b",
+        "surface-tint": "#5e5e5e",
+        "on-secondary-fixed": "#1b1c1c",
+        "outline-variant": "#cfc4c5",
+        "inverse-primary": "#c6c6c6",
+        "surface-container-highest": "#e2e2e2",
+        "on-tertiary-fixed": "#1b1b1b",
+        "surface": "#f9f9f9",
+        "on-primary-fixed": "#1b1b1b",
+        "error": "#ba1a1a",
+        "background": "#f9f9f9",
+        "on-tertiary": "#ffffff",
+        "primary": "#000000",
+        "surface-container-high": "#e8e8e8",
+        "inverse-surface": "#2f3131",
+        "inverse-on-surface": "#f0f1f1",
+        "secondary-fixed-dim": "#c7c6c6",
+        "surface-variant": "#e2e2e2",
+        "on-error": "#ffffff",
+        "on-tertiary-fixed-variant": "#474747",
+        "tertiary": "#000000",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+        "secondary-fixed": "#e3e2e2",
+        "outline": "#7e7576",
+        "on-surface": "#1a1c1c",
+        "on-surface-variant": "#4c4546",
+        "on-primary-fixed-variant": "#474747",
+        "on-primary-container": "#848484",
+        "primary-fixed": "#e2e2e2",
+        "surface-container-low": "#f3f3f3",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-container": "#646464",
+        "on-secondary": "#ffffff",
+        "surface-dim": "#dadada",
+        "secondary-container": "#e3e2e2",
+        "on-tertiary-container": "#848484",
+        "secondary": "#5e5e5e",
+        "tertiary-fixed-dim": "#c6c6c6",
+        "surface-bright": "#f9f9f9",
+        "on-background": "#1a1c1c",
+        "tertiary-fixed": "#e2e2e2",
+        "surface-container": "#eeeeee",
+        "on-secondary-fixed-variant": "#464747",
+        "on-primary": "#ffffff",
+        "primary-container": "#1b1b1b",
+        "primary-fixed-dim": "#c6c6c6"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "space-xl": "2rem",
+        "gutter": "3rem",
+        "gutter-tablet": "2rem",
+        "margin-mobile": "1.25rem",
+        "margin": "3rem",
+        "gutter-mobile": "1.25rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-md": ["Geist"],
+        "display-mobile": ["Geist"],
+        "label-mono-md": ["JetBrains Mono"],
+        "headline-sm": ["Geist"],
+        "body-md": ["Geist"],
+        "body-sm": ["Geist"],
+        "headline-lg": ["Geist"],
+        "body-lg": ["Geist"],
+        "label-mono-sm": ["JetBrains Mono"],
+        "headline-lg-mobile": ["Geist"],
+        "display": ["Geist"]
+      },
+      "fontSize": {
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+        "display-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+        "label-mono-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+        "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "label-mono-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+        "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-surface-container-highest"><div class="h-16 max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm group text-primary" data-path="work" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight">SARVOS</span><span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container border border-surface-container-highest text-secondary rounded">EST. 2024</span></a></div><nav class="hidden md:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-medium border-b-2 border-primary"><a aria-current="page" class="inline-flex items-center h-full transition-colors text-primary font-medium border-b-2 border-primary" data-path="work" href="#">Work</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="services" href="#">Services</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="about" href="#">About</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="insights" href="#">Insights</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><button aria-label="Toggle system theme" class="w-9 h-9 flex items-center justify-center rounded-lg border border-surface-container-highest bg-surface hover:bg-surface-container-low text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><a class="group inline-flex items-center gap-space-xs h-10 px-space-md rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium transition-all duration-150 hover:bg-tertiary-container hover:text-on-tertiary" data-path="contact" href="#"><span>Start a project</span><span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AEtjO1WyyvtoLmPUXro0GY5PJ_o7_zhwsOCAOqNmyRNThEkChsUNqNaJbNPNviDiNqEmooGOir3rs7ZhGxjy1f_TBmXYRE5dmB2t8Xg9EJYDWSp50F87wpnB7gMx2Wunosyor8StL5DokogM9wzE3xUyJsyEXtwG6s2Z4--FicbRpXvydqxhVamOGrPLLjLaifb062OoJoOmA7-wgiQOZOuGCp_Neo436p_xOMI7C8CHnDAuYpRN637LLgB_1CLZ"/></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- MAIN CONTAINER (1200px max, 48px padding, strict monochrome) -->
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin space-y-24 py-16">
+<!-- ==========================================
+         SECTION 01: HERO
+         ========================================== -->
+<section class="flex flex-col gap-space-lg pt-4 md:pt-8">
+<!-- Status Meta Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm border-b border-surface-container-highest pb-space-md">
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface tracking-widest flex items-center gap-space-xs">
+<span>[ 01 / INDEPENDENT STUDIO ]</span>
+<span class="text-secondary">— SOFTWARE & SYSTEMS ENGINEERING</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 bg-surface-container border border-surface-container-highest rounded text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span>CURRENT CAPACITY: Q3/Q4 AVAILABLE — 2 CLIENT SLOTS REMAINING</span>
+</div>
+</div>
+<!-- Hero Typography & Pitch -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start pt-space-md">
+<div class="lg:col-span-8 space-y-space-lg">
+<h1 class="text-[52px] sm:text-[62px] lg:text-[70px] leading-[1.04] tracking-[-0.05em] font-medium text-primary max-w-[16ch]">
+            Software engineered for clarity, speed, and scale.
+          </h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+            We design and engineer bespoke web platforms, full-stack web applications, workflow automation, and custom API architectures for organizations with exacting technical demands.
+          </p>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="group inline-flex items-center gap-space-xs h-10 px-5 rounded bg-primary text-on-primary font-body-md text-body-md font-medium transition-all duration-150 hover:bg-tertiary-container" href="#contact">
+<span>Start a project</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+<a class="inline-flex items-center gap-space-xs h-10 px-5 rounded border border-surface-container-highest bg-surface-container-lowest text-on-surface font-body-md text-body-md font-medium transition-colors hover:bg-surface-container-low" href="#work">
+<span>Explore selected work</span>
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<!-- Telemetry / Live Metrics Column -->
+<div class="lg:col-span-4 border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between h-full space-y-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-space-sm font-label-mono-sm text-label-mono-sm text-secondary">
+<span>OPERATIONAL TELEMETRY</span>
+<span>NODE_ID: SRV-01</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md py-space-xs">
+<div>
+<span class="block font-label-mono-sm text-label-mono-sm text-secondary">MEDIAN TTFB</span>
+<span class="font-headline-md text-headline-md font-semibold text-primary">34ms</span>
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface-variant">Global Edge Nodes</span>
+</div>
+<div>
+<span class="block font-label-mono-sm text-label-mono-sm text-secondary">TEST COVERAGE</span>
+<span class="font-headline-md text-headline-md font-semibold text-primary">94.8%</span>
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface-variant">Deterministic CI</span>
+</div>
+<div>
+<span class="block font-label-mono-sm text-label-mono-sm text-secondary">LIGHTHOUSE</span>
+<span class="font-headline-md text-headline-md font-semibold text-primary">100/100</span>
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface-variant">Core Web Vitals</span>
+</div>
+<div>
+<span class="block font-label-mono-sm text-label-mono-sm text-secondary">DEPT. MODEL</span>
+<span class="font-headline-md text-headline-md font-semibold text-primary">Direct</span>
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface-variant">Zero Proxy Mgmt</span>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>UPTIME TARGET: 99.99%</span>
+<span class="text-on-surface">RFC COMPLIANT</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+         SECTION 02: SERVICES / CORE DISCIPLINES
+         ========================================== -->
+<section class="space-y-space-lg pt-4" id="services">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-surface-container-highest pb-space-sm gap-space-xs">
+<div class="space-y-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">[ 02 / SERVICES ] — CORE DISCIPLINES</div>
+<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">What we engineer</h2>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-secondary max-w-xs sm:text-right">
+          MONOLITHIC RIGOR • MODULAR ARCHITECTURE • STRICT REPRODUCIBILITY
+        </p>
+</div>
+<!-- Hairline Divided Spec Rows -->
+<div class="border-t border-surface-container-highest divide-y divide-surface-container-highest bg-surface-container-lowest border-b">
+<!-- Discipline 01 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">01</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Full-Stack Web Applications</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Bespoke software platforms, SaaS systems & operational consoles</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Engineered using strict static typing, robust distributed state, reliable SQL migrations, and isolated containerized deployment targets. Resilient against state desynchronization and sudden concurrency surges.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">TYPESCRIPT</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">NEXT.JS</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">POSTGRES</span>
+</div>
+</div>
+</div>
+<!-- Discipline 02 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">02</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Performant Websites & Content Systems</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Ultra-lean headless architectures and digital flagships</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Sub-second TTFB, edge-cached serverless rendering, atomic design systems, and headless content modeling (Sanity, Payload, custom git-backed CMS) built for deterministic brand authority.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">EDGE CDN</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">HEADLESS</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">TAILWIND</span>
+</div>
+</div>
+</div>
+<!-- Discipline 03 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">03</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">AI Chatbots & Workflow Automation</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Contextual LLM orchestration and automated operational queues</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Deterministic RAG pipelines, schema-validated tool calling, background worker pools, vector databases, and asynchronous document parsing to strip redundant labor from repetitive operations.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">PYTHON</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">PGVECTOR</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">REDIS</span>
+</div>
+</div>
+</div>
+<!-- Discipline 04 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">04</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Virtual Tours & Interactive Maps</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Geospatial visualizers, WebGL experiences, 3D asset viewers</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Engineered spatial applications using MapLibre/Mapbox GL vector tiles, Three.js hardware acceleration, and custom GLSL shaders with full mobile touch-event parity and zero frame drops.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">WEBGL</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">MAPLIBRE</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">GLSL</span>
+</div>
+</div>
+</div>
+<!-- Discipline 05 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">05</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">SEO & Performance Engineering</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Lighthouse 100 tuning, runtime profiling, bundle slimming</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Elimination of layout shifts (CLS), sub-2.0s Largest Contentful Paint (LCP), aggressive tree-shaking, automated OpenGraph generation, semantic structured data schemas (JSON-LD), and indexation guarantees.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">LIGHTHOUSE</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">SSR/SSG</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">PROFILING</span>
+</div>
+</div>
+</div>
+<!-- Discipline 06 -->
+<div class="group p-space-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-1 font-label-mono-sm text-label-mono-sm text-secondary">06</div>
+<div class="md:col-span-4">
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Systems & API Integrations</h3>
+<p class="font-body-sm text-body-sm text-secondary pt-1">Enterprise data bridges, webhook clusters, idempotency locks</p>
+</div>
+<div class="md:col-span-5 font-body-md text-body-md text-on-surface-variant">
+              Bulletproof transaction syncing between Stripe, ERPs, CRM platforms, and legacy backends. Zero lost messages via dead-letter queues, idempotent retry schedules, and comprehensive audit trails.
+            </div>
+<div class="md:col-span-2 flex flex-wrap gap-1 justify-start md:justify-end">
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">REST/GRPC</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">WEBHOOKS</span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded text-on-surface-variant">STRIPE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+         SECTION 03: CASE STUDIES & WORK
+         ========================================== -->
+<section class="space-y-space-lg pt-4" id="work">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-surface-container-highest pb-space-sm gap-space-xs">
+<div class="space-y-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">[ 03 / WORK ] — SELECTED RECENT WORK</div>
+<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">Engineering case studies</h2>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary max-w-sm sm:text-right">
+          CLIENT WORK DETAILS ARE REDACTED IN ACCORDANCE WITH NON-DISCLOSURE AGREEMENTS. DISPLAYED AS RECONSTRUCTED ARCHITECTURES.
+        </div>
+</div>
+<!-- Featured Project 1: High Throughput Telemetry -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg space-y-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md border-b border-surface-container-highest pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary mb-1">
+<span>PROJECT ALPHA</span>
+<span>•</span>
+<span>FINTECH TELEMETRY & TRADING PLATFORM</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-medium text-primary">High-throughput telemetry pipeline & operations dashboard</h3>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container border border-surface-container-highest rounded text-primary font-medium">GO</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container border border-surface-container-highest rounded text-primary font-medium">KAFKA</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container border border-surface-container-highest rounded text-primary font-medium">CLICKHOUSE</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 bg-surface-container border border-surface-container-highest rounded text-primary font-medium">REACT</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-5 space-y-space-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The client operated a mission-critical infrastructure cluster plagued by ingest lag during volume spikes. We designed and replaced their centralized monolith with a sharded Go ingestion runtime feeding Apache Kafka and ClickHouse columnar storage.
+            </p>
+<div class="grid grid-cols-2 gap-space-sm border-t border-b border-surface-container-highest py-space-sm font-label-mono-sm text-label-mono-sm">
+<div>
+<span class="text-secondary block">PEAK INGEST</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">45,000 /sec</span>
+</div>
+<div>
+<span class="text-secondary block">QUERY LATENCY</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary"><42ms p99</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Included real-time WebSocket fan-out to custom canvas-rendered charting dashboards with 60 FPS update consistency across 500+ active operator terminals.
+            </p>
+</div>
+<!-- Architectural Wireframe Diagram -->
+<div class="lg:col-span-7 bg-surface-container-low border border-surface-container-highest rounded p-space-md flex flex-col justify-between font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-highest text-secondary">
+<span>SYSTEM_SCHEMATIC: INGESTION_BUS_V3</span>
+<span class="text-emerald-700">STABLE [45K EPS]</span>
+</div>
+<!-- SVG Data Flow Diagram -->
+<div class="py-4">
+<svg class="w-full h-auto text-primary" fill="none" stroke="currentColor" viewbox="0 0 540 140">
+<!-- Node 1: Edge Ingestion -->
+<rect class="fill-surface-container-lowest stroke-surface-container-highest" height="50" rx="4" stroke-width="1.5" width="100" x="10" y="45"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" stroke="none" text-anchor="middle" x="60" y="70">EDGE INGEST</text>
+<text fill="#7e7576" font-family="JetBrains Mono" font-size="8" stroke="none" text-anchor="middle" x="60" y="84">Go Daemon (x8)</text>
+<!-- Arrow 1 -->
+<path d="M 110 70 L 148 70" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<polygon fill="currentColor" points="148,67 154,70 148,73" stroke="none"></polygon>
+<!-- Node 2: Message Buffer -->
+<rect class="fill-surface-container-lowest stroke-surface-container-highest" height="50" rx="4" stroke-width="1.5" width="100" x="155" y="45"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" stroke="none" text-anchor="middle" x="205" y="70">PARTITION BUS</text>
+<text fill="#7e7576" font-family="JetBrains Mono" font-size="8" stroke="none" text-anchor="middle" x="205" y="84">Kafka Cluster</text>
+<!-- Arrow 2 -->
+<path d="M 255 70 L 293 70" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<polygon fill="currentColor" points="293,67 299,70 293,73" stroke="none"></polygon>
+<!-- Node 3: Columnar Store -->
+<rect class="fill-surface-container-lowest stroke-surface-container-highest" height="50" rx="4" stroke-width="1.5" width="105" x="300" y="45"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" stroke="none" text-anchor="middle" x="352" y="70">COLUMN STORE</text>
+<text fill="#7e7576" font-family="JetBrains Mono" font-size="8" stroke="none" text-anchor="middle" x="352" y="84">ClickHouse Primary</text>
+<!-- Arrow 3 -->
+<path d="M 405 70 L 438 70" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<polygon fill="currentColor" points="438,67 444,70 438,73" stroke="none"></polygon>
+<!-- Node 4: Canvas UI -->
+<rect class="fill-surface-container-lowest stroke-surface-container-highest" height="50" rx="4" stroke-width="1.5" width="85" x="445" y="45"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" stroke="none" text-anchor="middle" x="487" y="70">CANVAS UI</text>
+<text fill="#7e7576" font-family="JetBrains Mono" font-size="8" stroke="none" text-anchor="middle" x="487" y="84">React 60FPS</text>
+</svg>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-highest text-secondary text-[10px]">
+<span>FAILOVER: ACTIVE-ACTIVE REGIONAL REDUNDANCY</span>
+<span>ISOLATION: VPC PEERED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Projects 2 & 3: Side-by-Side Panels -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Project Beta -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>PROJECT BETA</span>
+<span>SPATIAL COMPUTING</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Enterprise geospatial tour & asset visualizer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">
+              High-performance browser application streaming multi-gigabyte point clouds, building information models (BIM), and high-resolution CAD layers over MapLibre vector maps. Custom shaders optimized for low-spec mobile tablets.
+            </p>
+</div>
+<div class="border border-surface-container-highest bg-surface-container-low rounded p-space-md font-label-mono-sm text-label-mono-sm space-y-1">
+<div class="flex justify-between text-secondary">
+<span>RENDER TARGET</span>
+<span class="text-on-surface">WebGL 2.0 / WebGPU</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>GEO-TILES</span>
+<span class="text-on-surface">Custom MVT Ingestion</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>FRAME TIME</span>
+<span class="text-on-surface">14.2ms avg (60Hz)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-highest">
+<div class="flex items-center gap-1 font-label-mono-sm text-label-mono-sm text-secondary">
+<span>WEBGL</span> • <span>MAPBOX GL</span> • <span>THREE.JS</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-medium">[ ACTIVE ]</span>
+</div>
+</div>
+<!-- Project Gamma -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>PROJECT GAMMA</span>
+<span>WORKFLOW AUTOMATION</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Autonomous technical documentation & triage agent</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">
+              Internal AI copilot indexing 12,000+ API docs, Jira engineering tickets, and git commits via pgvector embeddings. Generates PR draft explanations and resolves tier-1 integration issues autonomously with zero human triaging.
+            </p>
+</div>
+<div class="border border-surface-container-highest bg-surface-container-low rounded p-space-md font-label-mono-sm text-label-mono-sm space-y-1">
+<div class="flex justify-between text-secondary">
+<span>CONTEXT WINDOW</span>
+<span class="text-on-surface">128k Tokens (Hybrid RAG)</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>TRIAGE ACCURACY</span>
+<span class="text-on-surface">91.4% Validated</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>TIME RECOVERED</span>
+<span class="text-on-surface">~28 hrs / engineer / mo</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-highest">
+<div class="flex items-center gap-1 font-label-mono-sm text-label-mono-sm text-secondary">
+<span>FASTAPI</span> • <span>PGVECTOR</span> • <span>LANGCHAIN</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-medium">[ DEPLOYED ]</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+         SECTION 04: EXECUTION PRINCIPLES / PROCESS
+         ========================================== -->
+<section class="space-y-space-lg pt-4">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-surface-container-highest pb-space-sm gap-space-xs">
+<div class="space-y-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">[ 04 / PROCESS ] — EXECUTION PRINCIPLES</div>
+<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">Direct engineer-to-client collaboration</h2>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary sm:text-right">
+          NO PROXIES • PRODUCTION HYGIENE • TRANSPARENT COMMITS
+        </div>
+</div>
+<!-- 4 Numbered Editorial Columns -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Pillar 01 -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<div class="font-label-mono-md text-label-mono-md text-secondary">/ 01</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Direct Principal Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              No account managers, project coordinators, or sales intermediaries. You strategize and communicate directly with the senior software engineers who write and deploy your code.
+            </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary">
+            DIRECT SLACK / GITHUB
+          </div>
+</div>
+<!-- Pillar 02 -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<div class="font-label-mono-md text-label-mono-md text-secondary">/ 02</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Deterministic Milestones</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Weekly staging deployments, transparent pull requests, and unambiguous deliverables. Progress is verified by functional builds on your infrastructure, never vanity slide decks.
+            </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary">
+            CONTINUOUS INTEGRATION
+          </div>
+</div>
+<!-- Pillar 03 -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<div class="font-label-mono-md text-label-mono-md text-secondary">/ 03</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Zero Technical Debt</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Production-grade codebases out of the box: 90%+ unit and integration test coverage, strict type contracts, reproducible Docker configurations, and clear documentation.
+            </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary">
+            VERIFIED AUTOMATION
+          </div>
+</div>
+<!-- Pillar 04 -->
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<div class="font-label-mono-md text-label-mono-md text-secondary">/ 04</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-primary">Full Asset Ownership</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              You own 100% of all intellectual property, repository commits, cloud accounts, and architectural schematics from day one. Zero proprietary vendor lock-in or licensing fees.
+            </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary">
+            CLIENT IP EXCLUSIVE
+          </div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+         SECTION 05: PROJECT ENQUIRY FUNNEL
+         ========================================== -->
+<section class="space-y-space-lg pt-4 pb-12" id="contact">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-surface-container-highest pb-space-sm gap-space-xs">
+<div class="space-y-space-xs">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">[ 05 / CONTACT ] — INITIALIZE ENGAGEMENT</div>
+<h2 class="font-headline-lg text-headline-lg font-medium text-primary tracking-tight">Let's discuss your technical requirements</h2>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary sm:text-right">
+          SLA: < 24H RESPONSE • NDA ON DEMAND
+        </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left: Briefing Info & Guidelines -->
+<div class="lg:col-span-5 space-y-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Tell us about your timeline, scope, and engineering constraints. We respond within 24 business hours with an initial architectural perspective and availability.
+          </p>
+<div class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-md space-y-space-sm">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary">WHAT HAPPENS NEXT:</div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-primary">01.</span>
+<span>Direct engineer reads your brief and checks dependency feasibility.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-primary">02.</span>
+<span>We schedule a 30-minute technical scope alignment call (no sales pitches).</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-primary">03.</span>
+<span>You receive a fixed-scope milestone proposal or weekly engineering sprint agreement.</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-xs space-y-1 font-body-sm text-body-sm text-secondary">
+<p>Prefer formal RFC / RFP transmissions?</p>
+<p class="font-label-mono-sm text-label-mono-sm text-primary">
+              Send documents directly to: <span class="underline cursor-pointer">rfp@sarvos.engineering</span>
+</p>
+</div>
+</div>
+<!-- Right: Technical Form -->
+<div class="lg:col-span-7">
+<form class="border border-surface-container-highest bg-surface-container-lowest rounded p-space-lg space-y-space-md" id="enquiry-form" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.classList.add('opacity-40', 'pointer-events-none');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="block font-label-mono-sm text-label-mono-sm text-secondary" for="name">NAME / ORGANIZATION</label>
+<input class="w-full h-10 px-3 rounded bg-surface border border-surface-container-highest font-body-md text-body-md text-on-surface placeholder:text-secondary focus:border-primary focus:outline-none transition-colors" id="name" placeholder="e.g. Alex Vance, Northstar Labs" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="block font-label-mono-sm text-label-mono-sm text-secondary" for="email">WORK EMAIL</label>
+<input class="w-full h-10 px-3 rounded bg-surface border border-surface-container-highest font-body-md text-body-md text-on-surface placeholder:text-secondary focus:border-primary focus:outline-none transition-colors" id="email" placeholder="alex@northstar.io" required="" type="email"/>
+</div>
+</div>
+<!-- Scope Multi-select Tags -->
+<div class="space-y-2">
+<label class="block font-label-mono-sm text-label-mono-sm text-secondary">PROJECT SCOPE (SELECT ALL APPLICABLE)</label>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-block px-3 py-1.5 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+                    Web Application
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-block px-3 py-1.5 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+                    Workflow Automation
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-block px-3 py-1.5 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+                    Interactive / WebGL
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-block px-3 py-1.5 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+                    Performance Audit
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-block px-3 py-1.5 rounded border border-surface-container-highest bg-surface font-label-mono-sm text-label-mono-sm text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+                    API Architecture
+                  </span>
+</label>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="space-y-1">
+<label class="block font-label-mono-sm text-label-mono-sm text-secondary" for="details">PROJECT BRIEF & TECHNICAL CONSTRAINTS</label>
+<textarea class="w-full p-3 rounded bg-surface border border-surface-container-highest font-body-md text-body-md text-on-surface placeholder:text-secondary focus:border-primary focus:outline-none transition-colors" id="details" placeholder="Describe what you are building, expected volume, existing stack, and key technical bottlenecks..." required="" rows="4"></textarea>
+</div>
+<!-- Timeline Select -->
+<div class="space-y-1">
+<label class="block font-label-mono-sm text-label-mono-sm text-secondary" for="timeline">ESTIMATED TIMELINE</label>
+<select class="w-full h-10 px-3 rounded bg-surface border border-surface-container-highest font-body-md text-body-md text-on-surface focus:border-primary focus:outline-none transition-colors" id="timeline">
+<option value="immediate">Immediate (< 3 weeks to kick-off)</option>
+<option value="medium">1 — 2 months</option>
+<option value="exploratory">Exploratory / R&D Architecture Phase</option>
+</select>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full h-11 px-5 rounded bg-primary text-on-primary font-body-md text-body-md font-medium inline-flex items-center justify-center gap-space-xs transition-all duration-150 hover:bg-tertiary-container cursor-pointer" type="submit">
+<span>Transmit project brief</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+<!-- Success Banner (hidden by default) -->
+<div class="hidden p-space-md border border-surface-container-highest bg-surface-container rounded text-center space-y-1" id="form-success">
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold">[ BRIEF TRANSMITTED SUCCESSFULLY ]</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our engineering team has received your submission. We will review your constraints and respond within 24 business hours.</p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface border-t border-surface-container-highest"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl border-b border-surface-container-highest"><div class="md:col-span-5 flex flex-col justify-between space-y-space-md"><div class="space-y-space-xs"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">SARVOS</span><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Independent software and technology consultancy. Architecting resilient systems, digital flagships, and deterministically engineered web platforms.</p></div><div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary"><span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span><span>ALL SYSTEMS OPERATIONAL</span></div></div><div class="md:col-span-4 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Capabilities</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Websites & Flagship Platforms</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Full-stack Web Applications</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Workflow & Pipeline Automation</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Performance Tuning & SEO</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Custom API & Cloud Integrations</li></ul></div><div class="md:col-span-3 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Studio</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="text-on-surface-variant hover:text-on-surface" data-path="work" href="#">Selected Work</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="services" href="#">Services & Scope</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="about" href="#">About Consultancy</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="insights" href="#">Technical Insights</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="contact" href="#">Initiate Contact</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm text-secondary"><div class="flex items-center gap-space-sm"><span>© 2024 SARVOS ENGINEERING GMBH.</span><span>ALL RIGHTS RESERVED.</span></div><div class="flex items-center gap-space-md"><span>STUDIO AVAILABILITY: UTC+1 / CET</span><span>LATENCY: <18MS</span></div></div></div></footer></body></html>

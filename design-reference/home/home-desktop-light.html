@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SARVOS — Independent Software &amp; Technology Studio</title>
+<!-- Fonts: Geist & JetBrains Mono / Geist Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAFAFA',
+              card: '#FFFFFF',
+              muted: '#F5F5F5',
+              subtle: '#EAEAEA',
+              border: '#E5E5E5',
+              borderDark: '#D4D4D4',
+              textPrimary: '#000000',
+              textSecondary: '#4A4A4A',
+              textMuted: '#737373',
+            }
+          },
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+            mono: ['Geist Mono', 'JetBrains Mono', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.05em',
+            tight: '-0.03em',
+            mono: '0.06em',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        background-color: #FAFAFA;
+        color: #000000;
+        font-family: 'Geist', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+    .hairline-border {
+      border: 1px solid #E5E5E5;
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-[#000000] antialiased selection:bg-[#000000] selection:text-[#FFFFFF]">
+<!-- ========================================================
+       STICKY COMPACT HEADER
+       ======================================================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#FAFAFA]/90 backdrop-blur-md border-b border-[#E5E5E5]">
+<div class="max-w-[1200px] h-16 mx-auto px-6 md:px-12 flex items-center justify-between">
+<!-- SARVOS Wordmark -->
+<div class="flex items-center gap-3">
+<a class="font-sans font-semibold tracking-tight text-lg text-black hover:opacity-80 transition-opacity" href="#">
+          SARVOS
+        </a>
+<span class="font-mono text-[10px] tracking-wider px-1.5 py-0.5 rounded border border-[#E5E5E5] bg-white text-[#737373]">
+          EST. 2024
+        </span>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="inline-flex items-center h-full text-sm font-medium text-black border-b-2 border-black pt-0.5" href="#work">Work</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#services">Services</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#about">About</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#faq">Insights</a>
+<a class="inline-flex items-center h-full text-sm font-normal text-[#737373] hover:text-black transition-colors border-b-2 border-transparent pt-0.5" href="#contact">Contact</a>
+</nav>
+<!-- Right Controls: Theme toggle & CTA -->
+<div class="flex items-center gap-3">
+<button aria-label="Toggle theme" class="w-9 h-9 rounded-lg border border-[#E5E5E5] bg-white hover:bg-[#F5F5F5] text-black flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">light_mode</span>
+</button>
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-black text-white text-xs font-medium tracking-tight hover:bg-neutral-800 transition-colors" href="#contact">
+<span>Start a project</span>
+<span class="text-xs font-mono">↗</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN PAGE CONTENT (1200px max container, 48px gutters, 96px section padding) -->
+<main class="w-full pt-16">
+<div class="max-w-[1200px] mx-auto px-6 md:px-12">
+<!-- ========================================================
+           1. HERO SECTION (Two Columns)
+           ======================================================== -->
+<section class="py-20 md:py-24 border-b border-[#E5E5E5]">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Left Column -->
+<div class="lg:col-span-6 space-y-6">
+<!-- Eyebrow -->
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373] flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-black inline-block"></span>
+<span>INDEPENDENT SOFTWARE &amp; TECHNOLOGY STUDIO</span>
+</div>
+<!-- H1 Headline -->
+<h1 class="text-[44px] sm:text-[54px] lg:text-[62px] leading-[1.04] font-[550] tracking-[-0.05em] text-black">
+              We build software for real-world problems.
+            </h1>
+<!-- Body text -->
+<p class="text-[17px] leading-[1.6] text-[#4A4A4A] max-w-xl font-normal">
+              Websites, custom applications, automation and interactive digital experiences. Defined by the problem, not the buzzwords.
+            </p>
+<!-- Buttons -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-1.5 h-11 px-5 rounded-[8px] bg-black text-white text-sm font-medium hover:bg-neutral-800 transition-all" href="#contact">
+<span>Discuss a project</span>
+<span class="font-mono text-sm">↗</span>
+</a>
+<a class="inline-flex items-center gap-1.5 h-11 px-5 rounded-[8px] border border-[#E5E5E5] bg-white text-black text-sm font-medium hover:bg-[#F5F5F5] transition-colors" href="#work">
+<span>View selected work</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Browser-frame preview & interactive tabs -->
+<div class="lg:col-span-6 space-y-3">
+<!-- Browser Frame Card -->
+<div class="w-full bg-white rounded-lg border border-[#E5E5E5] shadow-sm overflow-hidden flex flex-col">
+<!-- Window Chrome -->
+<div class="h-10 px-4 bg-[#F5F5F5] border-b border-[#E5E5E5] flex items-center justify-between gap-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-[#E5E5E5] border border-[#D4D4D4]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#E5E5E5] border border-[#D4D4D4]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#E5E5E5] border border-[#D4D4D4]"></div>
+</div>
+<!-- Address bar -->
+<div class="flex-1 max-w-[340px] h-6 px-3 bg-white rounded border border-[#E5E5E5] flex items-center justify-between text-[11px] font-mono text-[#737373]">
+<span class="truncate" id="browser-url">sarvos.studio/preview/telemetry-v2</span>
+<span class="material-symbols-outlined text-[13px] text-[#A3A3A3]">lock</span>
+</div>
+<div class="w-10 flex justify-end">
+<span class="font-mono text-[10px] text-[#A3A3A3]">LIVE</span>
+</div>
+</div>
+<!-- Viewport Content Display -->
+<div class="p-5 md:p-6 min-h-[300px] bg-white flex flex-col justify-between" id="preview-viewport">
+<!-- Tab View 1: Telemetry Bus (Active Default) -->
+<div class="space-y-4" id="view-telemetry">
+<div class="flex items-center justify-between border-b border-[#E5E5E5] pb-3">
+<div class="font-mono text-[11px] text-[#737373] tracking-wide">METRIC TOPOLOGY // SHARDED INGESTION</div>
+<span class="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-black">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 45,020 EPS
+                    </span>
+</div>
+<div class="grid grid-cols-3 gap-3 pt-1">
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">P99 LATENCY</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">28.4ms</div>
+<div class="text-[10px] font-mono text-[#737373] mt-0.5">-4.2% stddev</div>
+</div>
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">INGESTION BUS</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">12 Shards</div>
+<div class="text-[10px] font-mono text-emerald-600 mt-0.5">Deterministic</div>
+</div>
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">UPTIME</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">99.998%</div>
+<div class="text-[10px] font-mono text-[#737373] mt-0.5">365d Window</div>
+</div>
+</div>
+<!-- Topology visual mockup -->
+<div class="p-3 rounded border border-[#E5E5E5] bg-[#F5F5F5] font-mono text-[11px] space-y-2">
+<div class="flex justify-between text-[#737373]">
+<span>NODE BUS: CLUSTER_WEST</span>
+<span class="text-black font-medium">BUFFER: 1.2% CAP</span>
+</div>
+<div class="w-full bg-[#E5E5E5] h-1.5 rounded-full overflow-hidden">
+<div class="bg-black h-full w-[68%]"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-[#737373] pt-1">
+<span>FLOW: Ingest ➔ Partition ➔ Columnar Storage</span>
+<span class="text-black">100% REPRODUCIBLE</span>
+</div>
+</div>
+</div>
+<!-- Tab View 2: Spatial Engine (Hidden) -->
+<div class="hidden space-y-4" id="view-spatial">
+<div class="flex items-center justify-between border-b border-[#E5E5E5] pb-3">
+<div class="font-mono text-[11px] text-[#737373] tracking-wide">WEBGL 2.0 / SPATIAL TILE VIEWPORT</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-black">
+                      60 FPS FIXED
+                    </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">POINT CLOUD DENSITY</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">4.2M Vertices</div>
+<div class="text-[10px] font-mono text-[#737373] mt-0.5">LOD Adaptive</div>
+</div>
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">FRAME TIME</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">14.1ms</div>
+<div class="text-[10px] font-mono text-[#737373] mt-0.5">Zero dropped frames</div>
+</div>
+</div>
+<div class="p-4 rounded border border-[#E5E5E5] bg-[#F5F5F5] text-center font-mono text-xs text-[#737373] py-6">
+                    [ INTERACTIVE 3D CAD PROJECTION // VECTOR TILE PIPELINE ]
+                  </div>
+</div>
+<!-- Tab View 3: DocuTriage (Hidden) -->
+<div class="hidden space-y-4" id="view-docutriage">
+<div class="flex items-center justify-between border-b border-[#E5E5E5] pb-3">
+<div class="font-mono text-[11px] text-[#737373] tracking-wide">WORKFLOW AUTOMATION // VECTOR AGENT</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-black">
+                      91.4% ACCURACY
+                    </span>
+</div>
+<div class="grid grid-cols-3 gap-3 pt-1">
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">DOCS INDEXED</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">12,480</div>
+</div>
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">AVG RESOLUTION</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">1.8s</div>
+</div>
+<div class="p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded">
+<div class="font-mono text-[10px] text-[#737373]">HOURS SAVED</div>
+<div class="text-xl font-semibold tracking-tight text-black mt-1">28h/mo</div>
+</div>
+</div>
+<div class="p-4 rounded border border-[#E5E5E5] bg-[#F5F5F5] text-center font-mono text-xs text-[#737373] py-6">
+                    [ CONTEXT: PGVECTOR 128K EMBEDDINGS // ASYNC QUEUES ]
+                  </div>
+</div>
+</div>
+</div>
+<!-- 3 Selector Tabs Underneath -->
+<div class="grid grid-cols-3 gap-2 pt-1" id="hero-tabs">
+<!-- Tab 1 -->
+<button class="hero-tab text-left p-3 rounded border border-black bg-white hover:border-black transition-all" onclick="switchHeroTab('telemetry', 'sarvos.studio/preview/telemetry-v2', this)" type="button">
+<div class="font-mono text-[9px] uppercase tracking-wider text-black font-semibold">INFRASTRUCTURE</div>
+<div class="font-sans text-xs font-semibold text-black truncate mt-0.5">Telemetry Bus [Placeholder]</div>
+<div class="font-mono text-[10px] text-black mt-1.5 flex items-center gap-1">
+<span>Open project</span>
+<span>↗</span>
+</div>
+</button>
+<!-- Tab 2 -->
+<button class="hero-tab text-left p-3 rounded border border-[#E5E5E5] bg-[#FAFAFA] hover:border-[#D4D4D4] transition-all" onclick="switchHeroTab('spatial', 'sarvos.studio/preview/spatial-engine', this)" type="button">
+<div class="font-mono text-[9px] uppercase tracking-wider text-[#737373]">SPATIAL COMPUTING</div>
+<div class="font-sans text-xs font-medium text-black truncate mt-0.5">Spatial Engine [Placeholder]</div>
+<div class="font-mono text-[10px] text-[#737373] mt-1.5 flex items-center gap-1">
+<span>Open project</span>
+<span>↗</span>
+</div>
+</button>
+<!-- Tab 3 -->
+<button class="hero-tab text-left p-3 rounded border border-[#E5E5E5] bg-[#FAFAFA] hover:border-[#D4D4D4] transition-all" onclick="switchHeroTab('docutriage', 'sarvos.studio/preview/docu-triage', this)" type="button">
+<div class="font-mono text-[9px] uppercase tracking-wider text-[#737373]">WORKFLOW AI</div>
+<div class="font-sans text-xs font-medium text-black truncate mt-0.5">DocuTriage [Placeholder]</div>
+<div class="font-mono text-[10px] text-[#737373] mt-1.5 flex items-center gap-1">
+<span>Open project</span>
+<span>↗</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           2. SELECTED WORK (Grid: 1 Large + 1 Smaller Project)
+           ======================================================== -->
+<section class="py-24 border-b border-[#E5E5E5]" id="work">
+<div class="space-y-4 mb-12">
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373]">[ 02 / SELECTED WORK ]</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">Built with a purpose.</h2>
+<p class="text-sm text-[#4A4A4A] max-w-md font-normal leading-relaxed">
+              A selection of software and digital experiences, presented through the problems they address and the solutions built.
+            </p>
+</div>
+</div>
+<!-- Grid: Large Project (7 cols) + Smaller Project (5 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Project 01 (Large) -->
+<div class="lg:col-span-7 bg-white rounded-lg border border-[#E5E5E5] p-6 sm:p-8 flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-[#E5E5E5] pb-3">
+<span class="font-mono text-[11px] tracking-wider text-[#737373]">SYSTEMS ARCHITECTURE</span>
+<span class="font-mono text-[11px] text-black font-medium">[ CASE STUDY ]</span>
+</div>
+<div>
+<h3 class="text-2xl font-semibold tracking-tight text-black">Core Engine Platform [Placeholder]</h3>
+<p class="text-sm text-[#4A4A4A] mt-2 leading-relaxed">
+<span class="font-mono text-xs uppercase text-[#737373]">Problem:</span> Legacy batch processing caused 4-hour latency spikes across multi-tenant ingestion points.
+                </p>
+</div>
+<!-- Interface Mockup inside 1px border -->
+<div class="p-4 rounded border border-[#E5E5E5] bg-[#FAFAFA] font-mono text-xs space-y-3">
+<div class="flex justify-between text-[#737373] text-[11px] border-b border-[#E5E5E5] pb-2">
+<span>COMPONENT SCHEMATIC</span>
+<span>STATUS: OPTIMAL</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center py-2">
+<div class="p-2.5 rounded bg-white border border-[#E5E5E5]">
+<div class="text-[10px] text-[#737373]">INGESTION</div>
+<div class="font-semibold text-black text-sm mt-0.5">Go Daemon</div>
+</div>
+<div class="p-2.5 rounded bg-white border border-[#E5E5E5]">
+<div class="text-[10px] text-[#737373]">BUFFER</div>
+<div class="font-semibold text-black text-sm mt-0.5">Kafka Bus</div>
+</div>
+<div class="p-2.5 rounded bg-white border border-[#E5E5E5]">
+<div class="text-[10px] text-[#737373]">STORAGE</div>
+<div class="font-semibold text-black text-sm mt-0.5">ClickHouse</div>
+</div>
+</div>
+<div class="text-[11px] text-[#737373] pt-1 flex justify-between">
+<span>RESULT: Sub-42ms P99 latency achieved at 45k eps</span>
+<span class="text-black font-medium">99.99% UPTIME</span>
+</div>
+</div>
+</div>
+<!-- Footer Meta & CTA -->
+<div class="pt-4 border-t border-[#E5E5E5] flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">GO</span>
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">KAFKA</span>
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">CLICKHOUSE</span>
+</div>
+<a class="inline-flex items-center gap-1 font-mono text-xs font-medium text-black hover:opacity-70 transition-opacity" href="#contact">
+<span>View project</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+<!-- Project 02 (Smaller) -->
+<div class="lg:col-span-5 bg-white rounded-lg border border-[#E5E5E5] p-6 sm:p-8 flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-[#E5E5E5] pb-3">
+<span class="font-mono text-[11px] tracking-wider text-[#737373]">WEBGL &amp; INTERACTIVE</span>
+<span class="font-mono text-[11px] text-black font-medium">[ CASE STUDY ]</span>
+</div>
+<div>
+<h3 class="text-2xl font-semibold tracking-tight text-black">Spatial CAD Visualizer [Placeholder]</h3>
+<p class="text-sm text-[#4A4A4A] mt-2 leading-relaxed">
+<span class="font-mono text-xs uppercase text-[#737373]">Problem:</span> Engineers lacked low-latency interactive 3D inspection tools for field hardware models.
+                </p>
+</div>
+<!-- Interface Mockup inside 1px border -->
+<div class="p-4 rounded border border-[#E5E5E5] bg-[#FAFAFA] font-mono text-xs space-y-3">
+<div class="flex justify-between text-[#737373] text-[11px] border-b border-[#E5E5E5] pb-2">
+<span>RENDER PIPELINE</span>
+<span>TARGET: 60Hz</span>
+</div>
+<div class="p-3 bg-white border border-[#E5E5E5] rounded space-y-1.5">
+<div class="flex justify-between text-[11px]">
+<span class="text-[#737373]">SHADERS</span>
+<span class="text-black font-medium">Custom GLSL</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-[#737373]">MOBILE TOUCH</span>
+<span class="text-black font-medium">Native Parity</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-[#737373]">DROP FRAMES</span>
+<span class="text-emerald-600 font-medium">0.00%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Meta & CTA -->
+<div class="pt-4 border-t border-[#E5E5E5] flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">THREE.JS</span>
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">WEBGL</span>
+<span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#F5F5F5] border border-[#E5E5E5] text-[#4A4A4A]">TYPESCRIPT</span>
+</div>
+<a class="inline-flex items-center gap-1 font-mono text-xs font-medium text-black hover:opacity-70 transition-opacity" href="#contact">
+<span>View project</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           3. SERVICES (Numbered Horizontal Rows, No decorative icons)
+           ======================================================== -->
+<section class="py-24 border-b border-[#E5E5E5]" id="services">
+<div class="space-y-4 mb-12">
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373]">[ 03 / WHAT WE DO ]</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">The right solution for the problem.</h2>
+<p class="text-sm text-[#4A4A4A] max-w-md font-normal leading-relaxed">
+              From a first website to a connected software system, we focus on what needs to be built and how it should work.
+            </p>
+</div>
+</div>
+<!-- 4 Numbered Rows -->
+<div class="border-t border-[#E5E5E5] divide-y divide-[#E5E5E5] bg-white border-b">
+<!-- Row 01 -->
+<div class="py-6 px-6 sm:px-8 hover:bg-[#FAFAFA] transition-colors">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-baseline">
+<div class="lg:col-span-1 font-mono text-sm text-[#737373]">01</div>
+<div class="lg:col-span-4">
+<h3 class="text-lg font-semibold text-black tracking-tight">Websites &amp; Custom Software</h3>
+<p class="text-sm text-[#4A4A4A] mt-1 leading-normal">
+                  business websites, web apps, internal tools, custom software built around real workflows.
+                </p>
+</div>
+<div class="lg:col-span-6 font-mono text-xs text-[#737373] leading-relaxed">
+                Business Websites · Web Applications · Internal Tooling · Custom Software Architecture
+              </div>
+<div class="lg:col-span-1 text-right">
+<a class="text-base text-black hover:translate-x-1 inline-block transition-transform" href="#contact">→</a>
+</div>
+</div>
+</div>
+<!-- Row 02 -->
+<div class="py-6 px-6 sm:px-8 hover:bg-[#FAFAFA] transition-colors">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-baseline">
+<div class="lg:col-span-1 font-mono text-sm text-[#737373]">02</div>
+<div class="lg:col-span-4">
+<h3 class="text-lg font-semibold text-black tracking-tight">AI &amp; Workflow Automation</h3>
+<p class="text-sm text-[#4A4A4A] mt-1 leading-normal">
+                  practical AI integrations and automation that reduce repetitive work and connect existing systems.
+                </p>
+</div>
+<div class="lg:col-span-6 font-mono text-xs text-[#737373] leading-relaxed">
+                Document Pipelines · Deterministic RAG · LLM Integrations · Queue Automation
+              </div>
+<div class="lg:col-span-1 text-right">
+<a class="text-base text-black hover:translate-x-1 inline-block transition-transform" href="#contact">→</a>
+</div>
+</div>
+</div>
+<!-- Row 03 -->
+<div class="py-6 px-6 sm:px-8 hover:bg-[#FAFAFA] transition-colors">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-baseline">
+<div class="lg:col-span-1 font-mono text-sm text-[#737373]">03</div>
+<div class="lg:col-span-4">
+<h3 class="text-lg font-semibold text-black tracking-tight">Virtual Tours &amp; Interactive Experiences</h3>
+<p class="text-sm text-[#4A4A4A] mt-1 leading-normal">
+                  interactive experiences that help people explore places, spaces and information online.
+                </p>
+</div>
+<div class="lg:col-span-6 font-mono text-xs text-[#737373] leading-relaxed">
+                3D Asset Viewers · Geospatial Mapping · WebGL Experiences · Interactive Portals
+              </div>
+<div class="lg:col-span-1 text-right">
+<a class="text-base text-black hover:translate-x-1 inline-block transition-transform" href="#contact">→</a>
+</div>
+</div>
+</div>
+<!-- Row 04 -->
+<div class="py-6 px-6 sm:px-8 hover:bg-[#FAFAFA] transition-colors">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-baseline">
+<div class="lg:col-span-1 font-mono text-sm text-[#737373]">04</div>
+<div class="lg:col-span-4">
+<h3 class="text-lg font-semibold text-black tracking-tight">SEO &amp; Website Improvement</h3>
+<p class="text-sm text-[#4A4A4A] mt-1 leading-normal">
+                  technical improvements that make websites easier to discover, access and use.
+                </p>
+</div>
+<div class="lg:col-span-6 font-mono text-xs text-[#737373] leading-relaxed">
+                Core Web Vitals · Lighthouse 100 Tuning · Headless Migration · Structured Data
+              </div>
+<div class="lg:col-span-1 text-right">
+<a class="text-base text-black hover:translate-x-1 inline-block transition-transform" href="#contact">→</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           4. PROCESS (Five Horizontal Steps)
+           ======================================================== -->
+<section class="py-24 border-b border-[#E5E5E5]">
+<div class="space-y-4 mb-12">
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373]">[ 04 / THE PROCESS ]</div>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">Clear steps. No unnecessary complexity.</h2>
+</div>
+<!-- 5-column layout with hairline borders -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border border-[#E5E5E5] rounded-lg bg-white overflow-hidden divide-y md:divide-y-0 md:divide-x divide-[#E5E5E5]">
+<!-- Step 01 -->
+<div class="p-6 flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="font-mono text-xs text-[#737373]">01</div>
+<h3 class="text-base font-semibold text-black">Understand</h3>
+<p class="text-xs text-[#4A4A4A] leading-relaxed">
+                We discuss the problem, the people using the solution and the outcome you need.
+              </p>
+</div>
+<div class="font-mono text-[10px] text-[#A3A3A3] pt-4">PHASE: 01</div>
+</div>
+<!-- Step 02 -->
+<div class="p-6 flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="font-mono text-xs text-[#737373]">02</div>
+<h3 class="text-base font-semibold text-black">Define</h3>
+<p class="text-xs text-[#4A4A4A] leading-relaxed">
+                We agree on scope, priorities, deliverables, constraints and next steps before building.
+              </p>
+</div>
+<div class="font-mono text-[10px] text-[#A3A3A3] pt-4">PHASE: 02</div>
+</div>
+<!-- Step 03 -->
+<div class="p-6 flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="font-mono text-xs text-[#737373]">03</div>
+<h3 class="text-base font-semibold text-black">Build</h3>
+<p class="text-xs text-[#4A4A4A] leading-relaxed">
+                We implement the solution in manageable stages and keep communication clear throughout.
+              </p>
+</div>
+<div class="font-mono text-[10px] text-[#A3A3A3] pt-4">PHASE: 03</div>
+</div>
+<!-- Step 04 -->
+<div class="p-6 flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="font-mono text-xs text-[#737373]">04</div>
+<h3 class="text-base font-semibold text-black">Verify</h3>
+<p class="text-xs text-[#4A4A4A] leading-relaxed">
+                We test the important user flows, check edge cases and address issues before handover.
+              </p>
+</div>
+<div class="font-mono text-[10px] text-[#A3A3A3] pt-4">PHASE: 04</div>
+</div>
+<!-- Step 05 -->
+<div class="p-6 flex flex-col justify-between space-y-4">
+<div class="space-y-2">
+<div class="font-mono text-xs text-[#737373]">05</div>
+<h3 class="text-base font-semibold text-black">Handover</h3>
+<p class="text-xs text-[#4A4A4A] leading-relaxed">
+                You receive the agreed deliverables, relevant documentation and a clear understanding of how the solution is operated.
+              </p>
+</div>
+<div class="font-mono text-[10px] text-[#A3A3A3] pt-4">PHASE: 05</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           5. ABOUT SECTION
+           ======================================================== -->
+<section class="py-24 border-b border-[#E5E5E5]" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-3">
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373]">[ 05 / ABOUT SARVOS ]</div>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">
+              Small enough to work closely. Technical enough to build properly.
+            </h2>
+</div>
+<div class="lg:col-span-7 space-y-6 lg:pl-6">
+<p class="text-lg text-[#4A4A4A] leading-relaxed font-normal">
+              SARVOS is a technology consultancy focused on building websites, software and digital systems around specific business needs. We work from requirements through implementation, testing and handover, with an emphasis on clear communication and maintainable results.
+            </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1 font-mono text-xs font-semibold text-black hover:opacity-70 transition-opacity" href="#contact">
+<span>More about SARVOS</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           6. FAQ ACCORDION (Interactive Vanilla JS, 1st expanded)
+           ======================================================== -->
+<section class="py-24 border-b border-[#E5E5E5]" id="faq">
+<div class="space-y-4 mb-12">
+<div class="font-mono text-[11px] uppercase tracking-[0.08em] text-[#737373]">[ 06 / COMMON QUESTIONS ]</div>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">Before we get started.</h2>
+</div>
+<div class="border-t border-[#E5E5E5] divide-y divide-[#E5E5E5] border-b">
+<!-- FAQ Item 1 (Expanded by default) -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>What kinds of projects do you take on?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">−</span>
+</button>
+<div class="faq-answer px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              We work on custom web applications, performant digital platforms, workflow automation, and specialized interactive tools where technical rigor and clear requirements matter.
+            </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>How much does a project cost?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">+</span>
+</button>
+<div class="faq-answer hidden px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              Engagements are scoped on a transparent fixed-deliverable or dedicated sprint basis depending on whether your specifications are fully defined or exploratory. We outline precise budgets prior to kickoff.
+            </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>How long does a project take?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">+</span>
+</button>
+<div class="faq-answer hidden px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              Timelines typically range from 2 to 4 weeks for focused performance audits and focused integrations, up to 8 to 12 weeks for bespoke full-stack platforms and complex digital systems.
+            </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>Can you improve an existing website or application?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">+</span>
+</button>
+<div class="faq-answer hidden px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              Yes. We regularly conduct refactors, Core Web Vitals optimization, database indexing, and API integrations into existing codebases with zero disruption to active production traffic.
+            </div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>Will I own the deliverables?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">+</span>
+</button>
+<div class="faq-answer hidden px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              Yes, absolutely. You receive 100% intellectual property ownership, full git repository access, code documentation, and deployment infrastructure configurations from day one.
+            </div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="faq-item">
+<button class="w-full py-5 px-2 flex items-center justify-between text-left text-base sm:text-lg font-medium text-black focus:outline-none hover:text-[#4A4A4A] transition-colors" onclick="toggleFaq(this)" type="button">
+<span>Can you help after launch?</span>
+<span class="faq-icon font-mono text-sm text-[#737373] pl-4">+</span>
+</button>
+<div class="faq-answer hidden px-2 pb-5 text-sm text-[#4A4A4A] leading-relaxed max-w-3xl">
+              We offer post-launch operational support, SLA agreements, and structured quarterly evolution retainers to ensure your system scales reliably alongside your business demands.
+            </div>
+</div>
+</div>
+</section>
+<!-- ========================================================
+           7. CTA BAND
+           ======================================================== -->
+<section class="py-24" id="contact">
+<div class="w-full rounded-xl border border-[#E5E5E5] bg-white p-8 sm:p-14 text-center max-w-3xl mx-auto space-y-6">
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black">
+            Tell us what needs building.
+          </h2>
+<p class="text-base text-[#4A4A4A] leading-relaxed max-w-xl mx-auto font-normal">
+            Share a little about the problem, your requirements and what a successful outcome would look like. We'll use that information to work out the next step.
+          </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 h-11 px-7 rounded-[8px] bg-black text-white text-sm font-medium hover:bg-neutral-800 transition-colors" href="mailto:contact@sarvos.studio">
+<span>Start a project</span>
+<span class="font-mono text-sm">↗</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- ========================================================
+       8. FOOTER
+       ======================================================== -->
+<footer class="w-full bg-[#FAFAFA] border-t border-[#E5E5E5] mt-12">
+<div class="max-w-[1200px] mx-auto px-6 md:px-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#E5E5E5]">
+<!-- Wordmark & Description -->
+<div class="md:col-span-6 space-y-4">
+<div class="space-y-1">
+<span class="font-sans text-lg font-semibold tracking-tight text-black">SARVOS</span>
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Independent Software &amp; Technology Studio</div>
+</div>
+<p class="text-sm text-[#4A4A4A] max-w-sm leading-relaxed">
+            SARVOS is a technology consultancy focused on building websites, software and digital systems around specific business needs.
+          </p>
+<div class="pt-1">
+<span class="font-mono text-xs text-[#737373]">
+              contact@sarvos.studio [email placeholder]
+            </span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="md:col-span-3 space-y-3">
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Navigation</div>
+<ul class="space-y-2 text-sm">
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#work">Work</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#services">Services</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#about">About</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#faq">Insights</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#contact">Contact</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div class="md:col-span-3 space-y-3">
+<div class="font-mono text-[11px] uppercase tracking-wider text-[#737373]">Legal</div>
+<ul class="space-y-2 text-sm">
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#4A4A4A] hover:text-black transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#737373]">
+<div>© 2025 SARVOS. All rights reserved.</div>
+<div>MONOCHROME TECHNICAL EDITORIAL SPEC</div>
+</div>
+</div>
+</footer>
+<!-- ========================================================
+       VANILLA JAVASCRIPT: Hero Tabs & Accordion
+       ======================================================== -->
+<script>
+    // Hero preview tab switcher (manual only)
+    function switchHeroTab(tabId, url, clickedBtn) {
+      // Hide all preview viewports
+      document.getElementById('view-telemetry').classList.add('hidden');
+      document.getElementById('view-spatial').classList.add('hidden');
+      document.getElementById('view-docutriage').classList.add('hidden');
+
+      // Show selected viewport
+      document.getElementById('view-' + tabId).classList.remove('hidden');
+
+      // Update browser URL
+      document.getElementById('browser-url').textContent = url;
+
+      // Update tab styles
+      const tabs = document.querySelectorAll('.hero-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('border-black', 'bg-white');
+        tab.classList.add('border-[#E5E5E5]', 'bg-[#FAFAFA]');
+        const label = tab.querySelector('.font-mono');
+        if (label) {
+          label.classList.remove('text-black', 'font-semibold');
+          label.classList.add('text-[#737373]');
+        }
+      });
+
+      clickedBtn.classList.remove('border-[#E5E5E5]', 'bg-[#FAFAFA]');
+      clickedBtn.classList.add('border-black', 'bg-white');
+      const activeLabel = clickedBtn.querySelector('.font-mono');
+      if (activeLabel) {
+        activeLabel.classList.remove('text-[#737373]');
+        activeLabel.classList.add('text-black', 'font-semibold');
+      }
+    }
+
+    // FAQ Accordion disclosure toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      const isHidden = answer.classList.contains('hidden');
+
+      if (isHidden) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+      } else {
+        answer.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
+  </script>
+</body></html>

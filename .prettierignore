@@ -1,0 +1,15 @@
+# Dependencies & build
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+pnpm-lock.yaml
+
+# Design reference & raw exports
+screens/
+design-reference/
+
+# Generated types
+next-env.d.ts

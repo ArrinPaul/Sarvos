@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-high": "#e8e8e8",
+        "secondary-fixed": "#e3e2e2",
+        "on-secondary-fixed": "#1b1c1c",
+        "outline-variant": "#cfc4c5",
+        "surface-tint": "#5e5e5e",
+        "on-error-container": "#93000a",
+        "on-secondary-container": "#646464",
+        "secondary": "#5e5e5e",
+        "tertiary": "#000000",
+        "on-tertiary-fixed-variant": "#474747",
+        "on-surface-variant": "#4c4546",
+        "surface-bright": "#f9f9f9",
+        "surface-container": "#eeeeee",
+        "tertiary-fixed": "#e2e2e2",
+        "on-primary": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "surface-container-low": "#f3f3f3",
+        "surface-container-lowest": "#ffffff",
+        "on-background": "#1a1c1c",
+        "background": "#f9f9f9",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#1b1b1b",
+        "primary": "#000000",
+        "secondary-container": "#e3e2e2",
+        "primary-fixed-dim": "#c6c6c6",
+        "primary-fixed": "#e2e2e2",
+        "on-primary-fixed-variant": "#474747",
+        "error": "#ba1a1a",
+        "secondary-fixed-dim": "#c7c6c6",
+        "on-secondary": "#ffffff",
+        "on-secondary-fixed-variant": "#464747",
+        "surface-container-highest": "#e2e2e2",
+        "inverse-surface": "#2f3131",
+        "on-surface": "#1a1c1c",
+        "tertiary-fixed-dim": "#c6c6c6",
+        "inverse-on-surface": "#f0f1f1",
+        "outline": "#7e7576",
+        "surface": "#f9f9f9",
+        "primary-container": "#1b1b1b",
+        "inverse-primary": "#c6c6c6",
+        "error-container": "#ffdad6",
+        "surface-dim": "#dadada",
+        "on-primary-container": "#848484",
+        "tertiary-container": "#1b1b1b",
+        "on-tertiary-container": "#848484",
+        "on-tertiary-fixed": "#1b1b1b",
+        "surface-variant": "#e2e2e2"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter": "3rem",
+        "gutter-tablet": "2rem",
+        "margin": "3rem",
+        "space-xl": "2rem",
+        "margin-mobile": "1.25rem",
+        "space-lg": "1.5rem",
+        "gutter-mobile": "1.25rem",
+        "space-xs": "0.25rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem"
+      },
+      "fontFamily": {
+        "headline-sm": ["Geist"],
+        "display": ["Geist"],
+        "headline-lg": ["Geist"],
+        "body-lg": ["Geist"],
+        "label-mono-sm": ["JetBrains Mono"],
+        "display-mobile": ["Geist"],
+        "headline-md": ["Geist"],
+        "body-md": ["Geist"],
+        "body-sm": ["Geist"],
+        "label-mono-md": ["JetBrains Mono"],
+        "headline-lg-mobile": ["Geist"]
+      },
+      "fontSize": {
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+        "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "label-mono-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+        "display-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+        "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-mono-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-surface-container-highest"><div class="h-16 max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm group text-primary" data-path="home" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight">SARVOS</span><span class="font-label-mono-sm text-label-mono-sm px-space-xs py-[2px] bg-surface-container border border-surface-container-highest text-secondary rounded">EST. 2024</span></a></div><nav class="hidden md:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-medium border-b-2 border-primary"><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="home" href="#">Home</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="work" href="#">Work</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="services" href="#">Services</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="about" href="#">About</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="insights" href="#">Insights</a><a class="inline-flex items-center h-full text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><button aria-label="Toggle system theme" class="w-9 h-9 flex items-center justify-center rounded-lg border border-surface-container-highest bg-surface hover:bg-surface-container-low text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><a class="group inline-flex items-center gap-space-xs h-10 px-space-md rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium transition-all duration-150 hover:bg-tertiary-container hover:text-on-tertiary" data-path="contact" href="#"><span>Start a project</span><span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<div class="max-w-[1200px] mx-auto w-full px-margin-mobile md:px-gutter-tablet lg:px-margin">
+<!-- EYEBROW & PAGE HEADER -->
+<header class="pt-space-xl pb-space-lg">
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm uppercase text-secondary">
+<span class="text-primary font-semibold">[ 02 / SERVICES &amp; CAPABILITIES ]</span>
+<span class="text-surface-container-highest">/</span>
+<span>END-TO-END TECHNICAL ARCHITECTURE &amp; EXECUTION</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end mt-space-md">
+<div class="lg:col-span-8">
+<h1 class="font-display text-display text-primary tracking-tight">
+            Disciplined engineering for complex systems.
+          </h1>
+</div>
+<div class="lg:col-span-4 lg:pl-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            We work across modern web platforms, distributed backends, practical intelligence systems, and spatial computing. Every engagement is led directly by principal engineers with clear technical roadmaps and transparent deliverables.
+          </p>
+</div>
+</div>
+</header>
+<!-- SLA / TELEMETRY BANNER -->
+<section class="mb-space-xl">
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-1">ENGAGEMENT MODEL</span>
+<span class="font-body-md text-body-md text-primary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              DIRECT PRINCIPAL
+            </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-1">CONTRACT CADENCE</span>
+<span class="font-body-md text-body-md text-primary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              SPRINT OR FIXED-PHASE
+            </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-1">CODE CADENCE</span>
+<span class="font-body-md text-body-md text-primary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              REPRODUCIBLE BUILDS
+            </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-1">HANDOVER PROTOCOL</span>
+<span class="font-body-md text-body-md text-primary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              COMPLETE IP &amp; REPOS
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION TITLE: SERVICES INVENTORY -->
+<div class="flex items-center justify-between pb-space-sm mb-space-lg">
+<span class="font-label-mono-md text-label-mono-md uppercase tracking-wider text-primary font-medium">CORE CAPABILITY MATRIX</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">[ INDEX 01 – 04 ]</span>
+</div>
+<!-- THE FOUR SERVICES -->
+<div class="flex flex-col gap-space-xl mb-space-xl">
+<!-- SERVICE 01 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg sm:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary uppercase mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">[ SERVICE.01 ]</span>
+<span>01 // ARCHITECTURE &amp; FRONTEND SYSTEMS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs mb-space-sm">
+                Websites &amp; Custom Software
+              </h2>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+                Flagship digital platforms and business-critical web applications.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-space-md">
+                Custom software engineered around real operating workflows. From public-facing flagship platforms with sub-second rendering to multi-tenant operational tools, secure internal portals, and transactional infrastructure.
+              </p>
+</div>
+<!-- Deliverables & Tech stack -->
+<div class="space-y-space-md">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">DELIVERABLES SCOPE</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Business Websites</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Web Applications</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Admin Tooling</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Headless CMS Architecture</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Custom Portals</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">High-Throughput APIs</span>
+</div>
+</div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">TECHNICAL STACK</span>
+<p class="font-label-mono-md text-label-mono-md text-primary">
+                  TypeScript, React / Next.js, Go, PostgreSQL, Edge Caching, Web Standards
+                </p>
+</div>
+<div class="pt-space-xs">
+<a class="group inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:text-secondary transition-colors" data-path="services/websites-software" href="#">
+<span>Explore service specification</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Schematic Visual 01 -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary pb-space-xs">
+<span>TOPOLOGY // LATENCY &lt; 40MS</span>
+<span>VERIFIED.SEC</span>
+</div>
+<div class="my-space-md">
+<svg class="w-full h-44 text-primary" fill="none" viewbox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Background Grid Coordinates -->
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.08" x1="20" x2="400" y1="30" y2="30"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.08" x1="20" x2="400" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.08" x1="20" x2="400" y1="150" y2="150"></line>
+<!-- Pipeline Path -->
+<path d="M 40 90 L 120 90 L 170 45 L 250 45 L 300 90 L 380 90" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M 120 90 L 170 135 L 250 135 L 300 90" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Nodes -->
+<circle cx="40" cy="90" fill="currentColor" r="5"></circle>
+<circle cx="120" cy="90" fill="currentColor" r="4"></circle>
+<circle cx="170" cy="45" fill="currentColor" r="4"></circle>
+<circle cx="250" cy="45" fill="currentColor" r="4"></circle>
+<circle cx="170" cy="135" fill="currentColor" r="4"></circle>
+<circle cx="250" cy="135" fill="currentColor" r="4"></circle>
+<circle cx="300" cy="90" fill="currentColor" r="4"></circle>
+<circle cx="380" cy="90" fill="currentColor" r="6"></circle>
+<!-- Labels -->
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="40" y="112">INGRESS</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="210" y="38">EDGE CACHE [SSR]</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="210" y="152">POSTGRES / DB SYNC</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="380" y="112">DOM READY</text>
+</svg>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded font-label-mono-sm text-label-mono-sm flex items-center justify-between text-secondary">
+<span>RUNTIME: HYBRID EDGE WORKERS</span>
+<span class="text-primary font-semibold">100% LIGHTHOUSE COMPLIANT</span>
+</div>
+</div>
+</div>
+</article>
+<!-- SERVICE 02 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg sm:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary uppercase mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">[ SERVICE.02 ]</span>
+<span>02 // INTELLIGENCE &amp; DETERMINISTIC PIPELINES</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs mb-space-sm">
+                AI &amp; Workflow Automation
+              </h2>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+                Practical automation and deterministic intelligence systems.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-space-md">
+                Eliminating repetitive human triage and connecting disparate business tools. We implement vector search, verifiable document processing pipelines, and deterministic agent workflows without hallucinations or black-box failures.
+              </p>
+</div>
+<div class="space-y-space-md">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">DELIVERABLES SCOPE</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Vector Search Engines</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Structured Document Ingestion</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Queue Automation</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Schema Extraction</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Slack/Email Triage Bots</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">API Orchestration</span>
+</div>
+</div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">TECHNICAL STACK</span>
+<p class="font-label-mono-md text-label-mono-md text-primary">
+                  Python, pgvector, FastAPI, LangChain / LlamaIndex, Celery, Redis
+                </p>
+</div>
+<div class="pt-space-xs">
+<a class="group inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:text-secondary transition-colors" data-path="services/automation" href="#">
+<span>Explore service specification</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Schematic Visual 02 -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary pb-space-xs">
+<span>PIPELINE // ZERO-HALLUCINATION VERIFIER</span>
+<span>STATE: DETERMINISTIC</span>
+</div>
+<div class="my-space-md">
+<svg class="w-full h-44 text-primary" fill="none" viewbox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Data Stream Grid -->
+<rect fill="currentColor" fill-opacity="0.05" height="120" rx="4" stroke="currentColor" stroke-width="1" width="80" x="30" y="30"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle" x="70" y="55">INPUT</text>
+<line stroke="currentColor" stroke-opacity="0.4" x1="45" x2="95" y1="75" y2="75"></line>
+<line stroke="currentColor" stroke-opacity="0.4" x1="45" x2="85" y1="95" y2="95"></line>
+<line stroke="currentColor" stroke-opacity="0.4" x1="45" x2="90" y1="115" y2="115"></line>
+<!-- Arrow 1 -->
+<path d="M 120 90 L 160 90" stroke="currentColor" stroke-width="1.5"></path>
+<polygon fill="currentColor" points="160,87 167,90 160,93"></polygon>
+<!-- Transformer Core -->
+<rect fill="currentColor" fill-opacity="0.08" height="90" rx="4" stroke="currentColor" stroke-width="1.5" width="90" x="175" y="45"></rect>
+<circle cx="220" cy="80" r="16" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5"></circle>
+<circle cx="220" cy="80" fill="currentColor" r="4"></circle>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="220" y="118">EMBEDDING</text>
+<!-- Arrow 2 -->
+<path d="M 275 90 L 315 90" stroke="currentColor" stroke-width="1.5"></path>
+<polygon fill="currentColor" points="315,87 322,90 315,93"></polygon>
+<!-- Output Matrix -->
+<rect fill="currentColor" height="120" rx="4" stroke="currentColor" stroke-width="1" width="60" x="330" y="30"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="8" font-weight="600" text-anchor="middle" x="360" y="55">VALIDATED</text>
+<circle cx="360" cy="80" fill="#ffffff" r="8"></circle>
+<path d="M 356 80 L 359 83 L 365 77" stroke="#000000" stroke-width="1.5"></path>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="360" y="105">OUTPUT</text>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="360" y="125">JSON SCHEMA</text>
+</svg>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded font-label-mono-sm text-label-mono-sm flex items-center justify-between text-secondary">
+<span>EXTRACTION ACCURACY: 99.8%</span>
+<span class="text-primary font-semibold">HUMAN-IN-THE-LOOP OPTION</span>
+</div>
+</div>
+</div>
+</article>
+<!-- SERVICE 03 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg sm:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary uppercase mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">[ SERVICE.03 ]</span>
+<span>03 // SPATIAL COMPUTING &amp; REAL-TIME GRAPHICS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs mb-space-sm">
+                Virtual Tours &amp; Interactive Experiences
+              </h2>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+                Interactive 3D environments and immersive browser visualizers.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-space-md">
+                High-performance WebGL and Three.js applications that bring physical places, complex equipment assemblies, and technical spatial data directly into standard browsers without plugins or heavy loading screens.
+              </p>
+</div>
+<div class="space-y-space-md">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">DELIVERABLES SCOPE</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Interactive WebGL Showcases</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">3D Asset Inspection</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">CAD Mesh Decimation</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Geospatial Mapping Portals</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Virtual Spatial Walkthroughs</span>
+</div>
+</div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">TECHNICAL STACK</span>
+<p class="font-label-mono-md text-label-mono-md text-primary">
+                  WebGL, Three.js, GLSL Shaders, WebAssembly, WebGPU, TypeScript
+                </p>
+</div>
+<div class="pt-space-xs">
+<a class="group inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:text-secondary transition-colors" data-path="services/spatial" href="#">
+<span>Explore service specification</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Schematic Visual 03 -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary pb-space-xs">
+<span>VIEWPORT // 60 FPS RENDER LOOP</span>
+<span>DRACO / KTX2 READY</span>
+</div>
+<div class="my-space-md">
+<svg class="w-full h-44 text-primary" fill="none" viewbox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Isometric Cube / Wireframe Assembly -->
+<!-- Front/Back Wireframe Box -->
+<path d="M 210 25 L 310 75 L 210 125 L 110 75 Z" fill="currentColor" fill-opacity="0.03" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M 110 75 L 110 135 L 210 175 L 210 125" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M 310 75 L 310 135 L 210 175" stroke="currentColor" stroke-width="1.5"></path>
+<!-- Internal Grid Planes -->
+<line stroke="currentColor" stroke-dasharray="2 3" stroke-opacity="0.3" x1="160" x2="260" y1="50" y2="100"></line>
+<line stroke="currentColor" stroke-dasharray="2 3" stroke-opacity="0.3" x1="260" x2="160" y1="50" y2="100"></line>
+<!-- Center Pivot -->
+<circle cx="210" cy="100" fill="currentColor" r="3"></circle>
+<!-- Rotation Orbit Ring -->
+<ellipse cx="210" cy="100" rx="130" ry="40" stroke="currentColor" stroke-dasharray="4 6" stroke-opacity="0.25"></ellipse>
+<!-- Coordinate Indicators -->
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" x="325" y="80">+X</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="210" y="18">+Y (UP)</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="95" y="80">+Z</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" x="50" y="160">TRI COUNT: 284.1K</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="370" y="160">DRAW CALLS: 12</text>
+</svg>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded font-label-mono-sm text-label-mono-sm flex items-center justify-between text-secondary">
+<span>TARGET HARDWARE: MOBILE &amp; DESKTOP</span>
+<span class="text-primary font-semibold">NO-PLUGIN BROWSER EXEC</span>
+</div>
+</div>
+</div>
+</article>
+<!-- SERVICE 04 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg sm:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary uppercase mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">[ SERVICE.04 ]</span>
+<span>04 // INFRASTRUCTURE &amp; PERFORMANCE AUDITING</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs mb-space-sm">
+                SEO &amp; Website Improvement
+              </h2>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+                Rigorous performance tuning, Core Web Vitals, and structural discoverability.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-space-md">
+                Transforming sluggish, poorly indexed web systems into resilient, high-speed platforms. We audit legacy bottlenecks, refactor asset delivery pipelines, achieve flawless 100/100 Lighthouse scores, and establish semantic structured metadata.
+              </p>
+</div>
+<div class="space-y-space-md">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">DELIVERABLES SCOPE</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Core Web Vitals Remediation</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Lighthouse 100 Audits</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">SSR / Edge Optimization</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Structured Schema Data</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Headless Migration</span>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-normal">Security Hardening</span>
+</div>
+</div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-space-xs">TECHNICAL STACK</span>
+<p class="font-label-mono-md text-label-mono-md text-primary">
+                  Performance Profiling, Edge Workers, Lighthouse CI, HTTP/3, Brotli / AVIF Pipelines
+                </p>
+</div>
+<div class="pt-space-xs">
+<a class="group inline-flex items-center gap-space-xs font-body-md text-body-md font-medium text-primary hover:text-secondary transition-colors" data-path="services/performance" href="#">
+<span>Explore service specification</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Schematic Visual 04 -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary pb-space-xs">
+<span>CORE WEB VITALS // BENCHMARK</span>
+<span>AUDIT SCORE: 100/100</span>
+</div>
+<div class="my-space-md">
+<svg class="w-full h-44 text-primary" fill="none" viewbox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Gauge / Metrics Grid -->
+<!-- Metric 1: LCP -->
+<circle cx="80" cy="80" r="38" stroke="currentColor" stroke-opacity="0.12" stroke-width="6"></circle>
+<circle cx="80" cy="80" r="38" stroke="currentColor" stroke-dasharray="238" stroke-dashoffset="20" stroke-width="6"></circle>
+<text fill="currentColor" font-family="Geist" font-size="16" font-weight="600" text-anchor="middle" x="80" y="78">0.4s</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="80" y="94">LCP [PASS]</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="80" y="145">LARGEST PAINT</text>
+<!-- Metric 2: INP -->
+<circle cx="210" cy="80" r="38" stroke="currentColor" stroke-opacity="0.12" stroke-width="6"></circle>
+<circle cx="210" cy="80" r="38" stroke="currentColor" stroke-dasharray="238" stroke-dashoffset="15" stroke-width="6"></circle>
+<text fill="currentColor" font-family="Geist" font-size="16" font-weight="600" text-anchor="middle" x="210" y="78">18ms</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="210" y="94">INP [PASS]</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="210" y="145">INTERACTION</text>
+<!-- Metric 3: CLS -->
+<circle cx="340" cy="80" r="38" stroke="currentColor" stroke-opacity="0.12" stroke-width="6"></circle>
+<circle cx="340" cy="80" r="38" stroke="currentColor" stroke-dasharray="238" stroke-dashoffset="8" stroke-width="6"></circle>
+<text fill="currentColor" font-family="Geist" font-size="16" font-weight="600" text-anchor="middle" x="340" y="78">0.00</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="340" y="94">CLS [PASS]</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="340" y="145">LAYOUT SHIFT</text>
+</svg>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded font-label-mono-sm text-label-mono-sm flex items-center justify-between text-secondary">
+<span>SEARCH CONSOLE COMPLIANT</span>
+<span class="text-primary font-semibold">ZERO REGRESSION AUDIT CI</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- HOW WE WORK / ENGAGEMENT PRINCIPLES -->
+<section class="mb-space-xl">
+<div class="pb-space-sm mb-space-md flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-secondary block mb-1">
+            [ COMPARATIVE OPERATING METHODOLOGY ]
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+            How we operate vs. traditional consultancies.
+          </h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">CONTRACTUAL INTEGRITY GUARANTEE</span>
+</div>
+<!-- Comparative Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="grid grid-cols-12 bg-surface-container-low px-space-lg py-space-sm font-label-mono-sm text-label-mono-sm uppercase text-secondary">
+<div class="col-span-3 sm:col-span-2">OPERATING AXIS</div>
+<div class="col-span-5 sm:col-span-5 text-primary font-semibold">THE SARVOS APPROACH</div>
+<div class="col-span-4 sm:col-span-5 text-secondary">TRADITIONAL AGENCIES</div>
+</div>
+<div class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 px-space-lg py-space-md items-start">
+<div class="col-span-3 sm:col-span-2 font-label-mono-sm text-label-mono-sm text-secondary font-medium pt-0.5">
+              SCOPE &amp; CADENCE
+            </div>
+<div class="col-span-5 sm:col-span-5 pr-space-md">
+<span class="font-body-md text-body-md text-primary font-medium block">Fixed, deterministic milestone phases.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Explicit deliverables, bounded sprints, zero unbudgeted scope drift.</span>
+</div>
+<div class="col-span-4 sm:col-span-5 text-secondary">
+<span class="font-body-md text-body-md text-secondary block">Unbounded time &amp; materials drift.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Vague estimates leading to endless change orders.</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 px-space-lg py-space-md items-start">
+<div class="col-span-3 sm:col-span-2 font-label-mono-sm text-label-mono-sm text-secondary font-medium pt-0.5">
+              ENGINEERING TALENT
+            </div>
+<div class="col-span-5 sm:col-span-5 pr-space-md">
+<span class="font-body-md text-body-md text-primary font-medium block">Principal engineers write the production code.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Senior technical leadership directly architects and commits the implementation.</span>
+</div>
+<div class="col-span-4 sm:col-span-5 text-secondary">
+<span class="font-body-md text-body-md text-secondary block">Account managers &amp; offshore tiers.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Pitch-team handoffs to inexperienced junior developers.</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 px-space-lg py-space-md items-start">
+<div class="col-span-3 sm:col-span-2 font-label-mono-sm text-label-mono-sm text-secondary font-medium pt-0.5">
+              TELEMETRY
+            </div>
+<div class="col-span-5 sm:col-span-5 pr-space-md">
+<span class="font-body-md text-body-md text-primary font-medium block">Live Git repositories &amp; continuous preview URLs.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Direct async engineering chat, automated test runs, observable build pipelines.</span>
+</div>
+<div class="col-span-4 sm:col-span-5 text-secondary">
+<span class="font-body-md text-body-md text-secondary block">Bi-weekly status PDF reports.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Opaque staging environments and bureaucratic status calls.</span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 px-space-lg py-space-md items-start">
+<div class="col-span-3 sm:col-span-2 font-label-mono-sm text-label-mono-sm text-secondary font-medium pt-0.5">
+              IP &amp; ASSET RIGHTS
+            </div>
+<div class="col-span-5 sm:col-span-5 pr-space-md">
+<span class="font-body-md text-body-md text-primary font-medium block">Complete source, docs, and infra ownership from Day 1.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">All artifacts deployed directly into your own cloud accounts with zero retention.</span>
+</div>
+<div class="col-span-4 sm:col-span-5 text-secondary">
+<span class="font-body-md text-body-md text-secondary block">Proprietary lock-in &amp; hostage repos.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Vendor lock-in on custom CMS engines or agency-hosted servers.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BOTTOM CALL TO ACTION -->
+<section class="bg-primary text-on-primary rounded-xl p-space-lg sm:p-space-xl mb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 space-y-space-xs">
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm uppercase text-surface-dim">
+<span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+<span>CAPACITY AVAILABLE FOR Q2/Q3 TECHNICAL INITIATIVES</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-medium tracking-tight text-on-primary">
+            Have an ambitious technical requirement?
+          </h2>
+<p class="font-body-md text-body-md text-on-primary-container max-w-xl">
+            We review technical specifications, architecture blueprints, and complex legacy challenges directly with your technical founders and engineering leadership.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-space-sm">
+<a class="group inline-flex items-center justify-center gap-space-xs h-11 px-space-lg rounded-lg bg-surface text-primary font-body-md text-body-md font-medium transition-all duration-150 hover:bg-surface-container-low shadow-sm" data-path="contact" href="#">
+<span>Discuss your project with an engineer</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+<span class="font-label-mono-sm text-label-mono-sm text-surface-dim">AVG RESPONSE LATENCY: &lt; 4 HOURS</span>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface border-t border-surface-container-highest"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl border-b border-surface-container-highest"><div class="md:col-span-5 flex flex-col justify-between space-y-space-md"><div class="space-y-space-xs"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">SARVOS</span><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Independent software and technology consultancy. Architecting resilient systems, digital flagships, and deterministically engineered web platforms.</p></div><div class="space-y-space-xs"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Direct Inquiry</div><a class="font-body-md text-body-md text-primary hover:underline flex items-center gap-space-xs" href="mailto:inquiries@sarvos.engineering"><span class="material-symbols-outlined text-[16px] text-secondary">mail</span><span>inquiries@sarvos.engineering</span></a></div><div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary"><span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span><span>ALL SYSTEMS OPERATIONAL</span></div></div><div class="md:col-span-4 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Capabilities</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Websites &amp; Flagship Platforms</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Full-stack Web Applications</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Workflow &amp; Pipeline Automation</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Performance Tuning &amp; SEO</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer">Custom API &amp; Cloud Integrations</li></ul></div><div class="md:col-span-3 space-y-space-sm"><div class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-secondary">Navigation</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="text-on-surface-variant hover:text-on-surface" data-path="home" href="#">Home</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="work" href="#">Selected Work</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="services" href="#">Services &amp; Scope</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="about" href="#">About Studio</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="insights" href="#">Technical Insights</a></li><li><a class="text-on-surface-variant hover:text-on-surface" data-path="contact" href="#">Contact &amp; Enquiry</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm text-secondary"><div class="flex items-center gap-space-sm"><span>© 2024 SARVOS ENGINEERING GMBH.</span><span>ALL RIGHTS RESERVED.</span></div><div class="flex items-center gap-space-md"><span>STUDIO AVAILABILITY: UTC+1 / CET</span><span>LATENCY: &lt;18MS</span></div></div></div></footer></body></html>

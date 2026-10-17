@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-lowest":"#ffffff","tertiary-fixed":"#e2e2e2","secondary-container":"#e3e2e2","error":"#ba1a1a","on-tertiary-fixed":"#1b1b1b","secondary-fixed-dim":"#c7c6c6","surface":"#f9f9f9","on-tertiary":"#ffffff","surface-tint":"#5e5e5e","secondary-fixed":"#e3e2e2","surface-container-highest":"#e2e2e2","primary":"#000000","on-primary-container":"#848484","background":"#f9f9f9","inverse-surface":"#2f3131","surface-container-high":"#e8e8e8","on-secondary-fixed":"#1b1c1c","inverse-primary":"#c6c6c6","on-error-container":"#93000a","on-secondary-container":"#646464","outline":"#7e7576","primary-container":"#1b1b1b","tertiary":"#000000","surface-container":"#eeeeee","inverse-on-surface":"#f0f1f1","surface-container-low":"#f3f3f3","on-primary-fixed-variant":"#474747","primary-fixed-dim":"#c6c6c6","on-primary":"#ffffff","tertiary-container":"#1b1b1b","on-tertiary-fixed-variant":"#474747","on-error":"#ffffff","surface-bright":"#f9f9f9","surface-dim":"#dadada","error-container":"#ffdad6","on-surface-variant":"#4c4546","surface-variant":"#e2e2e2","on-background":"#1a1c1c","on-surface":"#1a1c1c","primary-fixed":"#e2e2e2","tertiary-fixed-dim":"#c6c6c6","on-secondary":"#ffffff","on-primary-fixed":"#1b1b1b","on-tertiary-container":"#848484","outline-variant":"#cfc4c5","on-secondary-fixed-variant":"#464747","secondary":"#5e5e5e"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","gutter":"3rem","gutter-tablet":"2rem","margin":"3rem","space-md":"1rem","gutter-mobile":"1.25rem","space-xs":"0.25rem","margin-mobile":"1.25rem","space-sm":"0.5rem","space-lg":"1.5rem"},fontFamily:{"headline-sm":["Geist"],"headline-lg":["Geist"],"body-lg":["Geist"],"display-mobile":["Geist"],"display":["Geist"],"body-md":["Geist"],"headline-md":["Geist"],"headline-lg-mobile":["Geist"],"label-mono-sm":["JetBrains Mono"],"body-sm":["Geist"],"label-mono-md":["JetBrains Mono"]},fontSize:{"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-mobile":["36px",{"lineHeight":"42px","letterSpacing":"-0.03em","fontWeight":"600"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.04em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"500"}],"label-mono-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-container-highest"><div class="h-16 max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="font-headline-sm text-headline-sm tracking-tight text-primary uppercase font-bold" data-path="work" href="#">SARVOS</a><span class="hidden lg:inline-block font-label-mono-sm text-label-mono-sm text-on-surface-variant border border-outline-variant px-space-xs py-0.5 rounded">SYS.SPEC v4.2</span></div><nav class="hidden md:flex items-center gap-space-md" data-active-classes="text-primary font-bold border-b border-primary"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="work" href="#">Work</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="services" href="#">Services</a><a aria-current="page" class="transition-colors py-1 text-primary font-bold border-b border-primary" data-path="about" href="#">About</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="insights" href="#">Insights</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Toggle theme" class="w-10 h-10 border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors rounded"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><a class="hidden sm:inline-flex items-center justify-center h-10 px-space-md bg-primary text-on-primary font-body-md text-body-md hover:bg-opacity-90 transition-opacity border border-transparent rounded" data-path="contact" href="#">Start a project ↗</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Spec Bar / Breadcrumb Telemetry -->
+<div class="flex flex-wrap items-center justify-between py-space-sm border-b border-surface-container-highest text-secondary font-label-mono-sm text-label-mono-sm tracking-widest uppercase">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>SYS.DOC: 03_ABOUT_PRACTICE</span>
+<span class="text-outline-variant">/</span>
+<span>REV. 2025.04</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>DISTRIBUTION: PUBLIC RELEASE</span>
+<span class="hidden sm:inline text-outline-variant">|</span>
+<span class="hidden sm:inline">LOC: NYC // 40.7128° N, 74.0060° W</span>
+</div>
+</div>
+<!-- Hero / Manifest Header -->
+<section class="py-space-xl border-b border-surface-container-highest relative">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-space-xs px-space-xs py-0.5 mb-space-md bg-surface-container border border-outline-variant rounded font-label-mono-sm text-label-mono-sm text-primary tracking-wider uppercase">
+<span>[ 03 / STUDIO & METHODOLOGY ]</span>
+<span class="text-secondary">//</span>
+<span class="text-secondary">INDEPENDENT ENGINEERING PRACTICE</span>
+</div>
+<h1 class="font-display text-display text-primary tracking-tight font-semibold mb-space-lg leading-tight">
+        Small enough to work closely.<br/>
+<span class="text-secondary font-normal">Technical enough to build properly.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+        SARVOS is an independent technology consultancy focused on building websites, software and digital systems around specific business needs. We work from requirements through implementation, testing and handover, with an emphasis on clear communication and maintainable results.
+      </p>
+</div>
+<!-- Editorial Blueprint Metric Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-0 mt-space-xl border border-surface-container-highest bg-surface-container-lowest">
+<div class="p-space-lg border-b md:border-b-0 border-r border-surface-container-highest flex flex-col justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">RATIO: ARCHITECT TO CODE</span>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">1 : 1</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Zero non-technical intermediaries</p>
+</div>
+</div>
+<div class="p-space-lg border-b md:border-b-0 md:border-r border-surface-container-highest flex flex-col justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">CODE DISPOSITION</span>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">100%</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Client IP assignment on day one</p>
+</div>
+</div>
+<div class="p-space-lg border-r border-surface-container-highest flex flex-col justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">TEST PARITY</span>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">> 92%</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Automated determinism benchmark</p>
+</div>
+</div>
+<div class="p-space-lg flex flex-col justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">HANDOVER VELOCITY</span>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg font-semibold text-primary">0 LOC</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Proprietary lock-in modules</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Core Approach & Philosophy -->
+<section class="py-space-xl border-b border-surface-container-highest">
+<div class="flex flex-col md:flex-row md:items-baseline justify-between mb-space-lg">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase tracking-widest">[ SECTION 01 // OPERATING DOCTRINE ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs font-semibold">Core Approach & Philosophy</h2>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary mt-space-xs md:mt-0">
+        RULEBOOK SPECIFICATION: PR-019
+      </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-surface-container-highest bg-surface-container-lowest">
+<!-- Item 1 -->
+<div class="p-space-lg border-b md:border-b-0 md:border-r border-surface-container-highest flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-surface-container-highest mb-space-md">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">01 / DIRECT_ACCESS</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight mb-space-sm font-semibold">
+            Direct Engineering Leadership
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Zero layers of account executives, non-technical project handlers, or outsourced subcontract pools. You collaborate directly with the engineers architecting, writing, and committing the production codebase.
+          </p>
+</div>
+<div class="pt-space-lg mt-space-lg border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary flex items-center justify-between">
+<span>PIPELINE: DIRECT SLACK / PRs</span>
+<span class="font-mono text-primary">[UNFILTERED]</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-lg border-b md:border-b-0 md:border-r border-surface-container-highest flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-surface-container-highest mb-space-md">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">02 / ZERO_NOISE</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">data_object</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight mb-space-sm font-semibold">
+            Plain Technical Clarity
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            No buzzwords, vague abstractions, or speculative architectures built to pad billing statements. Every technical primitive, library, and cloud resource is rigorously justified against actual operational scale.
+          </p>
+</div>
+<div class="pt-space-lg mt-space-lg border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary flex items-center justify-between">
+<span>PARADIGM: PRAGMATIC MONOLITHS & EDGES</span>
+<span class="font-mono text-primary">[RATIONED]</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-lg flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-surface-container-highest mb-space-md">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">03 / SUSTAINABILITY</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight mb-space-sm font-semibold">
+            Long-term Maintainability
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            We write clean, strictly-typed TypeScript, idiomatic Go, and Python. We ship comprehensive test harnesses, self-documenting APIs, zero lock-in orchestration, and fully reproducible build environments.
+          </p>
+</div>
+<div class="pt-space-lg mt-space-lg border-t border-surface-container-highest font-label-mono-sm text-label-mono-sm text-secondary flex items-center justify-between">
+<span>STACK: TS • GO • PY • OCI</span>
+<span class="font-mono text-primary">[PORTABLE]</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Communication Principles & Protocols -->
+<section class="py-space-xl border-b border-surface-container-highest">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-4 flex flex-col justify-between">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase tracking-widest">[ SECTION 02 // RIGOR ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs font-semibold">
+            Communication Principles
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-md leading-relaxed">
+            High-integrity engineering cannot survive on vague weekly status decks. We replace ritualistic meetings with deterministic artifacts, automated feedback loops, and verifiable system checkpoints.
+          </p>
+</div>
+<!-- Live Protocol Spec Box -->
+<div class="mt-space-lg p-space-md bg-surface-container border border-surface-container-highest rounded">
+<div class="font-label-mono-sm text-label-mono-sm text-primary font-bold uppercase mb-1">AUDIT GUARANTEE</div>
+<div class="font-body-sm text-body-sm text-secondary">
+            Any stakeholder can verify deployment state at any time via branch-level staging instances and automated SHA-256 provenance tags.
+          </div>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col border border-surface-container-highest bg-surface-container-lowest">
+<!-- Principle 1 -->
+<div class="p-space-lg border-b border-surface-container-highest flex flex-col sm:flex-row gap-space-md items-start">
+<div class="font-label-mono-md text-label-mono-md font-bold px-2 py-1 bg-surface-container text-primary border border-outline-variant shrink-0">
+            01
+          </div>
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Continuous Asynchronous Telemetry</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container px-2 py-0.5 rounded">CADENCE: BI-WEEKLY + LIVE PREVIEW</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Every PR triggers isolated preview environments. Stakeholders review actual running code with linked Git commit logs rather than slideware summaries. Decisions happen transparently in version control.
+            </p>
+</div>
+</div>
+<!-- Principle 2 -->
+<div class="p-space-lg border-b border-surface-container-highest flex flex-col sm:flex-row gap-space-md items-start">
+<div class="font-label-mono-md text-label-mono-md font-bold px-2 py-1 bg-surface-container text-primary border border-outline-variant shrink-0">
+            02
+          </div>
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Deterministic Handover Protocols</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container px-2 py-0.5 rounded">STATUS: CONTINUOUS REPO RIGHTS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Complete intellectual property and source repository ownership transfer occurs on initialization. We ship runnable Docker runbooks, CI/CD automated deployment scripts, and architecture ADR records (Architectural Decision Records).
+            </p>
+</div>
+</div>
+<!-- Principle 3 -->
+<div class="p-space-lg flex flex-col sm:flex-row gap-space-md items-start">
+<div class="font-label-mono-md text-label-mono-md font-bold px-2 py-1 bg-surface-container text-primary border border-outline-variant shrink-0">
+            03
+          </div>
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Rigorous Scoping Before Execution</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container px-2 py-0.5 rounded">POLICY: ANTI-DRIFT SCOPING</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Fixed-phase milestone architecture bounded strictly by algorithmic complexity and systemic surface area. We do not engage in indefinite billable sprint inflation; work begins only once interfaces and dependencies are fully specified.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Delivery Process (5-Stage Technical Lifecycle) -->
+<section class="py-space-xl border-b border-surface-container-highest">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase tracking-widest">[ SECTION 03 // EXECUTION LIFECYCLE ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs font-semibold">
+          Delivery Process & Operational Gates
+        </h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary mt-space-xs md:mt-0">STRICT WATERFALL-AGILE HYBRID PIPELINE</span>
+</div>
+<!-- 5-Stage Blueprint Table / Responsive Grid -->
+<div class="border border-surface-container-highest bg-surface-container-lowest divide-y divide-surface-container-highest">
+<!-- Stage 01 -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start hover:bg-surface-container-low transition-colors">
+<div class="lg:col-span-2 flex items-center gap-space-sm">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">STAGE 01</span>
+<span class="px-2 py-0.5 bg-surface-container rounded text-primary font-label-mono-sm text-label-mono-sm uppercase">INIT</span>
+</div>
+<div class="lg:col-span-3">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">01. Understand</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Deep system archaeology, domain boundary discovery, and performance baseline audits.</p>
+</div>
+<div class="lg:col-span-3">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block uppercase mb-1">INPUTS / DISCOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface">Legacy schemas, traffic logs, user personas, operational bottlenecks.</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-space-sm rounded border border-surface-container-highest">
+<div class="flex items-center justify-between text-label-mono-sm font-label-mono-sm text-secondary uppercase mb-1">
+<span>GATE ARTIFACT • GATEWAY 01</span>
+<span class="text-primary font-semibold">REQ_FREEZE</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">Domain Specification Document & Performance SLO Baseline</span>
+</div>
+</div>
+<!-- Stage 02 -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start hover:bg-surface-container-low transition-colors">
+<div class="lg:col-span-2 flex items-center gap-space-sm">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">STAGE 02</span>
+<span class="px-2 py-0.5 bg-surface-container rounded text-primary font-label-mono-sm text-label-mono-sm uppercase">SPEC</span>
+</div>
+<div class="lg:col-span-3">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">02. Define</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High-level software architecture, data modeling, API contracts, and UX/UI blueprints.</p>
+</div>
+<div class="lg:col-span-3">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block uppercase mb-1">INPUTS / DISCOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface">Target latency SLOs, security clearances, cloud footprint limits.</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-space-sm rounded border border-surface-container-highest">
+<div class="flex items-center justify-between text-label-mono-sm font-label-mono-sm text-secondary uppercase mb-1">
+<span>GATE ARTIFACT • GATEWAY 02</span>
+<span class="text-primary font-semibold">ARCH_SIGN</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">OpenAPI / GraphQL Schema Contracts & System Flowchart (ADR-001)</span>
+</div>
+</div>
+<!-- Stage 03 -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start hover:bg-surface-container-low transition-colors">
+<div class="lg:col-span-2 flex items-center gap-space-sm">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">STAGE 03</span>
+<span class="px-2 py-0.5 bg-surface-container rounded text-primary font-label-mono-sm text-label-mono-sm uppercase">PROD</span>
+</div>
+<div class="lg:col-span-3">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">03. Build</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Iterative, deterministic implementation with strict typed static analysis and test harnesses.</p>
+</div>
+<div class="lg:col-span-3">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block uppercase mb-1">INPUTS / DISCOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface">Signed design tokens, API specifications, continuous automated CI pipelines.</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-space-sm rounded border border-surface-container-highest">
+<div class="flex items-center justify-between text-label-mono-sm font-label-mono-sm text-secondary uppercase mb-1">
+<span>GATE ARTIFACT • GATEWAY 03</span>
+<span class="text-primary font-semibold">CI_PASS</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">Runnable Feature Branches with Multi-Device Telemetry Logs</span>
+</div>
+</div>
+<!-- Stage 04 -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start hover:bg-surface-container-low transition-colors">
+<div class="lg:col-span-2 flex items-center gap-space-sm">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">STAGE 04</span>
+<span class="px-2 py-0.5 bg-surface-container rounded text-primary font-label-mono-sm text-label-mono-sm uppercase">TEST</span>
+</div>
+<div class="lg:col-span-3">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">04. Verify</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">End-to-end load simulations, security penetration scans, accessibility compliance, and chaos engineering.</p>
+</div>
+<div class="lg:col-span-3">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block uppercase mb-1">INPUTS / DISCOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface">Candidate build releases, production data anonymized mocks, stress vectors.</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-space-sm rounded border border-surface-container-highest">
+<div class="flex items-center justify-between text-label-mono-sm font-label-mono-sm text-secondary uppercase mb-1">
+<span>GATE ARTIFACT • GATEWAY 04</span>
+<span class="text-primary font-semibold">AUDIT_CERT</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">Comprehensive Security Scan, Lighthouse 100 Audit, Zero P1 Defects</span>
+</div>
+</div>
+<!-- Stage 05 -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start hover:bg-surface-container-low transition-colors">
+<div class="lg:col-span-2 flex items-center gap-space-sm">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">STAGE 05</span>
+<span class="px-2 py-0.5 bg-surface-container rounded text-primary font-label-mono-sm text-label-mono-sm uppercase">EXIT</span>
+</div>
+<div class="lg:col-span-3">
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">05. Handover</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Zero-friction transfer of infrastructure keys, runbooks, training walkthroughs, and deployment rights.</p>
+</div>
+<div class="lg:col-span-3">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block uppercase mb-1">INPUTS / DISCOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface">Internal in-house engineering team, target cloud accounts, IAM roles.</span>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-space-sm rounded border border-surface-container-highest">
+<div class="flex items-center justify-between text-label-mono-sm font-label-mono-sm text-secondary uppercase mb-1">
+<span>GATE ARTIFACT • GATEWAY 05</span>
+<span class="text-primary font-semibold">AUTONOMY</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">Self-Sustaining Operations Manual & Sovereign Git/Cloud Handoff</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Team & Practice Structure (Placeholder Block) -->
+<section class="py-space-xl border-b border-surface-container-highest">
+<div class="flex flex-col md:flex-row md:items-baseline justify-between mb-space-md">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase tracking-widest">[ SECTION 04 // PERSONNEL DISCLOSURE ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs font-semibold">Team & Practice Structure</h2>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary mt-space-xs md:mt-0">
+        POLICY: STRICT AUTHENTICITY
+      </div>
+</div>
+<!-- Editorial Callout on Authenticity -->
+<div class="p-space-md mb-space-lg bg-surface-container border border-surface-container-highest text-secondary font-label-mono-sm text-label-mono-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">info</span>
+<span>
+        [ EDITABLE TEAM / FOUNDER PLACEHOLDER ] — No invented staff, fictitious biographies, or stock portraits. Fill with actual studio credentials during production deployment.
+      </span>
+</div>
+<!-- 3 Structured Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-surface-container-highest bg-surface-container-lowest">
+<!-- Role Slot 1 -->
+<div class="p-space-lg border-b md:border-b-0 md:border-r border-surface-container-highest flex flex-col justify-between">
+<div>
+<div class="w-full aspect-[4/3] bg-surface-container border border-surface-container-highest flex flex-col items-center justify-center text-center p-space-md relative overflow-hidden group">
+<span class="material-symbols-outlined text-outline-variant text-[40px] mb-2">person</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">PORTRAIT_SLOT_01</span>
+<span class="font-label-mono-sm text-[10px] text-outline mt-1">[ VERIFIED PRINCIPAL HEADSHOT ]</span>
+<div class="absolute bottom-2 right-2 font-label-mono-sm text-[9px] text-outline-variant tracking-widest uppercase">SLOT_ID: FOUNDER_01</div>
+</div>
+<div class="mt-space-lg space-y-1">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">ROLE // PRIMARY DIRECTION</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Principal Systems Engineer / Founder</h3>
+<div class="font-label-mono-sm text-label-mono-sm text-primary pt-1">[ NAME_PLACEHOLDER ]</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-md leading-relaxed border-t border-surface-container-highest pt-space-md">
+            Directs end-to-end system design, high-concurrency architecture, and algorithmic integrity. 12+ years deploying enterprise-grade distributed systems, database scaling, and critical cloud backbones.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container-highest flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>FOCUS: DISTRIBUTED / GO / C</span>
+<span>PGP: 0x98A1...F2</span>
+</div>
+</div>
+<!-- Role Slot 2 -->
+<div class="p-space-lg border-b md:border-b-0 md:border-r border-surface-container-highest flex flex-col justify-between">
+<div>
+<div class="w-full aspect-[4/3] bg-surface-container border border-surface-container-highest flex flex-col items-center justify-center text-center p-space-md relative overflow-hidden group">
+<span class="material-symbols-outlined text-outline-variant text-[40px] mb-2">person</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">PORTRAIT_SLOT_02</span>
+<span class="font-label-mono-sm text-[10px] text-outline mt-1">[ VERIFIED ARCHITECT HEADSHOT ]</span>
+<div class="absolute bottom-2 right-2 font-label-mono-sm text-[9px] text-outline-variant tracking-widest uppercase">SLOT_ID: ENG_02</div>
+</div>
+<div class="mt-space-lg space-y-1">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">ROLE // INTERFACE ARCHITECTURE</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Frontend Architecture Lead</h3>
+<div class="font-label-mono-sm text-label-mono-sm text-primary pt-1">[ NAME_PLACEHOLDER ]</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-md leading-relaxed border-t border-surface-container-highest pt-space-md">
+            Leads client-side runtime efficiency, design token pipelines, and headless UI systems. Focused on zero-layout-shift performance, accessible component engineering, and modern DOM telemetry.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container-highest flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>FOCUS: TS / REACT / WASM</span>
+<span>PGP: 0x47B2...9C</span>
+</div>
+</div>
+<!-- Role Slot 3 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-full aspect-[4/3] bg-surface-container border border-surface-container-highest flex flex-col items-center justify-center text-center p-space-md relative overflow-hidden group">
+<span class="material-symbols-outlined text-outline-variant text-[40px] mb-2">person</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">PORTRAIT_SLOT_03</span>
+<span class="font-label-mono-sm text-[10px] text-outline mt-1">[ VERIFIED INFRA HEADSHOT ]</span>
+<div class="absolute bottom-2 right-2 font-label-mono-sm text-[9px] text-outline-variant tracking-widest uppercase">SLOT_ID: ENG_03</div>
+</div>
+<div class="mt-space-lg space-y-1">
+<div class="font-label-mono-sm text-label-mono-sm text-secondary uppercase">ROLE // PLATFORM & RELIABILITY</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Systems & Infrastructure Engineer</h3>
+<div class="font-label-mono-sm text-label-mono-sm text-primary pt-1">[ NAME_PLACEHOLDER ]</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-md leading-relaxed border-t border-surface-container-highest pt-space-md">
+            Engineers automated CI/CD pipelines, container orchestration, edge caching fabrics, and telemetry monitoring clusters. Hardened security architectures with immutable deployment manifests.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-sm border-t border-surface-container-highest flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span>FOCUS: K8S / TERRAFORM / SRE</span>
+<span>PGP: 0x11C9...8E</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Spec Footnote Strip -->
+<section class="py-space-md border-b border-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md font-label-mono-sm text-label-mono-sm text-secondary">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary font-bold">01 // CODEBASE INTEGRITY:</span>
+<span>Every repository protected with strict branch policies and unsigned commit blocks.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-primary font-bold">02 // NO RETAINER OVERHANG:</span>
+<span>Every engagement is designed for seamless in-house engineering autonomy.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-primary font-bold">03 // SLA GUARANTEES:</span>
+<span>Contractual response benchmarks directly backstopped by senior architects.</span>
+</div>
+</div>
+</section>
+<!-- Section 5: Engagement CTA -->
+<section class="pt-space-xl">
+<div class="p-space-xl border border-surface-container-highest bg-surface-container-lowest flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-secondary uppercase mb-space-xs">
+<span>[ INITIATION // PHASE 00 ]</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+          Have a technical initiative to discuss?
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+          Schedule an unmediated technical intake call directly with a principal engineer. We evaluate requirements, determine feasibility, and deliver an actionable architectural assessment.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm shrink-0 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center h-10 px-space-md bg-primary text-on-primary font-body-md text-body-md hover:bg-opacity-90 transition-opacity border border-transparent rounded text-center" data-path="contact" href="#">
+          Discuss a project ↗
+        </a>
+<a class="inline-flex items-center justify-center h-10 px-space-md bg-transparent text-primary font-body-md text-body-md hover:bg-surface-container transition-colors border border-outline-variant rounded text-center" data-path="services" href="#">
+          Explore our services ↗
+        </a>
+</div>
+</div>
+</section>
+</div></div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-highest mt-space-xl"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter-tablet lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg pb-space-lg border-b border-surface-container-highest"><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase font-bold text-primary">SARVOS</span><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Architectural systems engineering & high-integrity software infrastructure consultancy.</p><div class="font-label-mono-sm text-label-mono-sm text-secondary pt-space-xs">[ SYSTEM.ACTIVE • 0x534152564F53 ]</div></div><div class="md:col-span-2 flex flex-col gap-space-xs"><div class="font-label-mono-md text-label-mono-md uppercase text-primary pb-space-xs">Core Modules</div><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="work" href="#">Work</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="services" href="#">Services</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="insights" href="#">Insights</a></div><div class="md:col-span-2 flex flex-col gap-space-xs"><div class="font-label-mono-md text-label-mono-md uppercase text-primary pb-space-xs">Practice</div><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="careers" href="#">Careers</a></div><div class="md:col-span-3 flex flex-col gap-space-xs"><div class="font-label-mono-md text-label-mono-md uppercase text-primary pb-space-xs">Studio Terminal</div><div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">LAT 40.7128° N, LON 74.0060° W</div><div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">HOST: US-EAST-SYS-1</div><div class="font-label-mono-sm text-label-mono-sm text-secondary pt-space-xs">> STATUS: ALL NODES OPERATIONAL</div></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm text-on-surface-variant"><div>© 2025 SARVOS STUDIO LTD. ALL RIGHTS RESERVED.</div><div class="flex gap-space-md"><span>SPECIFICATION: IEEE-1012</span><span>STRICT MONOCHROME</span></div></div></div></footer></body></html>
