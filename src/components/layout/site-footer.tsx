@@ -125,7 +125,7 @@ export function SiteFooter() {
 
         {/* Bottom Bar with Hairline Divider */}
         <div className="border-border text-muted-foreground mt-12 flex flex-col items-start justify-between gap-4 border-t pt-8 text-xs sm:flex-row sm:items-center">
-          <p>© 2024–2026 SARVOS. All rights reserved.</p>
+          <p>© SINCE 2026 SARVOS. All rights reserved.</p>
           <div className="flex items-center gap-6 font-mono text-[11px]">
             <span>ENGINEERED WITH RIGOR</span>
             <span>NO COOKIES / PRIVACY FIRST</span>

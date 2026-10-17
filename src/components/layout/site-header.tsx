@@ -53,7 +53,7 @@ export function SiteHeader() {
         >
           <span className="text-base font-bold tracking-tight">SARVOS</span>
           <span className="text-muted-foreground border-border hidden rounded-[4px] border px-1.5 py-0.5 font-mono text-[11px] tracking-wider uppercase sm:inline-block">
-            EST. 2024
+            SINCE 2026
           </span>
         </Link>
 
