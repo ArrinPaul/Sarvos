@@ -26,6 +26,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(function(regs) {
+                    for (var r of regs) { r.unregister(); }
+                  });
+                }
+                if ('caches' in window) {
+                  caches.keys().then(function(names) {
+                    for (var name of names) { caches.delete(name); }
+                  });
+                }
+              }
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}
       >
