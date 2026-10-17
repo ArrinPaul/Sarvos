@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -14,9 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SARVOS — Independent Software & Technology Studio",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+  ),
+  title: {
+    default: "SARVOS — Independent Software & Technology Studio",
+    template: "%s | SARVOS",
+  },
   description:
-    "Disciplined software engineering, systems architecture, and technical consulting.",
+    "Disciplined software engineering, high-reliability systems architecture, and technical consulting.",
+  keywords: [
+    "software consultancy",
+    "systems architecture",
+    "Next.js",
+    "high-throughput engineering",
+    "API integration",
+    "AI automation",
+  ],
+  authors: [{ name: "SARVOS Studio" }],
+  creator: "SARVOS",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -47,7 +69,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col justify-between font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -55,7 +77,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>
