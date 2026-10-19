@@ -78,52 +78,82 @@ export async function POST(request: Request) {
       );
     }
 
-    // 6. Documented Email Delivery Adapter Point
-    const resendApiKey = process.env.RESEND_API_KEY;
-    const isEmailConfigured = Boolean(
-      resendApiKey && resendApiKey.trim().length > 0
-    );
+    // 6. Email delivery via Resend's REST API (no SDK dependency).
+    const resendApiKey = process.env.RESEND_API_KEY?.trim();
+    const toEmail = process.env.CONTACT_NOTIFICATION_EMAIL?.trim();
+    const fromEmail = process.env.CONTACT_FROM_EMAIL?.trim();
+    const isEmailConfigured = Boolean(resendApiKey && toEmail && fromEmail);
+    const referenceId = `SRV-${Date.now().toString(36).toUpperCase()}`;
 
-    // Audit log submission on server with sanitized telemetry
+    // Audit log without personal data (name, email and message are never logged).
     console.info("[SARVOS INQUIRY AUDIT]", {
       timestamp: new Date().toISOString(),
-      name: data.name.replace(/[\r\n\t]/g, " "),
-      email: data.email.replace(/[\r\n\t]/g, " "),
-      company: data.company ? data.company.replace(/[\r\n\t]/g, " ") : "N/A",
+      referenceId,
       service: data.service,
       budget: data.budget || "N/A",
       timeline: data.timeline || "N/A",
       emailConfigured: isEmailConfigured,
     });
 
+    // Never report success when nothing was delivered.
     if (!isEmailConfigured) {
       return NextResponse.json(
         {
-          success: true,
+          success: false,
           delivered: false,
-          message:
-            "Enquiry validated and recorded. Note: Production email dispatch provider is unconfigured.",
-          data: {
-            referenceId: `SRV-${Date.now().toString(36).toUpperCase()}`,
-            timestamp: new Date().toISOString(),
-          },
+          error:
+            "Enquiry delivery is temporarily unavailable. Please try again later.",
         },
-        { status: 200 }
+        { status: 503 }
       );
     }
 
-    // When configured with Resend API key:
-    // const resend = new Resend(resendApiKey);
-    // await resend.emails.send({ ... });
+    const text = [
+      `Reference: ${referenceId}`,
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Company: ${data.company || "N/A"}`,
+      `Service: ${data.service}`,
+      `Budget: ${data.budget || "N/A"}`,
+      `Timeline: ${data.timeline || "N/A"}`,
+      "",
+      data.description,
+    ].join("\n");
+
+    const deliveryResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: data.email,
+        subject: `SARVOS enquiry (${referenceId}): ${data.service}`,
+        text,
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
+
+    if (!deliveryResponse.ok) {
+      return NextResponse.json(
+        {
+          success: false,
+          delivered: false,
+          error:
+            "We could not deliver your enquiry. Please try again in a few minutes.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json(
       {
         success: true,
         delivered: true,
         message: "Enquiry successfully received and delivered.",
-        data: {
-          referenceId: `SRV-${Date.now().toString(36).toUpperCase()}`,
-        },
+        data: { referenceId },
       },
       { status: 200 }
     );
