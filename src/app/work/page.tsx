@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/sections/project-card";
-import { SectionLabel } from "@/components/ui/section-label";
+import { PageHeader } from "@/components/sections/page-header";
+import { CtaBand } from "@/components/sections/cta-band";
+import { Reveal } from "@/components/motion/reveal";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
@@ -11,26 +13,29 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="w-full py-16 sm:py-24">
-      <div className="mx-auto w-full max-w-[1200px] space-y-12 px-5 sm:px-8 lg:px-12">
-        {/* Header */}
-        <div className="border-border max-w-3xl space-y-4 border-b pb-8">
-          <SectionLabel index="01" label="ENGINEERING PORTFOLIO" />
-          <h1 className="text-foreground text-4xl font-semibold tracking-tight sm:text-5xl">
-            Built with a purpose.
-          </h1>
-          <p className="text-muted-foreground text-base leading-relaxed sm:text-lg">
-            A selection of production systems, custom applications, and
-            automated workflows engineered for performance, reliability, and
-            architectural clarity.
-          </p>
+    <div className="w-full pt-12 pb-3 sm:pt-20 sm:pb-5">
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
+        <PageHeader
+          size="display"
+          label="Engineering portfolio"
+          title="Built with a purpose."
+          description="A selection of production systems, custom applications, and automated workflows engineered for performance, reliability, and architectural clarity."
+        />
+
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:mt-24 md:grid-cols-2">
+          {projects.map((project, i) => (
+            <Reveal key={project.slug} delay={(i % 2) * 80} className="flex">
+              <ProjectCard project={project} className="w-full" />
+            </Reveal>
+          ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
+        <div className="mt-24 sm:mt-32">
+          <CtaBand
+            title="Have a similar system to build?"
+            body="Share the constraints. We reply with direct engineering feedback, not a sales deck."
+            action="Start a project"
+          />
         </div>
       </div>
     </div>

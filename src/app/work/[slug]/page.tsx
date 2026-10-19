@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects } from "@/content/projects";
+import { PageHeader } from "@/components/sections/page-header";
+import { CtaBand } from "@/components/sections/cta-band";
 import { SectionLabel } from "@/components/ui/section-label";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Server } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
+import { CheckCircle2 } from "lucide-react";
 
 interface CaseStudyProps {
   params: Promise<{ slug: string }>;
@@ -36,120 +39,89 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
     notFound();
   }
 
+  const next = projects[(projects.indexOf(project) + 1) % projects.length];
+
   return (
-    <article className="w-full py-16 sm:py-24">
-      <div className="mx-auto w-full max-w-[1200px] space-y-16 px-5 sm:px-8 lg:px-12">
-        {/* Navigation & Back Link */}
-        <div className="border-border flex items-center justify-between border-b pb-4">
-          <Link
-            href="/work"
-            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 font-mono text-xs uppercase transition-colors"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            <span>Back to all case studies</span>
-          </Link>
+    <article className="w-full pt-12 pb-3 sm:pt-20 sm:pb-5">
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
+        <PageHeader
+          label={`${project.category} • ${project.client} • ${project.year}`}
+          title={project.title}
+          description={project.tagline}
+          crumbs={[
+            { label: "Home", href: "/" },
+            { label: "Work", href: "/work" },
+            { label: project.title },
+          ]}
+        />
 
-          <span className="text-muted-foreground font-mono text-xs">
-            SPEC ID: {project.slug.toUpperCase()}
-          </span>
-        </div>
-
-        {/* Case Study Headline & Tagline */}
-        <div className="max-w-4xl space-y-6">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-muted-foreground border-border rounded-[4px] border px-2 py-0.5 font-mono text-xs tracking-wider uppercase">
-              {project.category}
-            </span>
-            <span className="text-muted-foreground font-mono text-xs">
-              {project.client} &bull; {project.year}
-            </span>
-          </div>
-
-          <h1 className="text-foreground text-3xl leading-[1.1] font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            {project.title}
-          </h1>
-
-          <p className="text-muted-foreground max-w-3xl text-lg leading-relaxed sm:text-xl">
-            {project.tagline}
-          </p>
-        </div>
-
-        {/* Key Benchmark Metrics Bar */}
-        <div className="border-border bg-card grid grid-cols-2 gap-4 rounded-[8px] border p-6 sm:grid-cols-4 sm:p-8">
+        {/* Metrics: large figures on a tonal field */}
+        <Reveal className="bg-muted mt-16 grid grid-cols-2 gap-8 rounded-[28px] p-8 sm:mt-24 sm:grid-cols-4 sm:p-12">
           {project.metrics.map((m) => (
-            <div key={m.label} className="space-y-1">
-              <p className="text-foreground font-mono text-2xl font-bold tracking-tight sm:text-3xl">
+            <div key={m.label} className="space-y-2">
+              <p className="text-foreground text-3xl font-semibold tracking-[-0.05em] whitespace-nowrap tabular-nums sm:text-5xl">
                 {m.value}
               </p>
-              <p className="text-muted-foreground font-mono text-xs tracking-wider uppercase">
-                {m.label}
-              </p>
+              <p className="text-muted-foreground text-sm">{m.label}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        {/* Challenge & Solution Detailed Narrative */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Main Content Sections */}
-          <div className="space-y-12 lg:col-span-8">
-            {/* The Challenge */}
-            <section className="space-y-4">
-              <SectionLabel index="01" label="THE OPERATIONAL BOTTLENECK" />
-              <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
-                Unpredictable ingestion latency during burst traffic windows.
+        <div className="mt-20 grid grid-cols-1 gap-14 sm:mt-28 lg:grid-cols-12">
+          <div className="space-y-24 lg:col-span-8">
+            <Reveal as="section" className="space-y-5">
+              <SectionLabel index="01" label="The operational bottleneck" />
+              <h2 className="text-foreground text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
+                The challenge
               </h2>
-              <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 {project.overview.challenge}
               </p>
-            </section>
+            </Reveal>
 
-            {/* The Architectural Solution */}
-            <section className="space-y-4">
-              <SectionLabel index="02" label="ENGINEERED ARCHITECTURE" />
-              <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
-                Separation of ingestion ingest from analytical query paths.
+            <Reveal as="section" className="space-y-5">
+              <SectionLabel index="02" label="Engineered architecture" />
+              <h2 className="text-foreground text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
+                The architecture
               </h2>
-              <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 {project.overview.solution}
               </p>
-              <div className="border-border bg-muted/60 space-y-3 rounded-[6px] border p-6 font-mono text-xs">
-                <div className="text-foreground flex items-center gap-2 font-semibold">
-                  <Server className="h-4 w-4" />
-                  <span>PIPELINE DATA FLOW:</span>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
+              <div className="bg-foreground text-background space-y-3 rounded-[20px] p-6 sm:p-8">
+                <p className="text-sm opacity-60">Pipeline data flow</p>
+                <p className="leading-relaxed">
                   {project.overview.architecture}
                 </p>
               </div>
-            </section>
+            </Reveal>
 
-            {/* Measured Results */}
-            <section className="space-y-4">
-              <SectionLabel index="03" label="EMPIRICAL RESULTS" />
-              <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
-                A resilient, horizontally scalable streaming pipeline.
+            <Reveal as="section" className="space-y-5">
+              <SectionLabel index="03" label="Empirical results" />
+              <h2 className="text-foreground text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
+                Measured results
               </h2>
-              <ul className="text-muted-foreground space-y-3 text-sm">
+              <ul className="space-y-4 pt-2">
                 {project.overview.results.map((res, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="text-foreground mt-0.5 h-5 w-5 shrink-0" />
-                    <span className="leading-relaxed">{res}</span>
+                    <CheckCircle2 className="text-foreground mt-1 h-5 w-5 shrink-0" />
+                    <span className="text-muted-foreground text-lg leading-relaxed">
+                      {res}
+                    </span>
                   </li>
                 ))}
               </ul>
-            </section>
+            </Reveal>
           </div>
 
-          {/* Sidebar Telemetry & Meta */}
-          <div className="space-y-8 lg:col-span-4">
-            <div className="border-border bg-card space-y-6 rounded-[8px] border p-6">
-              <div className="border-border space-y-2 border-b pb-4">
-                <span className="text-muted-foreground font-mono text-[11px] tracking-wider uppercase">
-                  SERVICES DEPLOYED
-                </span>
-                <ul className="text-foreground space-y-1 text-sm">
+          <aside className="lg:col-span-4">
+            <Reveal delay={90} className="space-y-8 lg:sticky lg:top-28">
+              <div className="space-y-3">
+                <p className="text-muted-foreground text-sm">
+                  Services deployed
+                </p>
+                <ul className="text-foreground space-y-2">
                   {project.services.map((s) => (
-                    <li key={s} className="flex items-center gap-2">
+                    <li key={s} className="flex items-center gap-2.5">
                       <span className="bg-foreground h-1.5 w-1.5 rounded-full" />
                       <span>{s}</span>
                     </li>
@@ -157,15 +129,15 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                 </ul>
               </div>
 
-              <div className="border-border space-y-2 border-b pb-4">
-                <span className="text-muted-foreground font-mono text-[11px] tracking-wider uppercase">
-                  TECHNOLOGY STACK
-                </span>
-                <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="space-y-3">
+                <p className="text-muted-foreground text-sm">
+                  Technology stack
+                </p>
+                <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((t) => (
                     <span
                       key={t}
-                      className="bg-muted border-border text-foreground rounded-[4px] border px-2 py-0.5 font-mono text-xs uppercase"
+                      className="bg-muted text-foreground rounded-full px-3 py-1 text-xs"
                     >
                       {t}
                     </span>
@@ -173,20 +145,32 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                 </div>
               </div>
 
-              <div className="space-y-3 pt-2">
-                <p className="text-muted-foreground text-xs">
-                  Have a similar architectural bottleneck to resolve?
-                </p>
-                <Link
-                  href="/contact"
-                  className="bg-primary text-background dark:bg-foreground dark:text-background inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-[6px] text-xs font-medium transition-colors hover:bg-neutral-800"
-                >
-                  <span>Discuss your architecture</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
+              <Link
+                href="/contact"
+                className="press bg-foreground text-background inline-flex h-12 w-full items-center justify-center rounded-full text-sm font-medium hover:opacity-90"
+              >
+                Discuss your architecture
+              </Link>
+            </Reveal>
+          </aside>
+        </div>
+
+        <div className="mt-24 space-y-5 sm:mt-32">
+          <CtaBand
+            tone="dark"
+            title="Have a similar architectural bottleneck?"
+            body="Share the constraints and we reply with direct engineering feedback."
+            action="Discuss your architecture"
+          />
+          <Link
+            href={`/work/${next.slug}`}
+            className="group text-muted-foreground hover:text-foreground flex items-center justify-between gap-6 px-3 py-4 text-sm transition-colors"
+          >
+            <span className="shrink-0">Next case study</span>
+            <span className="text-foreground text-right text-lg font-medium tracking-tight">
+              <span className="link-draw">{next.title}</span>
+            </span>
+          </Link>
         </div>
       </div>
     </article>

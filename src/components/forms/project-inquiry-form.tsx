@@ -81,10 +81,10 @@ export function ProjectInquiryForm() {
   };
 
   return (
-    <div className="border-border bg-card rounded-[8px] border p-6 transition-colors sm:p-10">
+    <div className="bg-muted rounded-[28px] p-6 sm:p-10">
       {/* Success State Notification */}
       {formStatus === "success" && (
-        <div className="border-border bg-muted/60 animate-fade-in mb-8 space-y-4 rounded-[6px] border p-6">
+        <div className="bg-card animate-fade-in mb-8 space-y-4 rounded-2xl p-6">
           <div className="text-foreground flex items-center gap-2.5 font-semibold">
             <CheckCircle2 className="h-5 w-5 text-emerald-500" />
             <span>Enquiry Successfully Processed</span>
@@ -147,7 +147,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="name"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Name <span className="text-destructive">*</span>
             </label>
@@ -165,7 +165,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Work Email <span className="text-destructive">*</span>
             </label>
@@ -187,7 +187,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="company"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Organization / Company
             </label>
@@ -201,7 +201,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="service"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Service Area <span className="text-destructive">*</span>
             </label>
@@ -229,7 +229,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="budget"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Estimated Budget Scope
             </label>
@@ -245,7 +245,7 @@ export function ProjectInquiryForm() {
           <div className="space-y-2">
             <label
               htmlFor="timeline"
-              className="text-foreground font-mono text-xs tracking-wider uppercase"
+              className="text-foreground text-sm font-medium"
             >
               Target Timeline
             </label>
@@ -263,7 +263,7 @@ export function ProjectInquiryForm() {
         <div className="space-y-2">
           <label
             htmlFor="description"
-            className="text-foreground font-mono text-xs tracking-wider uppercase"
+            className="text-foreground text-sm font-medium"
           >
             Project Overview &amp; Technical Requirements{" "}
             <span className="text-destructive">*</span>
@@ -283,14 +283,15 @@ export function ProjectInquiryForm() {
         </div>
 
         {/* Submit Action */}
-        <div className="border-border flex flex-col justify-between gap-4 border-t pt-4 sm:flex-row sm:items-center">
-          <span className="text-muted-foreground font-mono text-[11px]">
-            [ ALL COMMUNICATIONS ARE DIRECT WITH SENIOR ENGINEERS ]
+        <div className="flex flex-col justify-between gap-4 pt-4 sm:flex-row sm:items-center">
+          <span className="text-muted-foreground text-sm">
+            All communications are direct with senior engineers.
           </span>
 
           <Button
             type="submit"
             variant="primary"
+            size="lg"
             disabled={formStatus === "submitting"}
             className="w-full sm:w-auto"
           >

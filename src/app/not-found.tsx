@@ -1,26 +1,36 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { SectionLabel } from "@/components/ui/section-label";
 
 export default function NotFound() {
   return (
-    <div className="w-full py-24 sm:py-36">
-      <div className="mx-auto w-full max-w-[600px] space-y-6 px-5 text-center sm:px-8">
-        <SectionLabel index="404" label="ENDPOINT NOT LOCATED" />
-        <h1 className="text-foreground text-4xl font-semibold tracking-tight sm:text-5xl">
+    <div className="w-full py-20 sm:py-32">
+      <div className="mx-auto w-full max-w-[1280px] space-y-8 px-5 sm:px-8 lg:px-12">
+        <p
+          aria-hidden
+          className="rise text-[clamp(7rem,28vw,24rem)] leading-[0.8] font-semibold tracking-[-0.07em]"
+        >
+          404
+        </p>
+        <h1
+          className="text-headline rise text-foreground"
+          style={{ ["--d" as string]: "80ms" }}
+        >
           Specification not found.
         </h1>
-        <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+        <p
+          className="text-lede text-muted-foreground rise max-w-xl"
+          style={{ ["--d" as string]: "160ms" }}
+        >
           The requested route does not map to any active system specification or
           case study in the SARVOS registry.
         </p>
-        <div className="pt-4">
+        <div className="rise pt-2" style={{ ["--d" as string]: "240ms" }}>
           <Link
             href="/"
-            className="bg-primary text-background dark:bg-foreground dark:text-background inline-flex h-10 items-center justify-center gap-2 rounded-[8px] px-5 text-sm font-medium transition-colors hover:bg-neutral-800"
+            className="press bg-foreground text-background inline-flex h-14 items-center justify-center gap-2 rounded-full px-8 text-base font-medium hover:opacity-90"
           >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Return to Studio Home</span>
+            <ArrowLeft className="h-5 w-5" />
+            <span>Return to studio home</span>
           </Link>
         </div>
       </div>
