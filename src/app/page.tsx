@@ -76,7 +76,7 @@ export default function HomePage() {
             title="Disciplined engineering for complex systems."
             body="We engineer mission-critical applications and automated workflows tailored to specific operational profiles."
             href="/services"
-            cta="View all 5 specifications"
+            cta={`View all ${services.length} specifications`}
           />
 
           <div className="mt-14 sm:mt-20">

@@ -25,7 +25,7 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
           </div>
 
           <h1
-            className="text-display rise text-foreground max-w-[15ch]"
+            className="text-display rise-heading text-foreground max-w-[15ch]"
             style={{ ["--d" as string]: "80ms" }}
           >
             We build software for{" "}
@@ -91,7 +91,7 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
                         ? "bg-foreground text-background border-foreground font-medium"
                         : "text-muted-foreground border-border hover:bg-muted hover:text-foreground"
                     )}
-                    aria-label={`Select project ${proj.title}`}
+                    aria-label={`${String(idx + 1).padStart(2, "0")}. ${proj.category.split(" ")[0]}: ${proj.title}`}
                   >
                     {String(idx + 1).padStart(2, "0")}.{" "}
                     {proj.category.split(" ")[0]}
@@ -181,7 +181,7 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
                     </dl>
                   </div>
 
-                  <p className="mt-8 font-mono text-xs opacity-50">
+                  <p className="mt-8 font-mono text-xs opacity-70">
                     Ref 0x{activeProject.slug.slice(0, 8).toUpperCase()}
                   </p>
                 </div>

@@ -61,7 +61,7 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <header className="space-y-8">
+    <div className="space-y-8">
       {crumbs && (
         <div className="rise" style={{ ["--d" as string]: "0ms" }}>
           <Breadcrumbs items={crumbs} />
@@ -71,7 +71,7 @@ export function PageHeader({
         <SectionLabel index={index} label={label} />
       </div>
       <h1
-        className={`rise text-foreground max-w-5xl ${
+        className={`rise-heading text-foreground max-w-5xl ${
           size === "display" ? "text-display" : "text-headline"
         }`}
         style={{ ["--d" as string]: "100ms" }}
@@ -91,6 +91,6 @@ export function PageHeader({
           {children}
         </div>
       )}
-    </header>
+    </div>
   );
 }
