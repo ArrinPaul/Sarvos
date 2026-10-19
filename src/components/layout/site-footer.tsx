@@ -1,135 +1,79 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { BackToTop } from "@/components/motion/back-to-top";
+
+const NAV = [
+  { href: "/work", label: "Selected Work" },
+  { href: "/services", label: "Capabilities" },
+  { href: "/about", label: "About Studio" },
+  { href: "/insights", label: "Engineering Notes" },
+  { href: "/contact", label: "Project Enquiry" },
+];
 
 export function SiteFooter() {
   return (
-    <footer className="border-border bg-background w-full border-t transition-colors">
-      <div className="mx-auto w-full max-w-[1200px] px-5 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Brand & Studio Overview */}
-          <div className="space-y-4 lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="text-foreground text-lg font-bold tracking-tight">
-                SARVOS
-              </span>
-              <span className="text-muted-foreground border-border rounded-[4px] border px-1.5 py-0.5 font-mono text-[11px] tracking-wider uppercase">
-                SYS.SPEC v4.2
-              </span>
-            </div>
-            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-              Independent Software &amp; Technology Studio. We design, build,
-              and deploy high-reliability digital platforms, custom software,
-              and automated workflows for ambitious organizations.
+    <footer className="bg-foreground text-background w-full overflow-hidden">
+      <div className="mx-auto w-full max-w-[1280px] px-5 pt-20 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12">
+          <div className="space-y-6 lg:col-span-6">
+            <p className="text-lede max-w-md opacity-80">
+              Independent software &amp; technology studio. We design, build and
+              deploy high-reliability digital platforms for ambitious
+              organizations.
             </p>
-            <div className="inline-flex items-center gap-2 pt-2">
-              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-              <span className="text-muted-foreground font-mono text-xs tracking-wider uppercase">
-                [ SYSTEM.STATUS: OPERATIONAL ]
+            <div className="inline-flex items-center gap-2.5 text-sm opacity-80">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
+              <span>Accepting new engagements</span>
             </div>
           </div>
 
-          {/* Quick Links Navigation */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:col-span-4">
-            <div className="space-y-3">
-              <p className="text-foreground font-mono text-xs tracking-wider uppercase">
-                [ NAVIGATION ]
-              </p>
-              <ul className="text-muted-foreground space-y-2 text-sm">
-                <li>
+          <nav aria-label="Footer" className="lg:col-span-3 lg:col-start-8">
+            <p className="mb-4 text-sm opacity-60">Navigate</p>
+            <ul className="space-y-1">
+              {NAV.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href="/work"
-                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                    href={item.href}
+                    className="group inline-flex items-center gap-1.5 py-1 text-lg tracking-tight opacity-90 transition-opacity hover:opacity-100"
                   >
-                    <span>Selected Work</span>
-                    <ArrowUpRight className="h-3 w-3" />
+                    <span className="link-draw">{item.label}</span>
+                    <ArrowUpRight className="h-4 w-4 -translate-x-1 opacity-0 transition-[transform,opacity] duration-200 [transition-timing-function:var(--ease-out)] group-hover:translate-x-0 group-hover:opacity-100" />
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
-                  >
-                    <span>Capabilities</span>
-                    <ArrowUpRight className="h-3 w-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
-                  >
-                    <span>About Studio</span>
-                    <ArrowUpRight className="h-3 w-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/insights"
-                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
-                  >
-                    <span>Engineering Notes</span>
-                    <ArrowUpRight className="h-3 w-3" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </nav>
 
-            <div className="space-y-3">
-              <p className="text-foreground font-mono text-xs tracking-wider uppercase">
-                [ INQUIRIES ]
-              </p>
-              <ul className="text-muted-foreground space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
-                  >
-                    <span>Project Enquiry</span>
-                    <ArrowUpRight className="h-3 w-3" />
-                  </Link>
-                </li>
-                <li className="text-muted-foreground pt-1 font-mono text-xs">
-                  hello@your-domain.tld (placeholder)
-                </li>
-                <li className="text-muted-foreground font-mono text-xs">
-                  UTC+00:00 / GLOBAL
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Direct CTA Panel */}
-          <div className="border-border bg-card flex flex-col justify-between rounded-[8px] border p-6 lg:col-span-3">
-            <div className="space-y-2">
-              <span className="text-muted-foreground font-mono text-[11px] tracking-wider uppercase">
-                [ START AN ENGAGEMENT ]
-              </span>
-              <p className="text-foreground text-sm font-medium">
-                Have an architecture challenge or high-reliability system to
-                build?
-              </p>
-            </div>
-            <div className="pt-4">
-              <Link
-                href="/contact"
-                className="bg-primary text-background dark:bg-foreground dark:text-background inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-[8px] text-xs font-medium transition-colors hover:bg-neutral-800 dark:hover:bg-neutral-200"
-              >
-                <span>Initiate Consultation</span>
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
+          <div className="space-y-2 lg:col-span-2">
+            <p className="mb-4 text-sm opacity-60">Say hello</p>
+            <p className="font-mono text-sm opacity-90">
+              hello@your-domain.tld
+            </p>
+            <p className="text-sm opacity-60">(placeholder)</p>
+            <div className="pt-6">
+              <BackToTop />
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar with Hairline Divider */}
-        <div className="border-border text-muted-foreground mt-12 flex flex-col items-start justify-between gap-4 border-t pt-8 text-xs sm:flex-row sm:items-center">
-          <p>© SINCE 2026 SARVOS. All rights reserved.</p>
-          <div className="flex items-center gap-6 font-mono text-[11px]">
-            <span>ENGINEERED WITH RIGOR</span>
-            <span>NO COOKIES / PRIVACY FIRST</span>
-          </div>
+        <div className="[container-type:inline-size] mt-20 mb-8">
+          <p
+            aria-hidden
+            className="ml-[-0.045em] [font-size:29cqw] leading-[0.82] font-semibold tracking-[-0.06em] whitespace-nowrap select-none"
+          >
+            SARVOS
+          </p>
+        </div>
+      </div>
+
+      <div className="border-background/15 border-t">
+        <div className="mx-auto flex w-full max-w-[1280px] flex-col items-start justify-between gap-2 px-5 py-5 text-xs opacity-70 sm:flex-row sm:items-center sm:px-8 lg:px-12">
+          <p>© 2026 SARVOS. All rights reserved.</p>
+          <p>No cookies. Privacy first.</p>
         </div>
       </div>
     </footer>
