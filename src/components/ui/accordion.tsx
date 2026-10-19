@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export interface AccordionItemProps {
   id: string;
@@ -20,6 +20,8 @@ export function AccordionItem({
   className,
 }: AccordionItemProps) {
   const [isOpen, setIsOpen] = React.useState(defaultOpen);
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
 
   return (
     <div
@@ -32,15 +34,14 @@ export function AccordionItem({
           aria-expanded={isOpen}
           aria-controls={`accordion-panel-${id}`}
           onClick={() => setIsOpen((prev) => !prev)}
-          className="hover:text-foreground/80 focus-visible:ring-ring flex w-full cursor-pointer items-center justify-between py-2 text-left text-base font-medium transition-colors focus-visible:ring-1 focus-visible:outline-none"
+          className="focus-visible:ring-ring flex w-full cursor-pointer items-center justify-between gap-6 py-3 text-left text-lg font-medium tracking-tight focus-visible:ring-2 focus-visible:outline-none sm:text-xl"
         >
           <span className="pr-4">{title}</span>
-          <span className="border-border text-muted-foreground flex h-6 w-6 shrink-0 items-center justify-center border transition-transform">
-            {isOpen ? (
-              <Minus className="text-foreground h-3.5 w-3.5" />
-            ) : (
-              <Plus className="text-muted-foreground h-3.5 w-3.5" />
-            )}
+          <span
+            className="border-border text-foreground flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300 [transition-timing-function:var(--ease-out)] data-[open=true]:rotate-45"
+            data-open={isOpen}
+          >
+            <Plus className="h-4 w-4" />
           </span>
         </button>
       </h3>
@@ -48,13 +49,15 @@ export function AccordionItem({
         id={`accordion-panel-${id}`}
         role="region"
         aria-labelledby={`accordion-btn-${id}`}
-        hidden={!isOpen}
-        className={cn(
-          "text-muted-foreground pt-2 pb-4 text-sm leading-relaxed transition-all duration-200",
-          isOpen ? "animate-fade-in block" : "hidden"
-        )}
+        hidden={!isOpen && !mounted}
+        data-open={isOpen}
+        className="collapse"
       >
-        {content}
+        <div>
+          <div className="text-muted-foreground pt-2 pb-4 text-base leading-relaxed">
+            {content}
+          </div>
+        </div>
       </div>
     </div>
   );

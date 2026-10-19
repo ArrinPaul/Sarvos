@@ -28,7 +28,7 @@ export function ThemeToggle({
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-[8px] border px-2.5 font-mono text-xs tracking-wider uppercase transition-colors select-none focus-visible:ring-1 focus-visible:outline-none",
+        "press border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring inline-flex h-10 min-w-10 cursor-pointer items-center justify-center gap-2 rounded-full border px-2.5 text-xs select-none focus-visible:ring-2 focus-visible:outline-none",
         className
       )}
       aria-label={

@@ -18,14 +18,15 @@ export function SectionLabel({
   return (
     <div
       className={cn(
-        "text-muted-foreground inline-flex items-center gap-2 font-mono text-xs tracking-wider uppercase",
+        "text-muted-foreground inline-flex items-center gap-3 text-sm font-medium",
         className
       )}
       {...props}
     >
       {formattedIndex !== undefined && (
-        <span className="text-foreground">[{formattedIndex}]</span>
+        <span className="text-foreground tabular-nums">{formattedIndex}</span>
       )}
+      <span aria-hidden className="bg-foreground/40 h-px w-6" />
       <span>{label}</span>
     </div>
   );

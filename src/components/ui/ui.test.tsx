@@ -13,7 +13,7 @@ describe("Base UI Components", () => {
 
   it("renders SectionLabel with formatted index", () => {
     render(<SectionLabel index={1} label="Capabilities" />);
-    expect(screen.getByText("[01]")).toBeInTheDocument();
+    expect(screen.getByText("01")).toBeInTheDocument();
     expect(screen.getByText("Capabilities")).toBeInTheDocument();
   });
 

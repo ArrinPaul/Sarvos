@@ -13,11 +13,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
+      "inline-flex items-center justify-center font-medium press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
 
     const variantStyles = {
       primary:
-        "bg-primary text-background hover:bg-neutral-800 dark:bg-foreground dark:text-background dark:hover:bg-neutral-200 border border-transparent shadow-none",
+        "bg-foreground text-background hover:opacity-90 border border-transparent shadow-none",
       secondary:
         "bg-transparent text-foreground border border-border hover:bg-muted active:bg-accent",
       ghost:
@@ -27,9 +27,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizeStyles = {
-      sm: "h-8 px-3 text-xs rounded-[4px]",
-      md: "h-10 px-4 text-sm rounded-[8px]",
-      lg: "h-12 px-6 text-base rounded-[8px]",
+      sm: "h-9 px-4 text-sm rounded-full",
+      md: "h-11 px-5 text-sm rounded-full",
+      lg: "h-14 px-8 text-base rounded-full",
     };
 
     return (
