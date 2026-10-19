@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <div className="mt-16 sm:mt-24">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={Math.min(i, 2) * 60}>
-              <ServiceRow service={service} />
+              <ServiceRow service={service} headingAs="h2" />
             </Reveal>
           ))}
           <div className="border-border border-t" />

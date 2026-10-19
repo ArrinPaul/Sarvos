@@ -19,6 +19,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const menuButtonRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const wasOpen = React.useRef(false);
 
   // Hairline appears only once content scrolls under the bar
   React.useEffect(() => {
@@ -28,11 +31,43 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on Escape key press
+  // Move focus into the menu when it opens and back to the toggle when it closes
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      wasOpen.current = true;
+      menuRef.current?.querySelector<HTMLElement>("a")?.focus();
+    } else if (wasOpen.current) {
+      wasOpen.current = false;
+      menuButtonRef.current?.focus();
+    }
+  }, [mobileMenuOpen]);
+
+  // Close on Escape and keep Tab focus inside the open menu
   React.useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape" && mobileMenuOpen) {
+      if (!mobileMenuOpen) return;
+      if (e.key === "Escape") {
         setMobileMenuOpen(false);
+        return;
+      }
+      if (e.key === "Tab") {
+        const focusable = [
+          menuButtonRef.current,
+          ...Array.from(
+            menuRef.current?.querySelectorAll<HTMLElement>("a[href]") ?? []
+          ),
+        ].filter((el): el is HTMLElement => Boolean(el));
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const active = document.activeElement;
+        if (e.shiftKey && active === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && active === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     }
     window.addEventListener("keydown", handleKeyDown);
@@ -122,6 +157,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             className="press border-border bg-card text-foreground hover:bg-muted inline-flex h-10 w-10 items-center justify-center rounded-full border"
@@ -140,6 +176,7 @@ export function SiteHeader() {
 
       {mobileMenuOpen && (
         <div
+          ref={menuRef}
           id="mobile-navigation"
           role="dialog"
           aria-modal="true"

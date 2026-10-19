@@ -7,9 +7,15 @@ import { cn } from "@/lib/utils";
 export interface ProjectCardProps {
   project: Project;
   className?: string;
+  /** Heading level; use "h2" when the page has no h2 above the cards. */
+  headingAs?: "h2" | "h3";
 }
 
-export function ProjectCard({ project, className }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  className,
+  headingAs: Heading = "h3",
+}: ProjectCardProps) {
   return (
     <div
       className={cn(
@@ -23,14 +29,14 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           <span className="tabular-nums">{project.year}</span>
         </div>
 
-        <h3 className="text-foreground text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
+        <Heading className="text-foreground text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
           <Link
             href={`/work/${project.slug}`}
             className="after:absolute after:inset-0 focus-visible:underline focus-visible:outline-none"
           >
             {project.title}
           </Link>
-        </h3>
+        </Heading>
 
         <p className="text-muted-foreground line-clamp-3 text-base leading-relaxed">
           {project.description}

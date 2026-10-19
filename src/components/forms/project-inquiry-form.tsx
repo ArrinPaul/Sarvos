@@ -84,7 +84,10 @@ export function ProjectInquiryForm() {
     <div className="bg-muted rounded-[28px] p-6 sm:p-10">
       {/* Success State Notification */}
       {formStatus === "success" && (
-        <div className="bg-card animate-fade-in mb-8 space-y-4 rounded-2xl p-6">
+        <div
+          role="status"
+          className="bg-card animate-fade-in mb-8 space-y-4 rounded-2xl p-6"
+        >
           <div className="text-foreground flex items-center gap-2.5 font-semibold">
             <CheckCircle2 className="h-5 w-5 text-emerald-500" />
             <span>Enquiry Successfully Processed</span>
@@ -98,13 +101,6 @@ export function ProjectInquiryForm() {
               <strong className="text-foreground">
                 {submissionMeta.referenceId}
               </strong>
-              {!submissionMeta.delivered && (
-                <span className="block pt-1 text-[11px] text-amber-600 dark:text-amber-400">
-                  [ ADAPTER NOTICE: RESEND_API_KEY is not configured in
-                  .env.local. Submission was validated server-side and recorded
-                  to server audit log. ]
-                </span>
-              )}
             </div>
           )}
           <Button
@@ -120,7 +116,10 @@ export function ProjectInquiryForm() {
 
       {/* Error Banner */}
       {formStatus === "error" && (
-        <div className="border-destructive/40 bg-destructive/10 text-foreground animate-fade-in mb-6 flex items-start gap-3 rounded-[6px] border p-4 text-sm">
+        <div
+          role="alert"
+          className="border-destructive/40 bg-destructive/10 text-foreground animate-fade-in mb-6 flex items-start gap-3 rounded-[6px] border p-4 text-sm"
+        >
           <AlertCircle className="text-destructive mt-0.5 h-5 w-5 shrink-0" />
           <div className="space-y-1">
             <p className="text-destructive font-medium">Submission Error</p>
@@ -153,12 +152,20 @@ export function ProjectInquiryForm() {
             </label>
             <Input
               id="name"
+              autoComplete="name"
               placeholder="e.g. Jane Doe"
               error={Boolean(errors.name)}
+              aria-describedby={errors.name ? "name-error" : undefined}
               {...register("name")}
             />
             {errors.name && (
-              <p className="text-destructive text-xs">{errors.name.message}</p>
+              <p
+                id="name-error"
+                role="alert"
+                className="text-destructive text-xs"
+              >
+                {errors.name.message}
+              </p>
             )}
           </div>
 
@@ -171,13 +178,21 @@ export function ProjectInquiryForm() {
             </label>
             <Input
               id="email"
+              autoComplete="email"
               type="email"
               placeholder="jane@company.com"
               error={Boolean(errors.email)}
+              aria-describedby={errors.email ? "email-error" : undefined}
               {...register("email")}
             />
             {errors.email && (
-              <p className="text-destructive text-xs">{errors.email.message}</p>
+              <p
+                id="email-error"
+                role="alert"
+                className="text-destructive text-xs"
+              >
+                {errors.email.message}
+              </p>
             )}
           </div>
         </div>
@@ -193,6 +208,7 @@ export function ProjectInquiryForm() {
             </label>
             <Input
               id="company"
+              autoComplete="organization"
               placeholder="e.g. Acme Systems Inc."
               {...register("company")}
             />
@@ -273,10 +289,17 @@ export function ProjectInquiryForm() {
             rows={5}
             placeholder="Describe your system architecture requirements, known performance bottlenecks, or objectives..."
             error={Boolean(errors.description)}
+            aria-describedby={
+              errors.description ? "description-error" : undefined
+            }
             {...register("description")}
           />
           {errors.description && (
-            <p className="text-destructive text-xs">
+            <p
+              id="description-error"
+              role="alert"
+              className="text-destructive text-xs"
+            >
               {errors.description.message}
             </p>
           )}

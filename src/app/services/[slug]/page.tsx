@@ -125,7 +125,7 @@ export default async function ServiceDetailPage({
             </Reveal>
           </div>
 
-          <aside className="lg:col-span-4">
+          <div className="lg:col-span-4">
             <Reveal delay={90} className="space-y-8 lg:sticky lg:top-28">
               <div className="space-y-3">
                 <p className="text-muted-foreground text-sm">
@@ -157,7 +157,7 @@ export default async function ServiceDetailPage({
                 Request service proposal
               </Link>
             </Reveal>
-          </aside>
+          </div>
         </div>
 
         <div className="mt-24 space-y-5 sm:mt-32">

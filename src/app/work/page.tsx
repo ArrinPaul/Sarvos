@@ -25,7 +25,11 @@ export default function WorkPage() {
         <div className="mt-16 grid grid-cols-1 gap-5 sm:mt-24 md:grid-cols-2">
           {projects.map((project, i) => (
             <Reveal key={project.slug} delay={(i % 2) * 80} className="flex">
-              <ProjectCard project={project} className="w-full" />
+              <ProjectCard
+                project={project}
+                className="w-full"
+                headingAs="h2"
+              />
             </Reveal>
           ))}
         </div>

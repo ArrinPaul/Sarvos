@@ -7,9 +7,15 @@ import { cn } from "@/lib/utils";
 export interface ServiceRowProps {
   service: Service;
   className?: string;
+  /** Heading level; use "h2" when the page has no h2 above the list. */
+  headingAs?: "h2" | "h3";
 }
 
-export function ServiceRow({ service, className }: ServiceRowProps) {
+export function ServiceRow({
+  service,
+  className,
+  headingAs: Heading = "h3",
+}: ServiceRowProps) {
   return (
     <div
       className={cn(
@@ -22,14 +28,14 @@ export function ServiceRow({ service, className }: ServiceRowProps) {
           <span className="text-muted-foreground text-sm tabular-nums">
             {service.code}
           </span>
-          <h3 className="text-foreground text-3xl font-semibold tracking-[-0.035em] transition-transform duration-300 [transition-timing-function:var(--ease-out)] sm:text-4xl lg:group-hover:translate-x-2">
+          <Heading className="text-foreground text-3xl font-semibold tracking-[-0.035em] transition-transform duration-300 [transition-timing-function:var(--ease-out)] sm:text-4xl lg:group-hover:translate-x-2">
             <Link
               href={`/services/${service.slug}`}
               className="after:absolute after:inset-0 focus-visible:underline focus-visible:outline-none"
             >
               {service.title}
             </Link>
-          </h3>
+          </Heading>
         </div>
 
         <div className="space-y-5 lg:col-span-5">
