@@ -1,6 +1,6 @@
 # Change Log (audit fixes)
 
-Nothing is committed or deployed. All changes are in the working tree on `develop`.
+Committed on `develop` in separate batches (see `git log`); nothing has been deployed or pushed.
 
 | Issue               | Change                                                                                                                      | Files                                                                                                                               |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
