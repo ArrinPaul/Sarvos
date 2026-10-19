@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { getSiteUrl } from "@/lib/site";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -16,9 +17,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(getSiteUrl()),
+  alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    siteName: "SARVOS",
+    locale: "en_US",
+    title: "SARVOS — Independent Software & Technology Studio",
+    description:
+      "Disciplined software engineering, high-reliability systems architecture, and technical consulting.",
+  },
+  twitter: {
+    card: "summary",
+    title: "SARVOS — Independent Software & Technology Studio",
+    description:
+      "Disciplined software engineering, high-reliability systems architecture, and technical consulting.",
+  },
   title: {
     default: "SARVOS — Independent Software & Technology Studio",
     template: "%s | SARVOS",
@@ -77,8 +91,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a
+            href="#main"
+            className="bg-foreground text-background focus-visible:ring-ring sr-only z-[60] rounded-full px-5 py-3 text-sm font-medium focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            Skip to main content
+          </a>
           <SiteHeader />
-          <div className="flex-1">{children}</div>
+          <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
+            {children}
+          </main>
           <SiteFooter />
         </ThemeProvider>
       </body>
