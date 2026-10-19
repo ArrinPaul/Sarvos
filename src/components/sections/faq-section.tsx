@@ -2,6 +2,7 @@ import * as React from "react";
 import { faqs } from "@/content/faq";
 import { Accordion } from "@/components/ui/accordion";
 import { SectionLabel } from "@/components/ui/section-label";
+import { Reveal } from "@/components/motion/reveal";
 
 export function FAQSection() {
   const accordionItems = faqs.map((faq) => ({
@@ -9,36 +10,34 @@ export function FAQSection() {
     title: faq.question,
     content: (
       <div className="space-y-2">
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-base leading-relaxed">
           {faq.answer}
         </p>
-        <span className="text-muted-foreground/80 block pt-1 font-mono text-[10px] tracking-wider uppercase">
-          CATEGORY: {faq.category}
+        <span className="text-muted-foreground/80 block pt-1 text-xs">
+          {faq.category}
         </span>
       </div>
     ),
   }));
 
   return (
-    <section className="border-border w-full border-b py-16 sm:py-24">
-      <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-12">
+    <section className="w-full py-20 sm:py-32">
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Section Header */}
-          <div className="space-y-4 lg:col-span-5">
-            <SectionLabel index="04" label="FREQUENTLY ASKED QUESTIONS" />
-            <h2 className="text-foreground text-3xl font-semibold tracking-tight sm:text-4xl">
+          <Reveal className="space-y-6 lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
+            <SectionLabel index="06" label="Frequently asked questions" />
+            <h2 className="text-headline text-foreground">
               Direct answers on engagement, process, and ownership.
             </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+            <p className="text-muted-foreground max-w-md text-base leading-relaxed">
               Have specific constraints or security requirements? We discuss
               technical architecture openly before any commercial commitment.
             </p>
-          </div>
+          </Reveal>
 
-          {/* Accordion Component */}
-          <div className="lg:col-span-7">
+          <Reveal delay={90} className="lg:col-span-7">
             <Accordion items={accordionItems} />
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

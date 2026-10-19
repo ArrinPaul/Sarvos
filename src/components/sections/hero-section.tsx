@@ -2,13 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  ChevronRight,
-  Terminal,
-  Layers,
-  Database,
-} from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
@@ -23,59 +17,79 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
     featuredProjects[activeProjectIdx] || featuredProjects[0];
 
   return (
-    <section className="border-border relative w-full border-b py-16 sm:py-24 lg:py-28">
-      <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-12">
-        {/* Top Hero Editorial Copy */}
-        <div className="max-w-3xl space-y-6">
-          <SectionLabel index="01" label="INDEPENDENT TECHNOLOGY STUDIO" />
+    <section className="relative w-full pt-14 pb-16 sm:pt-24 sm:pb-24 lg:pt-32">
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
+        <div className="space-y-8">
+          <div className="rise" style={{ ["--d" as string]: "0ms" }}>
+            <SectionLabel index="01" label="Independent technology studio" />
+          </div>
 
-          <h1 className="text-foreground text-4xl leading-[1.08] font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-            We build software for real-world problems.
+          <h1
+            className="text-display rise text-foreground max-w-[15ch]"
+            style={{ ["--d" as string]: "80ms" }}
+          >
+            We build software for{" "}
+            <span className="whitespace-nowrap">real-world</span> problems.
           </h1>
 
-          <p className="text-muted-foreground max-w-2xl text-base leading-relaxed sm:text-lg">
-            SARVOS is an independent software and technology consultancy. We
-            design, engineer, and deploy high-reliability digital systems,
-            custom web applications, and automated workflows.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Link
-              href="/contact"
-              className="bg-primary text-background dark:bg-foreground dark:text-background inline-flex h-11 items-center justify-center gap-2 rounded-[8px] px-5 text-sm font-medium transition-colors hover:bg-neutral-800 dark:hover:bg-neutral-200"
+          <div className="flex flex-col gap-8">
+            <p
+              className="text-lede text-muted-foreground rise max-w-xl"
+              style={{ ["--d" as string]: "200ms" }}
             >
-              <span>Start a project</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+              SARVOS is an independent software and technology consultancy. We
+              design, engineer, and deploy high-reliability digital systems,
+              custom web applications, and automated workflows.
+            </p>
 
-            <Link
-              href="/services"
-              className="border-border bg-card text-foreground hover:bg-muted inline-flex h-11 items-center justify-center gap-2 rounded-[8px] border px-5 text-sm font-medium transition-colors"
+            <div
+              className="rise flex flex-wrap items-center gap-3"
+              style={{ ["--d" as string]: "300ms" }}
             >
-              <span>Explore capabilities</span>
-              <ChevronRight className="text-muted-foreground h-4 w-4" />
-            </Link>
+              <Link
+                href="/contact"
+                className="press group bg-foreground text-background inline-flex h-14 items-center justify-center gap-2 rounded-full px-7 text-base font-medium hover:opacity-90"
+              >
+                <span>Start a project</span>
+                <ArrowUpRight className="h-5 w-5 transition-transform duration-200 [transition-timing-function:var(--ease-out)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+
+              <Link
+                href="/services"
+                className="press border-border text-foreground hover:bg-muted inline-flex h-14 items-center justify-center gap-2 rounded-full border px-6 text-base font-medium"
+              >
+                <span>Explore capabilities</span>
+                <ChevronRight className="text-muted-foreground h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Interactive Project Showcase (Manual Switch, No Autoplay, ~200ms crossfade) */}
         {featuredProjects.length > 0 && (
-          <div className="mt-16 space-y-4 sm:mt-24">
-            <div className="border-border flex flex-col justify-between gap-4 border-b pb-3 sm:flex-row sm:items-center">
-              <span className="text-muted-foreground font-mono text-xs tracking-wider uppercase">
-                [ FEATURED CASE STUDIES // SELECT TO INSPECT ]
+          <div
+            className="rise mt-16 sm:mt-24"
+            style={{ ["--d" as string]: "420ms" }}
+          >
+            <div className="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+              <span className="text-muted-foreground text-sm">
+                Featured case studies
               </span>
-              <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+              <div
+                role="group"
+                aria-label="Featured case studies"
+                className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0"
+              >
                 {featuredProjects.map((proj, idx) => (
                   <button
                     key={proj.slug}
                     type="button"
                     onClick={() => setActiveProjectIdx(idx)}
+                    aria-pressed={activeProjectIdx === idx}
                     className={cn(
-                      "cursor-pointer rounded-[4px] border px-3 py-1.5 font-mono text-xs whitespace-nowrap uppercase transition-colors duration-200",
+                      "press min-h-10 cursor-pointer rounded-full border px-4 py-2 text-sm whitespace-nowrap",
                       activeProjectIdx === idx
-                        ? "bg-foreground text-background border-foreground font-semibold"
-                        : "bg-card text-muted-foreground border-border hover:bg-muted hover:text-foreground"
+                        ? "bg-foreground text-background border-foreground font-medium"
+                        : "text-muted-foreground border-border hover:bg-muted hover:text-foreground"
                     )}
                     aria-label={`Select project ${proj.title}`}
                   >
@@ -86,47 +100,45 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
               </div>
             </div>
 
-            {/* Project Preview Panel with 200ms CSS crossfade */}
-            <div className="border-border bg-card rounded-[8px] border p-6 transition-opacity duration-200 sm:p-8">
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-                {/* Left: Summary & Metrics */}
-                <div className="space-y-6 lg:col-span-7">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span className="text-muted-foreground font-mono text-xs tracking-wider uppercase">
-                        {activeProject.client} &bull; {activeProject.year}
-                      </span>
-                    </div>
-                    <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
+            {/* Preview panel: re-keyed so each selection crossfades in */}
+            <div className="bg-muted rounded-[28px] p-6 sm:p-10 lg:p-12">
+              <div
+                key={activeProject.slug}
+                className="animate-fade-in grid grid-cols-1 gap-10 lg:grid-cols-12"
+              >
+                <div className="space-y-8 lg:col-span-7">
+                  <div className="space-y-3">
+                    <span className="text-muted-foreground text-sm">
+                      {activeProject.client} &bull; {activeProject.year}
+                    </span>
+                    <h2 className="text-foreground text-3xl font-semibold tracking-[-0.035em] sm:text-5xl">
                       {activeProject.title}
                     </h2>
                   </div>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">
+                  <p className="text-muted-foreground max-w-xl text-base leading-relaxed sm:text-lg">
                     {activeProject.description}
                   </p>
 
-                  {/* Telemetry Metrics */}
-                  <div className="border-border grid grid-cols-2 gap-4 border-y py-4 sm:grid-cols-4">
+                  <div className="border-border grid grid-cols-2 gap-6 border-t pt-6 sm:grid-cols-4">
                     {activeProject.metrics.map((metric) => (
                       <div key={metric.label} className="space-y-1">
-                        <p className="text-foreground font-mono text-lg font-bold tracking-tight sm:text-xl">
+                        <p className="text-foreground text-2xl font-semibold tracking-[-0.03em] tabular-nums sm:text-3xl">
                           {metric.value}
                         </p>
-                        <p className="text-muted-foreground font-mono text-[11px] leading-tight tracking-wider uppercase">
+                        <p className="text-muted-foreground text-xs leading-tight">
                           {metric.label}
                         </p>
                       </div>
                     ))}
                   </div>
 
-                  {/* Tech Stack Chips & Link */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="flex flex-wrap gap-1.5">
                       {activeProject.stack.map((tech) => (
                         <span
                           key={tech}
-                          className="border-border bg-muted text-foreground rounded-[4px] border px-2 py-0.5 font-mono text-xs uppercase"
+                          className="bg-background text-foreground rounded-full px-3 py-1 text-xs"
                         >
                           {tech}
                         </span>
@@ -135,54 +147,43 @@ export function HeroSection({ featuredProjects }: HeroSectionProps) {
 
                     <Link
                       href={`/work/${activeProject.slug}`}
-                      className="text-foreground inline-flex items-center gap-1 text-sm font-medium hover:underline"
+                      className="group text-foreground -my-2.5 inline-flex items-center gap-1.5 py-2.5 text-sm font-medium"
                     >
-                      <span>Read full case study</span>
-                      <ArrowUpRight className="h-4 w-4" />
+                      <span className="link-draw">Read full case study</span>
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-200 [transition-timing-function:var(--ease-out)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Link>
                   </div>
                 </div>
 
-                {/* Right: Architectural Wireframe Card */}
-                <div className="border-border bg-muted/60 flex flex-col justify-between rounded-[6px] border p-6 font-mono text-xs lg:col-span-5">
-                  <div className="space-y-4">
-                    <div className="border-border flex items-center justify-between border-b pb-3">
-                      <span className="text-foreground flex items-center gap-2 font-semibold">
-                        <Terminal className="h-4 w-4" />
-                        SYS.ARCHITECTURE
-                      </span>
-                      <span className="text-muted-foreground text-[11px]">
-                        [ VERIFIED PASS ]
+                <div className="bg-foreground text-background flex flex-col justify-between rounded-[20px] p-6 sm:p-8 lg:col-span-5">
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-medium">Architecture</span>
+                      <span className="flex items-center gap-2 opacity-70">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        Verified
                       </span>
                     </div>
 
-                    <div className="text-muted-foreground space-y-3">
-                      <div className="flex items-start gap-2">
-                        <Layers className="text-foreground mt-0.5 h-4 w-4 shrink-0" />
-                        <div>
-                          <p className="text-foreground font-medium">Domain:</p>
-                          <p>{activeProject.category}</p>
-                        </div>
+                    <dl className="space-y-5">
+                      <div>
+                        <dt className="text-xs opacity-60">Domain</dt>
+                        <dd className="mt-1 text-lg tracking-tight">
+                          {activeProject.category}
+                        </dd>
                       </div>
-
-                      <div className="flex items-start gap-2">
-                        <Database className="text-foreground mt-0.5 h-4 w-4 shrink-0" />
-                        <div>
-                          <p className="text-foreground font-medium">
-                            Execution Engine:
-                          </p>
-                          <p>{activeProject.overview.solution}</p>
-                        </div>
+                      <div>
+                        <dt className="text-xs opacity-60">Execution engine</dt>
+                        <dd className="mt-1 text-sm leading-relaxed opacity-90">
+                          {activeProject.overview.solution}
+                        </dd>
                       </div>
-                    </div>
+                    </dl>
                   </div>
 
-                  <div className="border-border text-muted-foreground mt-6 border-t pt-4 text-[11px]">
-                    <span>
-                      SPECIFICATION REF: 0x
-                      {activeProject.slug.slice(0, 8).toUpperCase()}
-                    </span>
-                  </div>
+                  <p className="mt-8 font-mono text-xs opacity-50">
+                    Ref 0x{activeProject.slug.slice(0, 8).toUpperCase()}
+                  </p>
                 </div>
               </div>
             </div>

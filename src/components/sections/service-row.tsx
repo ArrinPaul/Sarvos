@@ -13,39 +13,35 @@ export function ServiceRow({ service, className }: ServiceRowProps) {
   return (
     <div
       className={cn(
-        "group border-border hover:bg-muted/40 -mx-4 rounded-[8px] border-b px-4 py-8 transition-colors duration-150",
+        "group border-border relative border-t py-8 sm:py-10",
         className
       )}
     >
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
-        {/* Code & Title */}
-        <div className="space-y-2 lg:col-span-4">
-          <div className="flex items-center gap-2">
-            <span className="text-muted-foreground border-border bg-card rounded-[4px] border px-1.5 py-0.5 font-mono text-xs tracking-wider uppercase">
-              [{service.code}]
-            </span>
-          </div>
-          <h3 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-start">
+        <div className="space-y-3 lg:col-span-6">
+          <span className="text-muted-foreground text-sm tabular-nums">
+            {service.code}
+          </span>
+          <h3 className="text-foreground text-3xl font-semibold tracking-[-0.035em] transition-transform duration-300 [transition-timing-function:var(--ease-out)] sm:text-4xl lg:group-hover:translate-x-2">
             <Link
               href={`/services/${service.slug}`}
-              className="hover:underline focus-visible:underline focus-visible:outline-none"
+              className="after:absolute after:inset-0 focus-visible:underline focus-visible:outline-none"
             >
               {service.title}
             </Link>
           </h3>
         </div>
 
-        {/* Short Description & Deliverables */}
-        <div className="space-y-4 lg:col-span-6">
-          <p className="text-muted-foreground text-sm leading-relaxed">
+        <div className="space-y-5 lg:col-span-5">
+          <p className="text-muted-foreground text-base leading-relaxed">
             {service.shortDesc}
           </p>
 
-          <div className="flex flex-wrap gap-1.5 pt-1">
+          <div className="flex flex-wrap gap-1.5">
             {service.components.slice(0, 3).map((comp) => (
               <span
                 key={comp}
-                className="border-border bg-card text-muted-foreground rounded-[4px] border px-2 py-0.5 font-mono text-[11px] uppercase"
+                className="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs"
               >
                 {comp}
               </span>
@@ -53,15 +49,10 @@ export function ServiceRow({ service, className }: ServiceRowProps) {
           </div>
         </div>
 
-        {/* Action Link */}
-        <div className="flex items-center lg:col-span-2 lg:justify-end">
-          <Link
-            href={`/services/${service.slug}`}
-            className="text-foreground border-border bg-card inline-flex items-center gap-1.5 rounded-[6px] border px-3 py-1.5 font-mono text-xs tracking-wider uppercase hover:underline"
-          >
-            <span>Inspect Spec</span>
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+        <div className="hidden lg:col-span-1 lg:flex lg:justify-end">
+          <span className="border-border text-foreground group-hover:bg-foreground group-hover:text-background flex h-12 w-12 items-center justify-center rounded-full border transition-colors duration-200">
+            <ArrowUpRight className="h-5 w-5 transition-transform duration-300 [transition-timing-function:var(--ease-out)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </span>
         </div>
       </div>
     </div>
